@@ -1,0 +1,22 @@
+form {
+    overflow-y: scroll;
+    padding-top: 150px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+form > div {
+    width: 85%;
+}
+
+@media screen and (max-width: 960px) {
+    form {
+        overflow-y: scroll;
+        padding-top: 600px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
