@@ -1,0 +1,9 @@
+mat-form-field {
+    width: 70%;
+}
+
+form {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
