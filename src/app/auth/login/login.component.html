@@ -1,8 +1,8 @@
-<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="3%"
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1%"
 #form="ngForm" class="mat-card"> <!-- (ngSubmit)="fs.signInViaEmail(emailInput.value, passwordInput.value)" |||| Class mat-card is used to apply dark mode background and coloring -->
     <mat-form-field appearance="outline">
         <mat-label>Адреса електронске поште</mat-label>
-        <input type="email" ngModel matInput autocomplete="prodavnica-oie-email" pattern="^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$" name="email" #emailInput="ngModel" required/>
+        <input type="email" ngModel matInput autocomplete="virtour-email" pattern="^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$" name="email" #emailInput="ngModel" required/>
         <mat-icon matSuffix>alternate_email</mat-icon>
         <mat-hint>пр. marko.dojkic.18@singimail.rs</mat-hint>
         <mat-error *ngIf="emailInput.hasError('required')">Поље адресе електронске поште не сме бити празно</mat-error>
@@ -11,7 +11,7 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Лозинка</mat-label>
-        <input type="password" ngModel matInput autocomplete="prodavnica-oie-password" name="password" #passwordInput="ngModel" minlength="8" required/>
+        <input type="password" ngModel matInput autocomplete="virtour-password" name="password" #passwordInput="ngModel" minlength="8" required/>
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint>пр. secretPassword123</mat-hint>
         <mat-error *ngIf="passwordInput.hasError('required')">Поље лозинке не сме бити празно</mat-error>

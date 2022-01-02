@@ -4,27 +4,28 @@ import { FormGroup, NgModel } from '@angular/forms';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.scss']
 })
   
 export class RegistrationComponent implements OnInit {
 
-  paymentPattern!: string;
+  /*paymentPattern!: string;
   paymentHint!: string;
-  paymentErrorMessage!: string;
+  paymentErrorMessage!: string;*/
 
   constructor() { }
 
   ngOnInit(): void {
-    this.paymentPattern = this.paymentHint = this.paymentErrorMessage = "";
+    //this.paymentPattern = this.paymentHint = this.paymentErrorMessage = "";
   }
 
   checkRequiredFields(form: FormGroup): boolean {
-    /*var isAllValid: boolean = true;
-    Object.keys(form.controls).forEach(id => {
+    var isAllValid: boolean = true;
+    /*Object.keys(form.controls).forEach(id => {
       if(form.controls[id].hasError('required') || form.controls[id].hasError('pattern')) isAllValid = false;
     });
     return isAllValid && !form.controls["password"]?.hasError("minlength") && !form.controls["passwordRepeat"]?.hasError("matched");*/
+    //****HAS ERRORS FIX***
     return false;
   }
 
@@ -33,7 +34,7 @@ export class RegistrationComponent implements OnInit {
     else repeatPass.control.setErrors(null);
   }
 
-  updatePaymentAddressInput(paymentType: number) {
+  /*updatePaymentAddressInput(paymentType: number) {
     switch (paymentType) {
       case 0:
         this.paymentPattern = "^(2|5)[1-5][0-9]{14}$"; //International pattern
@@ -68,6 +69,7 @@ export class RegistrationComponent implements OnInit {
       default:
         this.paymentPattern = this.paymentHint = this.paymentErrorMessage = "";
     }
-  }
+  }*/
+
 
 }
