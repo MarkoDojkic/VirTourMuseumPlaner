@@ -2,14 +2,17 @@ import { filter } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import * as moment from 'moment';
+import 'moment-duration-format';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+  
 export class AppComponent implements OnInit {
-  [x: string]: any;
+  
   title = 'VirTourMuseumPlaner';
   
   constructor(private router: Router,  

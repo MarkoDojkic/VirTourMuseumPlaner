@@ -21,7 +21,7 @@
     <div>
         <mat-form-field appearance="outline" fxFlex>
             <mat-label for="email">Адреса електронске поште</mat-label>
-            <input type="email" autocomplete="prodavnica-oie-new-email" pattern="^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$" ngModel matInput name="email" #emailInput="ngModel" required/>
+            <input type="email" autocomplete="virtour-new-email" pattern="^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$" ngModel matInput name="email" #emailInput="ngModel" required/>
             <mat-icon matSuffix>alternate_email</mat-icon>
             <mat-hint>пр. marko.dojkic.18@singimail.rs</mat-hint>
             <mat-error *ngIf="emailInput.hasError('required')">Поље адресе електронске поште не сме бити празно</mat-error>
