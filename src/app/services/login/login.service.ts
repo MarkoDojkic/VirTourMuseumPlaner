@@ -10,12 +10,12 @@ import { CryptoService } from '../crypto/crypto.service';
 @Injectable({
   providedIn: 'root'
 })
-  
-export class LoginService { 
+
+export class LoginService {
   constructor(private http: HttpClient, private cs: CryptoService, private router: Router) { }
 
   login(loginForm: NgForm): void {
-    
+
     this.http.post<Visitor>("http://localhost:21682/login", { "email": loginForm.controls["email"].value }, { responseType: 'json' }).toPromise().then((resolve) => {
       if (this.cs.encrypt(environment.cryptoKey, loginForm.controls["password"].value).indexOf(resolve.password.toString()) === -1) {
         Swal.fire({
@@ -36,6 +36,7 @@ export class LoginService {
         showCancelButton: false,
         confirmButtonText: "У реду",
       }).then(() => {
+
         sessionStorage.setItem("loggedInUser", this.cs.encrypt(environment.cryptoKey, resolve.id.toString()));
         this.router.navigate(["/profile"]);
       });
@@ -51,7 +52,7 @@ export class LoginService {
     });
   }
 
-  logout(): void {
+  signOut(): void {
     sessionStorage.clear();
     this.router.navigate(["login"]);
   }

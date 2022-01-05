@@ -1,68 +1,70 @@
 <div *ngIf="!checkIfUserIsLoggedIn()">
-  <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%">
-      <span [fxFlex.gt-sm]="15" [fxFlex.lt-sm]="25">VirTourMuseumPlaner <br> © 2022 Марко Дојкић</span>
-      
-      <div [fxHide.lt-sm]="true" fxFlex="75" fxLayoutGap="2%">
-        <button mat-stroked-button routerLink="/exponants" fxFlex>
-            Експонати   
-        </button>
-        <button mat-stroked-button routerLink="/login" fxFlex>
-            Логовање   
-        </button>
-        <button mat-stroked-button routerLink="/registration" fxFlex>
-            Регистрација
-        </button>
+    <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%">
+        <span [fxFlex.gt-sm]="15" [fxFlex.lt-sm]="25">VirTourMuseumPlaner <br> © 2022 Марко Дојкић</span>
+
+        <div [fxHide.lt-sm]="true" fxFlex="75" fxLayoutGap="2%">
+            <button mat-stroked-button routerLink="/exponants" fxFlex>
+                Експонати
+            </button>
+            <button mat-stroked-button routerLink="/login" fxFlex>
+                Логовање
+            </button>
+            <button mat-stroked-button routerLink="/registration" fxFlex>
+                Регистрација
+            </button>
         </div>
         <div [fxHide.gt-xs]="true" fxFlex="45" fxLayoutGap="15%">
             <button mat-icon-button routerLink="/museum" fxFlex>
                 <mat-icon>museum</mat-icon>
             </button>
             <button mat-icon-button routerLink="/login" fxFlex>
-                <mat-icon>login</mat-icon>   
+                <mat-icon>login</mat-icon>
             </button>
             <button mat-icon-button routerLink="/registration" fxFlex>
                 <mat-icon>person_add</mat-icon>
             </button>
         </div>
 
-      <mat-slide-toggle (change)="onDarkModeChange($event)" [checked]="isDarkMode" [fxFlex.gt-sm]="8" [fxFlex.lt-sm]="20">Тамни<br>режим</mat-slide-toggle>
-  </mat-toolbar>
+        <mat-slide-toggle (change)="onDarkModeChange($event)" [checked]="isDarkMode" [fxFlex.gt-sm]="8"
+            [fxFlex.lt-sm]="20">Тамни<br>режим</mat-slide-toggle>
+    </mat-toolbar>
 </div>
 <div *ngIf="checkIfUserIsLoggedIn()">
-    <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
-        <span>VirTourMuseumPlaner <br> © 2022 Марко Дојкић</span>
-        
+    <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%">
+        <span [fxFlex.gt-sm]="15" [fxFlex.lt-sm]="65">VirTourMuseumPlaner<br>© 2022 Марко Дојкић</span>
+
         <div [fxHide.lt-sm]="true" fxFlex="75" fxLayoutGap="2%">
             <button mat-stroked-button routerLink="/exponants" fxFlex>
-                Експонати   
+                Експонати
             </button>
             <button mat-stroked-button routerLink="/tours" fxFlex>
-                Мој обиласци   
+                Моји обиласци
             </button>
             <button mat-stroked-button routerLink="/profile" fxFlex>
                 Профил
             </button>
-            <button mat-stroked-button (click)="loginService.logout()" color="warn" fxFlex>
+            <button mat-stroked-button (click)="loginService.signOut()" color="warn" fxFlex>
                 Излогуј ме
             </button>
         </div>
 
-        <div [fxHide.gt-xs]="true" fxFlex="55" fxLayoutGap="4%">
+        <div [fxHide.gt-xs]="true" fxFlex="60" fxLayoutGap="2%">
             <button mat-stroked-button routerLink="/exponants" fxFlex>
-                Експонати   
+                <mat-icon>museum</mat-icon>
             </button>
             <button mat-stroked-button routerLink="/tours" fxFlex>
-                Мој обиласци   
+                <mat-icon>tour</mat-icon>
             </button>
             <button mat-stroked-button routerLink="/profile" fxFlex>
-                Профил
+                <mat-icon>person</mat-icon>
             </button>
-            <button mat-stroked-button (click)="loginService.logout()" color="warn" fxFlex>
-                Излогуј ме
+            <button mat-stroked-button (click)="loginService.signOut()" color="warn" fxFlex>
+                <mat-icon>person_outline</mat-icon>
             </button>
         </div>
 
-        <mat-slide-toggle (change)="onDarkModeChange($event)" [checked]="isDarkMode" [fxFlex.gt-sm]="8" [fxFlex.lt-sm]="20">Тамни<br>режим</mat-slide-toggle>
+        <mat-slide-toggle (change)="onDarkModeChange($event)" [checked]="isDarkMode" [fxFlex.gt-sm]="12"
+            [fxFlex.lt-sm]="20">Тамни<br>режим</mat-slide-toggle>
     </mat-toolbar>
 </div>
 <router-outlet></router-outlet>

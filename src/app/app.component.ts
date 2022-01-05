@@ -11,11 +11,11 @@ import { LoginService } from './services/login/login.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-  
+
 export class AppComponent implements OnInit {
-    
-  constructor(private router: Router,  
-    private activatedRoute: ActivatedRoute,  
+
+  constructor(private router: Router,
+    private activatedRoute: ActivatedRoute,
     private titleService: Title, public loginService: LoginService) { }
 
   ngOnInit() {
@@ -29,21 +29,21 @@ export class AppComponent implements OnInit {
   }
 
   isDarkMode = true; /* Initially dark mode is on */
-  
+
   onDarkModeChange(e: { checked: boolean; }) {
     this.isDarkMode = e.checked;
     document.querySelector("body")?.classList.remove(!e.checked ? "theme-dark" : "theme-light");
     document.querySelector("body")?.classList.add(e.checked ? "theme-dark" : "theme-light");
   }
 
-  getChild(activatedRoute: ActivatedRoute): any {  
-    if (activatedRoute.firstChild) {  
-      return this.getChild(activatedRoute.firstChild);  
-    } else {  
-      return activatedRoute;  
-    }  
+  getChild(activatedRoute: ActivatedRoute): any {
+    if (activatedRoute.firstChild) {
+      return this.getChild(activatedRoute.firstChild);
+    } else {
+      return activatedRoute;
+    }
   }
-  
+
   checkIfUserIsLoggedIn(): boolean {
     return sessionStorage.getItem("loggedInUser") != null;
   }

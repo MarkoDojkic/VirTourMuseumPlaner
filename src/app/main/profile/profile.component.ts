@@ -1,7 +1,7 @@
 import { Visitor } from 'src/app/model/visitor';
 import { Component, OnInit } from '@angular/core';
 import { NgModel, NgForm, AbstractControl } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +9,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  uid!: string;
   userName!: string;
   userSurname!: string;
   userEmail!: string;
@@ -28,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild("favoriteProductInput") favoriteProductInput: ElementRef<HTMLInputElement>;
   */
-  constructor(private userService:UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -47,54 +45,51 @@ export class ProfileComponent implements OnInit {
   }
 
   onUpdate(form: NgForm): void {
-    const newName: string = (form.controls["name"].valid && form.controls["name"].dirty) ? form.controls["name"].value : this.userName;
-    const newSurname: string = (form.controls["surname"].valid && form.controls["surname"].dirty) ? form.controls["surname"].value : this.userSurname;
     var visitorData!: Visitor;
+    var hasEditedLoginData = false;
+    var isPasswordChanged = false;
 
-    this.userService.getVisitor(sessionStorage.getItem("loggedInUserId")!).then((resolve) => visitorData! = resolve);
-    
-    if (!newName.includes(this.userName) || !newSurname.includes(this.userSurname)) {
-      visitorData!.name = newName;
-      visitorData!.surname = newSurname;
-    }
-        
-    visitorData!.mobilePhone = (form.controls["mobilePhone"].valid && form.controls["mobilePhone"].dirty) ? form.controls["mobilePhone"].value : visitorData!.mobilePhone;
+    this.userService.getLoggedInVisitor().then((resolve) => visitorData! = resolve).then(() => {
+      if (form.controls["name"].dirty && form.controls["name"].valid) visitorData!.name = form.controls["name"].value;
+      if (form.controls["surname"].dirty && form.controls["surname"].valid) visitorData!.surname = form.controls["surname"].value;
+      if (form.controls["email"].dirty && form.controls["email"].valid) {
+        visitorData!.email = form.controls["email"].value;
+        hasEditedLoginData = true;
+      }
+      if (form.controls["phone"].dirty && form.controls["phone"].valid) visitorData!.phone = form.controls["phone"].value;
+      if (form.controls["mobilePhone"].dirty && form.controls["mobilePhone"].valid) visitorData!.mobilePhone = form.controls["mobilePhone"].value;
+      if (form.controls["password"].dirty && form.controls["password"].valid
+        && form.controls["password"].value === form.controls["passwordRepeat"].value) {
+        visitorData.password = form.controls["password"].value;
+        hasEditedLoginData = true;
+        isPasswordChanged = true;
+      }
 
-    if (form.controls["email"].dirty && form.controls["email"].valid) {
-      visitorData!.email = form.controls["email"].value;
-      form.controls["email"].reset();
-    }
+      //updatedFirestoreData["favoriteProducts"] = this.favoriteProducts;
 
-    if (form.controls["password"].dirty && form.controls["password"].valid
-          && form.controls["password"].value === form.controls["passwordRepeat"].value) {
-      this.userService.updatePassword(form.controls["password"].value);
-      form.controls["password"].reset();
-      form.controls["passwordRepeat"].reset();
-      return;
-    }
+      this.userService.updateData(visitorData!, hasEditedLoginData, isPasswordChanged);
 
-    //updatedFirestoreData["favoriteProducts"] = this.favoriteProducts;
-
-    this.userService.updateData(visitorData!);
-
-    form.controls["name"].reset();
-    form.controls["surname"].reset();
-    form.controls["email"].reset();
-    form.controls["password"].reset();
-    form.controls["passwordRepeat"].reset();
-
-    this.updateFieldData();
+      setTimeout(() => {
+        form.controls["name"].reset();
+        form.controls["surname"].reset();
+        form.controls["email"].reset();
+        form.controls["phone"].reset();
+        form.controls["mobilePhone"].reset();
+        form.controls["password"].reset();
+        form.controls["passwordRepeat"].reset();
+        this.updateFieldData();
+      })
+    });
   }
 
   updateFieldData() {
-    this.userService.getVisitor(sessionStorage.getItem("loggedInUser")!.toString()).then((resolve) => {
-      this.uid = resolve.id.toString();
+    this.userService.getLoggedInVisitor().then((resolve) => {
       this.userName = resolve.name.toString();
       this.userSurname = resolve.surname.toString();
       this.userEmail = resolve.email.toString();
       this.userPhone = resolve.phone!.toString();
       this.userMobilePhone = resolve.mobilePhone!.toString();
-    }, (reject) => {  
+    }, (reject) => {
       console.log(reject);
     });
   }
