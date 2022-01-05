@@ -6,8 +6,8 @@ export interface Visitor {
     name: String;
     surname: String;
     email: String;
-    phone: String | undefined;
-    mobilePhone: String | undefined;
+    phone: String;
+    mobilePhone: String;
     password: String;
     planer: Array<Tour>;
     favorites: Array<Exhibit>;

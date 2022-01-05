@@ -48,7 +48,7 @@ app.post('/login', (request, response) => {
         if (!usersData instanceof Array) usersData = [usersData];
         if (usersData.map(user => user.email).indexOf(loginData["email"]) !== -1)
             response.json(usersData.find(user => user["email"] === loginData["email"]));
-        else response.sendStatus(403).send("User not found").end();
+        else response.sendStatus(403);
     });
 });
 
@@ -61,6 +61,27 @@ app.get("/getUser/:id", (request, response) => {
             return;
         }
         if (!usersData instanceof Array) usersData = [usersData];
-        response.send(usersData.find(user => user.id = request.params.id));
+        response.send(usersData.find(user => user.id === request.params.id));
+    });
+});
+
+app.post('/update/:id', (request, response) => {
+    fs.readFile("users.json", (error, buffer) => {
+        var usersData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!usersData instanceof Array) usersData = [usersData];
+        var user = usersData.find(user => user.id === request.params.id);
+        var newUserData = request.body;
+        
+        usersData.splice(usersData.indexOf(user), 1, newUserData);
+                
+        fs.writeFile("users.json", JSON.stringify(usersData), (error) => { 
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else response.sendStatus(200).end();
+        });
     });
 });
