@@ -1,5 +1,5 @@
-<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.2%" fxLayoutGap.lt-md="2.2%"
-#form="ngForm" class="mat-card"> <!-- (ngSubmit)="fs.signUpViaEmail(emailInput.value,passwordInput.value, form)" |||| Class mat-card is used to apply dark mode background and coloring -->
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.2%" fxLayoutGap.lt-md="12%" fxLayoutGap.lt-sm="15%"
+#form="ngForm" class="mat-card" (ngSubmit)="registrationService.register(form)">  <!-- Class mat-card is used to apply dark mode background and coloring -->
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%">
         <mat-form-field appearance="outline" fxFlex>
             <mat-label for="name">Име</mat-label>
@@ -70,7 +70,7 @@
     </div>
 
     <section fxLayout="row" fxLayoutGap="10px">
-        <button type="submit" mat-stroked-button color="primary" [disabled]="!checkRequiredFields(form.value)">Региструј ме</button> <!-- Disabled if form is invalid -->
+        <button type="submit" mat-stroked-button color="primary" [disabled]="form.invalid">Региструј ме</button> <!-- Disabled if form is invalid -->
         <button type="reset" mat-stroked-button color="warn" [disabled]="form.pristine">Обриши све</button> <!-- Disabled if form isn't modified -->
     </section>
 

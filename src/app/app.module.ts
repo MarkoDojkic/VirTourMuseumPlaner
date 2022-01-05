@@ -12,12 +12,19 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './main/profile/profile.component';
+import { ExponantsComponent } from './main/exponants/exponants.component';
+import { ToursComponent } from './main/tours/tours.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ProfileComponent,
+    ExponantsComponent,
+    ToursComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +74,7 @@ import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
         overlap: 150
       }
     }),
+    HttpClientModule,
   ],
   providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }],
   bootstrap: [AppComponent]

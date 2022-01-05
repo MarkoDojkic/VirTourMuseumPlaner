@@ -1,0 +1,24 @@
+[
+    {
+        "id": "fd40451e-220f-46d4-bd2e-3c8a1a359431",
+        "name": "Sabrina",
+        "surname": "Carpetner",
+        "email": "sabrina1999@sabrina.com",
+        "password": "OGCXnihKv7YIno8j769xYQ==",
+        "favorites": [],
+        "phone": "0224789520",
+        "mobilePhone": "",
+        "planer": []
+    },
+    {
+        "id": "8143acbd-38f9-46f3-86b5-9b2e2a463d21",
+        "name": "Марко",
+        "surname": "Дојкић",
+        "email": "marko.dojkic@gmail.com",
+        "password": "nL/EkTUqmZJ8q2ebxfaQsA==",
+        "favorites": [],
+        "phone": "0118465335",
+        "mobilePhone": "",
+        "planer": []
+    }
+]
