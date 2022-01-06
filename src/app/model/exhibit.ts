@@ -1,6 +1,7 @@
 import { Review } from "./review";
 
 export interface Exhibit {
+    id: String;
     title: String;
     description: String;
     imageURL: String;
