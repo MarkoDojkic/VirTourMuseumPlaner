@@ -14,7 +14,7 @@ import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './main/profile/profile.component';
-import { ExponantsComponent } from './main/exponants/exponants.component';
+import { ExhibitsComponent } from './main/exhibits/exhibits.component';
 import { ToursComponent } from './main/tours/tours.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { ToursComponent } from './main/tours/tours.component';
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    ExponantsComponent,
+    ExhibitsComponent,
     ToursComponent
   ],
   imports: [

@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors({origin: "*"}))
 
 app.post('/register', (request, response) => {
-    fs.readFile("users.json", (error, buffer) => {
+    fs.readFile("visitors.json", (error, buffer) => {
         var usersData = JSON.parse(buffer);
         
         if (error) {
@@ -29,7 +29,7 @@ app.post('/register', (request, response) => {
             return;
         }
         usersData.push(newUserData);
-        fs.writeFile("users.json", JSON.stringify(usersData), (error) => { 
+        fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => { 
             if (error) response.sendStatus(500).send("Error while writing json data").end();
             else response.sendStatus(200).end();
         });
@@ -37,7 +37,7 @@ app.post('/register', (request, response) => {
 });
 
 app.post('/login', (request, response) => {
-    fs.readFile("users.json", (error, buffer) => {
+    fs.readFile("visitors.json", (error, buffer) => {
         var usersData = JSON.parse(buffer);
         if (error) {
             console.log(error);
@@ -53,7 +53,7 @@ app.post('/login', (request, response) => {
 });
 
 app.get("/getUser/:id", (request, response) => {
-    fs.readFile("users.json", (error, buffer) => {
+    fs.readFile("visitors.json", (error, buffer) => {
         var usersData = JSON.parse(buffer);
         if (error) {
             console.log(error);
@@ -66,7 +66,7 @@ app.get("/getUser/:id", (request, response) => {
 });
 
 app.post('/update/:id', (request, response) => {
-    fs.readFile("users.json", (error, buffer) => {
+    fs.readFile("visitors.json", (error, buffer) => {
         var usersData = JSON.parse(buffer);
         if (error) {
             console.log(error);
@@ -79,9 +79,26 @@ app.post('/update/:id', (request, response) => {
         
         usersData.splice(usersData.indexOf(user), 1, newUserData);
                 
-        fs.writeFile("users.json", JSON.stringify(usersData), (error) => { 
+        fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => { 
             if (error) response.sendStatus(500).send("Error while writing json data").end();
             else response.sendStatus(200).end();
         });
+    });
+});
+
+app.get("/temp", (request, response) => {
+    fs.readFile("exhibits.json", (error, buffer) => {
+        var data = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!data instanceof Array) data = [data];
+                
+        /*fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else response.sendStatus(200).end();
+        });*/
     });
 });
