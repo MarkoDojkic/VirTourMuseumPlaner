@@ -1,7 +1,10 @@
 import { Visitor } from 'src/app/model/visitor';
-import { Component, OnInit } from '@angular/core';
-import { NgModel, NgForm, AbstractControl } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgModel, NgForm, AbstractControl, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user/user.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-profile',
@@ -15,17 +18,13 @@ export class ProfileComponent implements OnInit {
   userPhone!: string;
   userMobilePhone!: string;
 
-  /*favoriteProducts: Array<string> = new Array<string>();
-  avaiableFavoriteProducts: Array<string> = ["Монокристални соларни панели", "Поликристални соларни панели",
-    "Аморфни соларни панели", "Електрична возила", "PWM контролери пуњења акумулатора",
-    "MPPT контролери пуњења акумулатора", "OFF-Grid инвертори", "ON-Grid инвертори", "Хибридни инвертори",
-    "Хоризонтални ветрогенератори", "Вертикални ветрогенератори", "Оловни акумулатори",
-    "Никл базирани акумулатори", "Литијумски акумулатори", "Специјални акумулатори"];
-  filteredFavoriteProducts: Observable<Array<string>> = new Observable<Array<string>>();
-  favoriteProductsInputControl: FormControl = new FormControl();
+  favorites: Array<string> = new Array<string>();
+  avaiableFavorites: Array<string> = ["Техника 60-их", "Техника 70-их", "Техника 80-их", "Техника 90-их", "Савремена техника", "Рачунари", "Техника за забаву", "Музички уређаји", "Телевизори", "Телефони", "Рачунарска опрема"];
+  filteredFavorites: Observable<Array<string>> = new Observable<Array<string>>();
+  favoritesInputControl: FormControl = new FormControl();
 
-  @ViewChild("favoriteProductInput") favoriteProductInput: ElementRef<HTMLInputElement>;
-  */
+  @ViewChild("favoritesInput") favoritesInput!: ElementRef<HTMLInputElement>;
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -33,10 +32,10 @@ export class ProfileComponent implements OnInit {
       this.updateFieldData();
     }, 1000);
 
-    /* this.filteredFavoriteProducts = this.favoriteProductsInputControl.valueChanges
-      .pipe(map((favoriteProduct: string | null) => favoriteProduct ? this.avaiableFavoriteProducts.filter(avaiableFavoriteProduct =>
-        avaiableFavoriteProduct.toLowerCase().indexOf(favoriteProduct.toLowerCase()) === 0) : this.avaiableFavoriteProducts.slice())
-    ); */
+    this.filteredFavorites = this.favoritesInputControl.valueChanges
+      .pipe(map((favoriteProduct: string | null) => favoriteProduct ? this.avaiableFavorites.filter(avaiableFavorite =>
+        avaiableFavorite.toLowerCase().indexOf(favoriteProduct.toLowerCase()) === 0) : this.avaiableFavorites.slice())
+      );
   }
 
   checkPasswordRepeat(pass: NgModel, repeatPass: NgModel): void {
@@ -65,7 +64,7 @@ export class ProfileComponent implements OnInit {
         isPasswordChanged = true;
       }
 
-      //updatedFirestoreData["favoriteProducts"] = this.favoriteProducts;
+      visitorData.favorites = this.favorites;
 
       this.userService.updateData(visitorData!, hasEditedLoginData, isPasswordChanged);
 
@@ -89,22 +88,22 @@ export class ProfileComponent implements OnInit {
       this.userEmail = resolve.email.toString();
       this.userPhone = resolve.phone!.toString();
       this.userMobilePhone = resolve.mobilePhone!.toString();
+      this.favorites = resolve.favorites!;
     }, (reject) => {
       console.log(reject);
     });
   }
 
-  /*addSelectedFavoriteProduct(event: MatAutocompleteSelectedEvent): void {
-    var selectedFavoriteProduct: string = this.avaiableFavoriteProducts.find(favoriteProduct => event.option.viewValue.startsWith(favoriteProduct, 0));
-    if(!this.favoriteProducts.includes(selectedFavoriteProduct, 0))
-      this.favoriteProducts.push(selectedFavoriteProduct);
-    this.favoriteProductsInputControl.setValue("", { emitEvent: true }); //emitEvent: true will fire valueChanges
-    this.favoriteProductInput.nativeElement.value = "";
+  addSelectedFavorite(event: MatAutocompleteSelectedEvent): void {
+    var selectedFavorite: string = this.avaiableFavorites.find(favorite => event.option.viewValue.startsWith(favorite, 0))!;
+    if (!this.favorites.includes(selectedFavorite, 0))
+      this.favorites.push(selectedFavorite);
+    this.favoritesInputControl.setValue("", { emitEvent: true }); //emitEvent: true will fire valueChanges
+    this.favoritesInput.nativeElement.value = "";
   }
 
-  removeSelectedFavoriteProduct(selectedFavoriteProduct: string): void {
-    const index = this.favoriteProducts.indexOf(selectedFavoriteProduct);
-    this.favoriteProducts.splice(index, 1);
-  }*/
+  removeSelectedFavorite(selectedFavoriteProduct: string): void {
+    this.favorites.splice(this.favorites.indexOf(selectedFavoriteProduct), 1);
+  }
 
 }
