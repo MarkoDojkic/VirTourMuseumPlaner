@@ -47,7 +47,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatSnackBarModule,
         MatPaginatorModule,
         MatChipsModule,
-        MatAutocompleteModule        
+        MatAutocompleteModule,
     ],
     exports: [
         MatButtonModule,

@@ -1,0 +1,117 @@
+<mat-drawer-container fxFill class="mat-card" autosize>
+  <mat-drawer #drawer mode="side">
+    <mat-accordion *ngIf="filteredExhibitions != null">
+      <!-- <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по цени</mat-panel-description>
+            </mat-expansion-panel-header>
+            <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [(options)]="priceSliderOptions" (userChangeEnd)="applyFilters()"></ngx-slider>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по количини</mat-panel-description>
+            </mat-expansion-panel-header>
+            <span>Најмања количина на стању: <input type="number" [(ngModel)]="minInStock" name="minInStock" (keyup)="applyFilters()"/></span>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="voltages != null">
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по напону</mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngFor="let voltage of voltages | keyvalue">
+              <mat-checkbox [(ngModel)]="voltage.value" (change)="updateVoltages(voltage.key, $event)">{{voltage.key}}</mat-checkbox>
+            </span>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="amperages != null">
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по јачини струје пуњења</mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngFor="let amperage of amperages | keyvalue : orderByNumber">
+              <mat-checkbox [(ngModel)]="amperage.value" (change)="updateAmperages(amperage.key, $event)">{{amperage.key}}</mat-checkbox>
+            </span>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="wattages != null">
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по излазној снази</mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngFor="let wattage of wattages | keyvalue : orderByNumber">
+              <mat-checkbox [(ngModel)]="wattage.value" (change)="updateWattages(wattage.key, $event)">{{wattage.key}}</mat-checkbox>
+            </span>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="amperhours != null">
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по капацитету</mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngFor="let amperhour of amperhours | keyvalue : orderByNumber">
+              <mat-checkbox [(ngModel)]="amperhour.value" (change)="updateAmperhours(amperhour.key, $event)">{{amperhour.key}}</mat-checkbox>
+            </span>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="selectedCategory === 'Електрична возила'">
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по домету</mat-panel-description>
+            </mat-expansion-panel-header>
+            <ngx-slider [(value)]="minDrivingRange" [(highValue)]="maxDrivingRange" [(options)]="priceSliderOptionsDrivingRange" (userChangeEnd)="applyFilters()"></ngx-slider>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-description>Филтрирај по оцени</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
+              <button mat-icon-button (mouseover)="updateRating(0)" (click)="applyFilters()" id="shopRating_0"><mat-icon>not_interested</mat-icon></button>
+              <button mat-icon-button *ngFor="let dummy of [].constructor(5); let i = index" (mouseover)="updateRating(i + 1)" (click)="applyFilters()"><mat-icon id="{{'shopRating_' + (i + 1)}}">star_outline</mat-icon></button>
+            </div>
+          </mat-expansion-panel> -->
+    </mat-accordion>
+    <mat-divider></mat-divider>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-grid-list [cols]="1" rowHeight="20%" style="min-width: 350px;">
+      <mat-grid-tile *ngFor="let exhibition of filteredExhibitions" fxLayout="row" fxLayoutAlign="center center" fxFlex>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="30">
+          <mat-card-content fxLayoutAlign="center center" fxFlex>
+            {{exhibition.type}}
+            <br> Врста експоната: {{exhibition.exhibitsType}}
+          </mat-card-content>
+        </mat-card>
+        <carousel fxLayoutAlign="center center" fxFlex="70">
+          <div class="carousel-cell" fxLayoutAlign="center center" *ngFor="let exhibit of exhibition.exhibits"
+            id="{{exhibit.id}}" fxFlex>
+            <mat-card fxLayout="column" fxLayoutAlign="center center" fxFlex>
+              <mat-card-header fxLayoutAlign="center center" fxFlex="10">
+                <mat-card-title>{{exhibit.title}}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" fxFlex="30" />
+              <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+              <mat-card-content fxLayoutAlign="center center" fxFlex=20>
+                {{exhibit.description}}
+              </mat-card-content>
+              <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex="40" fxLayoutGap="1%">
+                <span fxFlex="20">Вредност експоната: {{ exhibit.price?.toLocaleString("sr-RS", { minimumFractionDigits:
+                  2,
+                  maximumFractionDigits: 2 }) }} динара</span>
+                <span fxFlex="20">Процењено време обиласка: {{ exhibit.time }} минута</span>
+                <span fxFlex="20">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
+                <button fxFlex="5" type="button" mat-icon-button color="accent">
+                  <!-- (click)="buyProduct(item)" -->
+                  <mat-icon>add_circle</mat-icon>
+                </button>
+                <button fxFlex="5" type="button" mat-icon-button color="secondary">
+                  <!-- (click)="showReviews(item.id)"> -->
+                  <mat-icon>comment</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </carousel>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-drawer-content>
+</mat-drawer-container>
+<notifier-container></notifier-container>

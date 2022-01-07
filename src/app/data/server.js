@@ -85,3 +85,40 @@ app.post('/update/:id', (request, response) => {
         });
     });
 });
+
+app.get('/getExhibitions', (request, response) => {
+    function readFromFile(file) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+    }
+    
+    const promises = [
+        readFromFile('exhibitions.json'),
+        readFromFile('exhibits.json')
+    ];
+    
+    Promise.all(promises).then(result => {
+        var exhibitionsData = result[0];
+        var exhibitsData = result[1];
+
+        if (!exhibitionsData instanceof Array) exhibitionsData = [exhibitionsData];
+        if (!exhibitsData instanceof Array) exhibitsData = [exhibitsData];
+        
+        exhibitionsData.forEach(exhibition => {
+            var exhibits = [];
+            exhibition.exhibits.forEach(exhibitId => exhibits.push(exhibitsData.find(e => e.id == exhibitId)))
+            exhibition.exhibits = exhibits;
+        });
+
+        response.send(exhibitionsData);
+    });
+});
