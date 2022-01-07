@@ -1,5 +1,4 @@
-import { Exhibit } from "./exhibit";
-import { Tour } from "./tour";
+import { PlanerInstance } from "./planer-instance";
 
 export interface Visitor {
     id: String;
@@ -9,6 +8,6 @@ export interface Visitor {
     phone: String;
     mobilePhone: String;
     password: String;
-    planer: Array<Tour>;
-    favorites: Array<Exhibit>;
+    planer: Array<PlanerInstance>;
+    favorites: Array<string>;
 }

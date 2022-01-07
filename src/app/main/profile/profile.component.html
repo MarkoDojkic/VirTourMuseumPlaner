@@ -72,26 +72,31 @@
         </mat-form-field>
     </div>
 
-    <!--<div>
+    <div>
         <mat-form-field appearance="outline" fxFlexFill>
-            <mat-label for="favoriteProducts">Омиљене врсте производа</mat-label>
-            <mat-chip-list #favoriteProductsChipList>
-                <mat-chip *ngFor="let favoriteProduct of favoriteProducts" [selectable]="false" [removable]="true" (removed)="removeSelectedFavoriteProduct(favoriteProduct); form.form.markAsDirty();" name="favoriteProducts">
-                  {{ favoriteProduct }}
-                  <mat-icon matChipRemove>cancel</mat-icon>
+            <mat-label for="favorites">Омиљене врсте поставки и експоната</mat-label>
+            <mat-chip-list #favoritesChipList>
+                <mat-chip *ngFor="let favorite of favorites" [selectable]="false" [removable]="true"
+                    (removed)="removeSelectedFavorite(favorite); form.form.markAsDirty();" name="favorite">
+                    {{ favorite }}
+                    <mat-icon matChipRemove>cancel</mat-icon>
                 </mat-chip>
 
-                <input *ngIf="favoriteProducts.length !== avaiableFavoriteProducts.length" placeholder="Унесите врсту производа" #favoriteProductInput
-                  [formControl]="favoriteProductsInputControl" [matAutocomplete]="autocompletefavoriteProducts" [matChipInputFor]="favoriteProductsChipList"/>
-              </mat-chip-list>
+                <input *ngIf="favorites.length !== avaiableFavorites.length"
+                    placeholder="Унесите врсту поставке или експоната" #favoritesInput
+                    [formControl]="favoritesInputControl" [matAutocomplete]="autocompleteFavorites"
+                    [matChipInputFor]="favoritesChipList" />
+            </mat-chip-list>
 
-              <mat-autocomplete #autocompletefavoriteProducts="matAutocomplete" (optionSelected)="addSelectedFavoriteProduct($event); form.form.markAsDirty();">
-                <mat-option *ngFor="let favoriteProduct of filteredFavoriteProducts | async" [value]="favoriteProduct"> <!-- Is asynchronous because it waits for user input
-                  {{ favoriteProduct }}
+            <mat-autocomplete #autocompleteFavorites="matAutocomplete"
+                (optionSelected)="addSelectedFavorite($event); form.form.markAsDirty();">
+                <mat-option *ngFor="let favorite of filteredFavorites | async" [value]="favorite">
+                    <!-- Is asynchronous because it waits for user input -->
+                    {{ favorite }}
                 </mat-option>
-              </mat-autocomplete>
+            </mat-autocomplete>
         </mat-form-field>
-    </div>-->
+    </div>
 
     <section fxLayout="row" fxLayoutGap="10px">
         <button type="submit" mat-stroked-button color="primary" [disabled]="form.invalid || form.pristine">Промени
