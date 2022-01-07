@@ -26,6 +26,7 @@
     "@sweetalert2/theme-default": "^5.0.8",
     "@sweetalert2/themes": "^5.0.8",
     "angular-notifier": "^9.1.0",
+    "angular-responsive-carousel": "^2.1.2",
     "crypto-js": "^4.1.1",
     "duration": "^0.2.2",
     "format": "^0.2.2",

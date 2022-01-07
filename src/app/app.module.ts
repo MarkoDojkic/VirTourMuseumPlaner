@@ -5,16 +5,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, Title } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
 import { ProfileComponent } from './main/profile/profile.component';
-import { ExhibitsComponent } from './main/exhibits/exhibits.component';
+import { ExhibitionComponent } from './main/exhibitions/exhibitions.component';
 import { ToursComponent } from './main/tours/tours.component';
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ToursComponent } from './main/tours/tours.component';
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    ExhibitsComponent,
+    ExhibitionComponent,
     ToursComponent
   ],
   imports: [
@@ -75,6 +76,7 @@ import { ToursComponent } from './main/tours/tours.component';
       }
     }),
     HttpClientModule,
+    IvyCarouselModule
   ],
   providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }],
   bootstrap: [AppComponent]

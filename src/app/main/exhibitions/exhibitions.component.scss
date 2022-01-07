@@ -1,0 +1,19 @@
+.floating {
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+}
+
+mat-drawer-container {
+    position: fixed;
+    top: 78px;
+}
+
+mat-card {
+    text-align: center;
+    height: 45%;
+}
+
+span > mat-checkbox {
+    margin: 0 10px;
+}
