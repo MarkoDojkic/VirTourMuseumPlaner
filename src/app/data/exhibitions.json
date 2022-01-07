@@ -1,0 +1,348 @@
+[
+    {
+        "id": "055ba874-7ad0-4061-ac5e-2a47f1e3b70e",
+        "type": "Техника 90-их",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "2c720998-9a1e-4c15-a6e2-130888badd3e",
+            "64382de8-d776-41ad-bbfd-286829a14b51",
+            "3023b245-f37b-4f34-bd85-086a1b04c569",
+            "3b0433a6-968d-47f8-a6e4-15d37ff28623"
+        ]
+    },
+    {
+        "id": "29e5df22-c814-4f23-809b-42a12d389f1a",
+        "type": "Техника 60-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "5e622045-393b-4ac6-ba02-ba0e7888f563",
+            "d1bbe622-34b5-4b9e-adaf-682f0e9dbbf1",
+            "a7eb3f0c-680d-438c-8b19-dd342264fc5d",
+            "066daac4-96f7-4842-8d19-f379c33f7a3c",
+            "40142fe2-eb08-4afa-8623-bb45b0910676"
+        ]
+    },
+    {
+        "id": "ed3accf6-9c5b-4766-8ba4-b6b57159a548",
+        "type": "Техника 90-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "3f68dba3-07da-4c27-a71c-0d3404de5147",
+            "5a63d418-4cda-4f32-803c-0d364aeace75",
+            "f0114671-a6c6-4048-b4ac-f8b1e63a1cf2",
+            "e1217bb9-dc8a-4ca4-9250-4b56eec4e248",
+            "042533b1-b48a-48a2-a494-19ef53d59680"
+        ]
+    },
+    {
+        "id": "55b91d81-505d-41b6-b7cf-0a0cb1b5f371",
+        "type": "Савремена техника",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "77b2511a-6683-41cc-b28f-3bdad20afb92",
+            "55b96bd5-eb6e-4434-b287-33e701c805e9",
+            "f40de358-f586-4692-8795-381f8652f28b"
+        ]
+    },
+    {
+        "id": "f77e7f2d-00eb-4072-a2e5-de2eb306084b",
+        "type": "Техника 80-их",
+        "exhibitsType": "Музички уређаји",
+        "exhibits": [
+            "bbfdd479-a4c9-47ca-b933-b3a8fbb50c1d"
+        ]
+    },
+    {
+        "id": "362b8001-188e-43fa-bb48-7272eda3c986",
+        "type": "Савремена техника",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "14e17ce3-854e-403a-837a-bf25a47ef04d"
+        ]
+    },
+    {
+        "id": "2792d548-a11a-44bb-85b5-ca73999b44e9",
+        "type": "Техника 70-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "150f4aaa-1c97-463a-b61b-e3057d8423bc",
+            "370af10b-d482-4e7f-87bb-99779c159ddc",
+            "4bab23c8-5455-4204-967a-2240d1aa0ddd",
+            "fa85c866-1170-44ab-b0a0-a0580d1f1837"
+        ]
+    },
+    {
+        "id": "7968e456-8a24-462c-847b-e4d0a3b5f39a",
+        "type": "Техника 80-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "0ca80b3c-ec79-424f-a149-51b16b6e21a3",
+            "87ba7c94-fd96-4822-91cd-596150743c36",
+            "9fdb640a-decb-41dd-909e-698b488affdf"
+        ]
+    },
+    {
+        "id": "231913a7-53d8-4096-a2e9-705938d93757",
+        "type": "Техника 80-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "c8b1884c-eeee-4095-9702-c709d058a2be",
+            "25e4966c-7221-4fc2-a0f7-503c7d1fb733",
+            "97f9ed60-dc29-43ea-ae8d-f1c182f821d9"
+        ]
+    },
+    {
+        "id": "0e2ce3a9-e855-444d-a685-769f823be062",
+        "type": "Техника 90-их",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "1040ea1b-4280-44fb-a0eb-ac90ca1f24cf",
+            "3753cefc-81df-4e99-abda-326c4a13a726"
+        ]
+    },
+    {
+        "id": "64049a36-0dc3-4bc3-821b-c4212e44adb0",
+        "type": "Техника 70-их",
+        "exhibitsType": "Телефони",
+        "exhibits": [
+            "827889db-3d56-473b-b069-c52032ea8882",
+            "b6fc8b4e-f565-4935-a149-aa6e388a9daf",
+            "83d7f4be-d7bc-4430-921b-5e1df3a87164",
+            "a74e92d6-8251-4ef2-9fdd-99ff8b2eb7ca",
+            "b8e8d3d7-ab72-4aad-ba91-6d65fcc2ca9d"
+        ]
+    },
+    {
+        "id": "420e66dd-d0f8-49e9-9bf8-ec110562e258",
+        "type": "Техника 80-их",
+        "exhibitsType": "Музички уређаји",
+        "exhibits": [
+            "c4ad565f-cb1b-45a5-844b-11b620fb721b",
+            "ae6eeb5b-fd4e-435c-8e01-2e6d2a50a3f6",
+            "d1d8c175-6193-40ef-b8cb-5e61ba259902"
+        ]
+    },
+    {
+        "id": "1c7131f7-7d5e-41ec-a456-8224d918f0ea",
+        "type": "Техника 90-их",
+        "exhibitsType": "Телефони",
+        "exhibits": [
+            "22e30ea3-af5f-4593-9e35-f2d0d4deb018",
+            "1f8659d3-1ed4-4e46-88dd-3c2f8e95b53a",
+            "58dbf2b2-ca81-42d6-85c9-1c48da1772aa",
+            "cb792f79-479d-4e46-81a8-218ce3dd13be",
+            "c37aaf17-5989-4bb9-81eb-39705edece94"
+        ]
+    },
+    {
+        "id": "48285ab9-a5cc-49f3-9fec-d716be302438",
+        "type": "Савремена техника",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "ed2077bf-fe27-4b82-b357-89049fcac0fa",
+            "3cec7e07-56a2-431c-80cb-ed3696034c53",
+            "f2570ce7-0454-4f8a-bd17-d1cfeb719cfa"
+        ]
+    },
+    {
+        "id": "191d38aa-6c86-4405-bcb6-f9a6122e6bad",
+        "type": "Савремена техника",
+        "exhibitsType": "Телефони",
+        "exhibits": [
+            "0cf61aba-5d56-4549-8560-7b2f3a4ee213",
+            "257c90b0-5af9-45af-b1f8-475d91ede8e7",
+            "ab2956be-8cd5-4231-998f-ffbc114a40fb"
+        ]
+    },
+    {
+        "id": "c3e26c73-05af-4455-9df4-1df273cc7673",
+        "type": "Савремена техника",
+        "exhibitsType": "Телефони",
+        "exhibits": [
+            "a14c621b-8b9c-4d67-a44c-e3a3949e33e4",
+            "74fdecae-8f82-4702-a8fb-2e543b70bf92",
+            "ded2ec24-21a8-4f30-b36e-21e22d597338",
+            "682978c0-f182-4f84-9897-d9cc60fdfbe4",
+            "8d2a4ff5-59b4-43cd-87c6-e9a897521ee5"
+        ]
+    },
+    {
+        "id": "0c663dd9-815c-43a8-a749-cc34cb3c86d4",
+        "type": "Техника 60-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "6d5a8a60-e08b-46e8-9d0d-37bd8afa2abb",
+            "0511a6f0-5cbb-4ba5-864d-c0d9f5d91656",
+            "301bae0c-db9c-4795-bc21-c8d1e1cc9815",
+            "613aacce-cc47-41ac-bd09-99e4ecec5da5",
+            "4c5de847-779e-4ced-90cc-0ecbf00a3eef"
+        ]
+    },
+    {
+        "id": "086186cc-d81b-4ea2-bc67-1316b01ef784",
+        "type": "Техника 90-их",
+        "exhibitsType": "Музички уређаји",
+        "exhibits": [
+            "8c4e323f-5f17-421f-a1ce-ff2e2fe33431",
+            "47e7f59f-e55a-4170-9e89-d1e57f3a7384",
+            "5f90643b-ce9d-4af6-9b1e-cbd822b2a8af",
+            "3546abcd-5eb1-42e6-811c-1ffef715540c",
+            "01b4d4fe-d6ec-4840-9ba7-349704420c81",
+            "a631a8e9-8e48-44a1-b0d8-99d772c258df"
+        ]
+    },
+    {
+        "id": "772d015b-31ac-4b51-9cea-911aa979d553",
+        "type": "Техника 90-их",
+        "exhibitsType": "Телевизори",
+        "exhibits": [
+            "a77090e9-b3e8-4c8f-94ae-1cf77b91e6dd",
+            "29d5a38e-926e-4fda-9c05-a338c6072c2b",
+            "f79de4d5-ae52-4d04-9ea5-d0ba270ba33e",
+            "69f31007-56a4-4b15-8fe2-e93f7b6dbd6b",
+            "e01aae3f-1301-45e6-a036-154de423ce99",
+            "a7b852b1-4d6e-4201-9626-53cc3fffdfdb",
+            "db7c3326-7f1a-42df-a95c-718506c608c2"
+        ]
+    },
+    {
+        "id": "86fedb3d-a282-466a-8424-e579856b0650",
+        "type": "Техника 60-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "e1ae9051-9d0f-4de6-af49-d0486ad7f778",
+            "2ac5cb00-cd41-42ed-b2d1-750f2e972566",
+            "20a6d94e-2b94-4f8d-9e3b-9d32a8703c4f",
+            "8b2d05ba-a322-4c9a-b715-1734bf45121c",
+            "0ae3c09a-36da-4d9d-9702-c53efbe87a5a"
+        ]
+    },
+    {
+        "id": "00a231a1-63ee-4bf1-aef9-3d279e5f2c38",
+        "type": "Техника 80-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "07f9636b-230c-4cc5-bdf5-23dd99d954db",
+            "b34cbb98-751d-4b57-bfba-388b47671712",
+            "72b75da9-b055-41d4-a198-bf6b32e0ffbd"
+        ]
+    },
+    {
+        "id": "3e67a842-8dca-4a2b-9dbd-c95a8c152716",
+        "type": "Техника 80-их",
+        "exhibitsType": "Музички уређаји",
+        "exhibits": [
+            "fd4da3f2-7869-4642-bab5-23cf59c2265f",
+            "27c372d6-b99a-43ce-83ee-3578e03a87b8",
+            "3630c9d8-ce18-466a-bf42-5421265ad0bb",
+            "ca90e63a-d03e-47af-bb85-8dddae8cceb6"
+        ]
+    },
+    {
+        "id": "2c3ffef6-1cf1-4239-9bba-60441eef9a85",
+        "type": "Техника 70-их",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "6c40359e-fb43-43d9-8179-c9a9fbf0d622",
+            "5630ad5c-5f51-42ad-ab4f-a4e8de692751",
+            "47f19aff-2787-48c8-bae2-f6287a079a28",
+            "616bd25b-1bcb-422a-b453-c46ba4ea0dfc"
+        ]
+    },
+    {
+        "id": "847816a8-d1bf-401d-aa23-20b07595a093",
+        "type": "Техника 90-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "82c66438-7373-452f-83bd-be0cd9730748",
+            "f4c8d605-c3cf-411f-b6e4-d2e476544c61",
+            "272cc905-7032-4bd1-ae13-14911be4dd09",
+            "9b92f9ed-917c-41a6-a679-f2d3e663709b"
+        ]
+    },
+    {
+        "id": "460ccac6-362e-4b32-b71c-fc48c04af446",
+        "type": "Савремена техника",
+        "exhibitsType": "Рачунарска опрема",
+        "exhibits": [
+            "f55de72d-13e0-40da-bcf0-88366cacf0ee",
+            "1b9a192f-53de-4382-a008-416ae97c102f",
+            "771310ef-0c30-493b-a19e-16cb142b5c2f",
+            "e0a62a49-cc69-430c-ab42-784e1ca9dba2",
+            "65644b50-c3f7-4fa1-9434-bbd41f61a547",
+            "48dd4b87-8ddc-4024-a524-8c5c0e734ed7",
+            "599dd78d-d961-4358-9eda-f7dffc964e7a"
+        ]
+    },
+    {
+        "id": "bd6b9371-37ca-4c9b-932f-30b78ed9d0c2",
+        "type": "Техника 80-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "5e06226c-64f2-4e86-8ddd-0a3764e26998",
+            "42cf9301-1ea7-47aa-8dcf-e6de7425c780",
+            "2a2a95a7-85ff-40cb-b99f-f23bde8bf35c",
+            "a599ed2d-6bd4-413f-91b8-8aba2137b448",
+            "65436e1e-97df-47eb-ab47-007d576e0948",
+            "d80fe7b9-3b50-425a-b70b-40ea386b983a"
+        ]
+    },
+    {
+        "id": "4afd1e37-4290-42bc-9d10-29943d95355d",
+        "type": "Техника 60-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "406c0eb9-5d29-4e2b-8f6d-1b814f1bab51",
+            "1fcdab7d-0bd1-42bd-83ed-6c76fc3b4aec",
+            "6d05fcf1-a5bb-429d-bd0c-28f84182d092"
+        ]
+    },
+    {
+        "id": "c17a8cfd-332c-43bb-b298-3c366bd9a7af",
+        "type": "Техника 60-их",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "967415eb-9eb5-419d-979d-04477b49ac58",
+            "c89e5c3d-faab-4ef2-a86e-d5306e927dbd"
+        ]
+    },
+    {
+        "id": "8ab5246e-e8e9-4d57-b01a-332b9e323e71",
+        "type": "Савремена техника",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "dd059bf6-aff2-4aa5-a6ad-2f98adb63890",
+            "bc2290ac-6e27-47da-af68-ce1aba989ef4",
+            "f9003e80-27c7-4584-a43f-6e6d45ef6962"
+        ]
+    },
+    {
+        "id": "9b2de80d-a331-4148-820a-8927c4a79037",
+        "type": "Техника 60-их",
+        "exhibitsType": "Телевизори",
+        "exhibits": [
+            "a1db9118-028f-43b7-8f9d-b0b1075301dd",
+            "d9d0fa9c-6e97-4e25-a6a1-719bfcef1179"
+        ]
+    },
+    {
+        "id": "6087e95b-683e-47ee-9783-f7c74b6351e0",
+        "type": "Техника 60-их",
+        "exhibitsType": "Техника за забаву",
+        "exhibits": [
+            "75e050dc-bccd-43f1-9de2-7e2aef060ff2",
+            "4d620129-cccc-42ea-87f0-60347aec2b97",
+            "18a2e80d-98ca-4ab8-840d-6dad4db08e07",
+            "24978fc8-ae5e-49f2-bc4c-c4b5979c760f"
+        ]
+    },
+    {
+        "id": "127101fe-8add-49ca-b6e1-b0a5880d21cf",
+        "type": "Савремена техника",
+        "exhibitsType": "Рачунари",
+        "exhibits": [
+            "84950761-26df-436a-ba51-80808652dec9",
+            "42eb275f-4ea9-4d9d-be36-9773861984bb"
+        ]
+    }
+]
