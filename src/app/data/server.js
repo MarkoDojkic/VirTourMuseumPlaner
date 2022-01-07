@@ -85,20 +85,3 @@ app.post('/update/:id', (request, response) => {
         });
     });
 });
-
-app.get("/temp", (request, response) => {
-    fs.readFile("exhibits.json", (error, buffer) => {
-        var data = JSON.parse(buffer);
-        if (error) {
-            console.log(error);
-            response.sendStatus(405).send(error).end();
-            return;
-        }
-        if (!data instanceof Array) data = [data];
-                
-        /*fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => {
-            if (error) response.sendStatus(500).send("Error while writing json data").end();
-            else response.sendStatus(200).end();
-        });*/
-    });
-});
