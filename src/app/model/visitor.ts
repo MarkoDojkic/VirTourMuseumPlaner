@@ -1,13 +1,13 @@
 import { PlanerInstance } from "./planer-instance";
 
 export interface Visitor {
-    id: String;
-    name: String;
-    surname: String;
-    email: String;
-    phone: String;
-    mobilePhone: String;
-    password: String;
+    id: string;
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    mobilePhone: string;
+    password: string;
     planer: Array<PlanerInstance>;
     favorites: Array<string>;
 }

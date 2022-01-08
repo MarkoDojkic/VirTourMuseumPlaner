@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { Exhibit } from 'src/app/model/exhibit';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-exhibitions',
@@ -15,6 +17,7 @@ export class ExhibitionComponent implements OnInit {
   exhibitions!: Array<Exhibition>;
   filteredExhibitions!: Array<Exhibition>;
   filterShow = false;
+  carouselResponsiveOptions;
 
   //Filtering values
   /*minPrice: number;
@@ -54,7 +57,30 @@ export class ExhibitionComponent implements OnInit {
 
   hasChild = (_: number, node: FlatNode) => node.expandable;
   */
-  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router) { }
+  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router) {
+    this.carouselResponsiveOptions = [
+      {
+        breakpoint: '1920px',
+        numVisible: 4,
+        numScroll: 4
+      },
+      {
+        breakpoint: '1366px',
+        numVisible: 3,
+        numScroll: 3
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 2
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ];
+  }
 
   ngOnInit(): void {
     //this.onResize(null);
@@ -73,6 +99,14 @@ export class ExhibitionComponent implements OnInit {
     else if (window.innerWidth <= 670)
       this.numberOfColumns = 1
   } */
+
+  returnTotalCost(exhibits: Array<Exhibit>): Number {
+    return exhibits.map(e => e.price).reduce((sum, price) => sum + price, 0);
+  }
+
+  returnTotalTime(exhibits: Array<Exhibit>): Number {
+    return exhibits.map(e => e.time).reduce((sum, time) => sum + time, 0);
+  }
 
   displayExhibitions(): void {
     this.exhibitionService.getAll().then(resolve => {
@@ -479,15 +513,12 @@ export class ExhibitionComponent implements OnInit {
       return parseInt(temp) < voltageMin || parseInt(temp) > voltageMax;
     });
   }
-  
-  buyProduct(product: Item) {
-    product.orderedQuantity = product.orderedQuantity === undefined || product.orderedQuantity < 1 ? 1 : product.orderedQuantity;
-    product.orderedQuantity = product.orderedQuantity > product.leftInStock ? product.leftInStock : product.orderedQuantity;
-  
-    if (this.fs.loggedInUserId === null) {
+  */
+  addToPlaner(exhibitId: string) {
+    if (sessionStorage.getItem("loggedInUser") == null) {
       Swal.fire({
         title: "Нисте улоговани!",
-        text: "Морате бити улоговани да бисте додали производ у корпу!",
+        text: "Морате бити улоговани да бисте додали експонат у планер!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Преусмери ме на страницу за логовање",
@@ -495,9 +526,11 @@ export class ExhibitionComponent implements OnInit {
       }).then(result => {
         if (result.isConfirmed) this.router.navigate(["/login"]); //If clicked on confirm button
       });
-  
+
       return;
     }
+    //Implement logic here
+    /*
   
     new Observable((observer) => {
       this.idb.getObjectStoreItem(this.idb.getIDB(this.localStorageDb),
@@ -525,75 +558,64 @@ export class ExhibitionComponent implements OnInit {
       });
   
       this.ns.notify("info", "Стање у корпи за производ „" + product.title + "“ је: " + newQuantity + " комад(а)");
-    });
-  }*/
+    }); */
+  }
 
-  /* showReviews(itemId: string) {
-    this.fs.getAllReviewsForProduct(itemId).then(response => {
+  showReviews(exhibitId: string) {
+    this.exhibitionService.getReviewsForExhibit(exhibitId).then(response => {
       var html: string = `<div _ngcontent-bjf-c268="" fxlayout="column" fxlayoutalign="center stretch" fxlayoutgap="2%" ng-reflect-fx-layout="column" ng-reflect-fx-layout-align="center stretch" ng-reflect-fx-layout-gap="2%" style="flex-direction: column; box-sizing: border-box; display: flex; place-content: stretch center; align-items: stretch; max-width: 100%;" class="mat-card">`;
       var notReviewedCount: number = 0;
-  
+
       response.forEach(review => {
         if (review.rating === 0 && review.comment === "") {
           notReviewedCount++;
           return;
         } //Not reviewed yet so skip
-  
-        if (review.isAnonymous) {
-          review.authorName = "Анонимни";
-          review.authorSurname = "корисник";
-        } else {
-          this.fs.getFirestoreUserData(review.reviewedBy).subscribe(data => {
-            review.authorName = data.get("name");
-            review.authorSurname = data.get("surname");
-          });
-        }
-  
+
         setTimeout(() => {
-  
+
           html += `<section _ngcontent-bjf-s268="" fxlayout="column" fxlayoutalign="center stretch" fxlayoutgap="1%" ng-reflect-fx-layout="column" ng-reflect-fx-layout-align="center stretch" ng-reflect-fx-layout-gap="1%" style="flex-direction: column; box-sizing: border-box; display: flex; place-content: stretch center; align-items: stretch; max-width: 100%; margin-bottom: 5%;">
                     <div _ngcontent-bjf-c268="" fxlayout="row" fxlayoutalign="space-evenly stretch" fxlayoutgap="1%" ng-reflect-fx-layout="row" ng-reflect-fx-layout-align="space-evenly stretch" ng-reflect-fx-layout-gap="1%" style="margin-bottom: 1%; flex-direction: row; box-sizing: border-box; display: flex; place-content: stretch space-evenly; align-items: stretch; max-height: 100%;">
-                      <span _ngcontent-bjf-c268="" style="margin-right: 1%; width:45%">`+ review.authorName + " " + review.authorSurname + `</span>`;
-  
+                      <span _ngcontent-bjf-c268="" style="margin-right: 1%; width:45%">`+ review.reviewer.name + " " + review.reviewer.surname + `</span>`;
+
           for (let i = 1; i <= 5; i++) {
             html += `<mat-icon _ngcontent-bjf-c268="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font" style="padding-top: 6px; margin-right: 1%;">`;
             html += i > review.rating ? "star_outline" : "star";
             html += `</mat-icon>`;
           }
-  
-          html += `<span _ngcontent-bjf-c268="">` + this.datePipe.transform(review.lastChange.toDate(), "dd.MM.YYYY. HH:mm:ss") + `</span>
-                  </div>
+
+          html += `</div>
                   <p style="margin-top: 3%">`+ review.comment + `</p>
               </section>`
         }, 1000);
       });
-  
+
       setTimeout(() => {
         if (response.length === 0 || response.length === notReviewedCount)
           html += "<p>Нема доступних рецензија</p>"
-  
+
         html += "</div>" //Closing div
-  
+
         Swal.fire({
-    title: "Приказ рецензија за изабрани производ",
-    html: html,
-    showCancelButton: false,
-    confirmButtonText: "У реду",
-    allowOutsideClick: false
-        });
-  }, 2000);
-    }).catch (reject => {
-  //console.error(reject);
-  Swal.fire({
-    title: "Грешка приликом преузимања података",
-    text: "Није могуће преузети податке рецензија за производ " + itemId + ". Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.",
-      icon: "error",
-        showCancelButton: false,
+          title: "Приказ рецензија за изабрани експонат",
+          html: html,
+          showCancelButton: false,
           confirmButtonText: "У реду",
-            allowOutsideClick: false
-  });
-  });
-  }*/
+          allowOutsideClick: false
+        });
+      }, 2000);
+    }).catch(reject => {
+      //console.error(reject);
+      Swal.fire({
+        title: "Грешка приликом преузимања података",
+        text: "Није могуће преузети податке рецензија за изабрани експонат. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.",
+        icon: "error",
+        showCancelButton: false,
+        confirmButtonText: "У реду",
+        allowOutsideClick: false
+      });
+    });
+  }
 }
 
 //export { Item, CategoryNode, FlatNode }; //To resolve additional export request by Angular

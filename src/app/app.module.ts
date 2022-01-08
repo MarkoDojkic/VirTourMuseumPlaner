@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CarouselModule } from 'primeng/carousel';
 import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
 import { HttpClientModule } from '@angular/common/http';
@@ -76,7 +76,7 @@ import { ToursComponent } from './main/tours/tours.component';
       }
     }),
     HttpClientModule,
-    IvyCarouselModule
+    CarouselModule
   ],
   providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }],
   bootstrap: [AppComponent]

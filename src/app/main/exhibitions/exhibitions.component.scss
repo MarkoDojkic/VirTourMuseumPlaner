@@ -11,9 +11,36 @@ mat-drawer-container {
 
 mat-card {
     text-align: center;
-    height: 45%;
+    padding: 2px !important;
+}
+
+.mat-card-actions {
+    max-width: 90%;
+    margin-bottom: 5px !important;
+}
+
+.marginOverride {
+    margin-bottom: -9px !important;
+}
+
+.mat-card-image {
+    height: 100px !important;
+    width: 100px !important;
+}
+
+.titleFont {
+    font-size: 15px;
+}
+
+.descFont {
+    font-size: 0.5vmax;
+    line-height: 10px;
 }
 
 span > mat-checkbox {
     margin: 0 10px;
+}
+
+mat-grid-list {
+    margin-bottom: 3%;
 }

@@ -32,6 +32,8 @@
     "format": "^0.2.2",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.0.4",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.3.0",
     "tslib": "^2.2.0",
