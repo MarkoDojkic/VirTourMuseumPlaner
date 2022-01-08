@@ -7,6 +7,7 @@ import { ProfileComponent } from './main/profile/profile.component';
 import { ToursComponent } from './main/tours/tours.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: "/exhibitions", pathMatch: 'full' },
   { path: 'exhibitions', component: ExhibitionComponent, data: { title: 'Поставке' } },
   { path: 'login', component: LoginComponent, data: { title: 'Логовање' } },
   { path: 'registration', component: RegistrationComponent, data: { title: 'Регистрација' } },

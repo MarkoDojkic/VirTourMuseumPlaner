@@ -2,7 +2,7 @@ import { Exhibit } from "./exhibit";
 import { Review } from "./review";
 
 export interface Tour {
-    id: String;
+    id: string;
     exhibits: Array<Exhibit>;
     reviews: Array<Review>;
     status: "Текући" | "Завршен" | "Отказан";

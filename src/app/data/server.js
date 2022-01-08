@@ -14,7 +14,7 @@ app.use(cors({origin: "*"}))
 
 app.post('/register', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
-        var usersData = JSON.parse(buffer);
+        var visitorsData = JSON.parse(buffer);
         
         if (error) {
             console.log(error);
@@ -23,13 +23,13 @@ app.post('/register', (request, response) => {
         }
         var newUserData = request.body;
         newUserData.id = uuidv4();
-        if (!usersData instanceof Array) usersData = [usersData];
-        if(usersData.map(u => u.email).indexOf(newUserData["email"]) !== -1){
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        if(visitorsData.map(u => u.email).indexOf(newUserData["email"]) !== -1){
             response.sendStatus(403).send("User already exists").end();
             return;
         }
-        usersData.push(newUserData);
-        fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => { 
+        visitorsData.push(newUserData);
+        fs.writeFile("visitors.json", JSON.stringify(visitorsData), (error) => { 
             if (error) response.sendStatus(500).send("Error while writing json data").end();
             else response.sendStatus(200).end();
         });
@@ -38,48 +38,48 @@ app.post('/register', (request, response) => {
 
 app.post('/login', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
-        var usersData = JSON.parse(buffer);
+        var visitorsData = JSON.parse(buffer);
         if (error) {
             console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
         const loginData = request.body;
-        if (!usersData instanceof Array) usersData = [usersData];
-        if (usersData.map(user => user.email).indexOf(loginData["email"]) !== -1)
-            response.json(usersData.find(user => user["email"] === loginData["email"]));
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        if (visitorsData.map(user => user.email).indexOf(loginData["email"]) !== -1)
+            response.json(visitorsData.find(user => user["email"] === loginData["email"]));
         else response.sendStatus(403);
     });
 });
 
 app.get("/getUser/:id", (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
-        var usersData = JSON.parse(buffer);
+        var visitorsData = JSON.parse(buffer);
         if (error) {
             console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
-        if (!usersData instanceof Array) usersData = [usersData];
-        response.send(usersData.find(user => user.id === request.params.id));
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        response.send(visitorsData.find(user => user.id === request.params.id));
     });
 });
 
 app.post('/update/:id', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
-        var usersData = JSON.parse(buffer);
+        var visitorsData = JSON.parse(buffer);
         if (error) {
             console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
-        if (!usersData instanceof Array) usersData = [usersData];
-        var user = usersData.find(user => user.id === request.params.id);
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        var user = visitorsData.find(user => user.id === request.params.id);
         var newUserData = request.body;
         
-        usersData.splice(usersData.indexOf(user), 1, newUserData);
+        visitorsData.splice(visitorsData.indexOf(user), 1, newUserData);
                 
-        fs.writeFile("visitors.json", JSON.stringify(usersData), (error) => { 
+        fs.writeFile("visitors.json", JSON.stringify(visitorsData), (error) => { 
             if (error) response.sendStatus(500).send("Error while writing json data").end();
             else response.sendStatus(200).end();
         });
@@ -120,5 +120,47 @@ app.get('/getExhibitions', (request, response) => {
         });
 
         response.send(exhibitionsData);
+    });
+});
+
+app.get("/getReviews/:id", (request, response) => {
+    function readFromFile(file) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+    }
+    
+    const promises = [
+        readFromFile('tours.json'),
+        readFromFile('reviews.json'),
+        readFromFile('visitors.json')
+    ];
+    
+    Promise.all(promises).then(result => {
+        var toursData = result[0];
+        var reviewsData = result[1];
+        var visitorsData = result[2];
+        var output = [];
+
+        if (!toursData instanceof Array) toursData = [toursData];
+        if (!reviewsData instanceof Array) reviewsData = [reviewsData];
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        
+        toursData.forEach(tour => {
+            var review = reviewsData.find(r => r.id == tour.reviews[tour.exhibits.findIndex(e => e == request.params.id)])
+            if (review != undefined) {
+                review.reviewer = visitorsData.find(user => user.id == review.reviewer);
+                output.push(review);
+            }
+        });
+        response.send(output);
     });
 });

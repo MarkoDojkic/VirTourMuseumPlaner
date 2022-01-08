@@ -2,9 +2,9 @@ import { Exhibit } from "./exhibit";
 import { Review } from "./review";
 
 export interface Exhibition {
-    id: String;
-    type: String;
-    exhibitsType: String;
+    id: string;
+    type: string;
+    exhibitsType: string;
     exhibits: Array<Exhibit>; //Show length also.
     //price is caluclated based on exhibits also with time
     //Use with: moment.duration(140, "minutes").format({ precision: 0, template: "hh:mm" }) -> returns 02:20

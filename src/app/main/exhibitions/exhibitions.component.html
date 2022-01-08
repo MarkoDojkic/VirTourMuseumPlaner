@@ -72,45 +72,55 @@
   </mat-drawer>
 
   <mat-drawer-content>
-    <mat-grid-list [cols]="1" rowHeight="20%" style="min-width: 350px;">
-      <mat-grid-tile *ngFor="let exhibition of filteredExhibitions" fxLayout="row" fxLayoutAlign="center center" fxFlex>
-        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="30">
-          <mat-card-content fxLayoutAlign="center center" fxFlex>
+    <mat-grid-list [cols]="1" rowHeight="40vh" style="min-width: 350px;">
+      <mat-grid-tile *ngFor="let exhibition of filteredExhibitions" fxLayout="row" fxLayout.lt-md="column"
+        fxLayoutAlign="center center" fxFlex>
+        <mat-card style="margin-right: 5px;" fxLayout="column" fxLayoutAlign="center center" fxFlex="20">
+          <mat-card-content fxLayoutAlign="center center" fxLayout="column" fxFlex>
             {{exhibition.type}}
             <br> Врста експоната: {{exhibition.exhibitsType}}
+            <br> Цена обиласка: {{ returnTotalCost(exhibition.exhibits).toLocaleString("sr-RS", {
+            minimumFractionDigits:
+            2,
+            maximumFractionDigits: 2 }) }} динара
+            <br> Процењено време обиласка: {{ returnTotalTime(exhibition.exhibits) }} минута
           </mat-card-content>
         </mat-card>
-        <carousel fxLayoutAlign="center center" fxFlex="70">
-          <div class="carousel-cell" fxLayoutAlign="center center" *ngFor="let exhibit of exhibition.exhibits"
-            id="{{exhibit.id}}" fxFlex>
-            <mat-card fxLayout="column" fxLayoutAlign="center center" fxFlex>
-              <mat-card-header fxLayoutAlign="center center" fxFlex="10">
-                <mat-card-title>{{exhibit.title}}</mat-card-title>
-              </mat-card-header>
-              <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" fxFlex="30" />
-              <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
-              <mat-card-content fxLayoutAlign="center center" fxFlex=20>
-                {{exhibit.description}}
-              </mat-card-content>
-              <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex="40" fxLayoutGap="1%">
-                <span fxFlex="20">Вредност експоната: {{ exhibit.price?.toLocaleString("sr-RS", { minimumFractionDigits:
-                  2,
-                  maximumFractionDigits: 2 }) }} динара</span>
-                <span fxFlex="20">Процењено време обиласка: {{ exhibit.time }} минута</span>
-                <span fxFlex="20">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
-                <button fxFlex="5" type="button" mat-icon-button color="accent">
-                  <!-- (click)="buyProduct(item)" -->
-                  <mat-icon>add_circle</mat-icon>
-                </button>
-                <button fxFlex="5" type="button" mat-icon-button color="secondary">
-                  <!-- (click)="showReviews(item.id)"> -->
-                  <mat-icon>comment</mat-icon>
-                </button>
-              </mat-card-actions>
-            </mat-card>
-          </div>
-        </carousel>
+        <p-carousel fxLayoutAlign="center center" fxFlex="80" [value]="exhibition.exhibits" [numVisible]="5"
+          [numScroll]="5" [showIndicators]="false" [showNavigators]="true"
+          [responsiveOptions]="carouselResponsiveOptions">
+          <ng-template let-exhibit pTemplate="item">
+            <div class="exhibit-item">
+              <div class="exhibit-item-content">
+                <mat-card fxLayout="column" fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2px">
+                  <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
+                    <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
+                  </mat-card-header>
+                  <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
+                  <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+                  <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
+                    <p class="descFont">{{exhibit.description}}</p>
+                  </mat-card-content>
+                  <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex=40>
+                    <span fxFlex="25" class="descFont">Вредност експоната: {{ exhibit.price?.toLocaleString("sr-RS", {
+                      minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
+                    <span fxFlex="25" class="descFont">Процењено време обиласка: {{ exhibit.time }} минута</span>
+                    <span fxFlex="25" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
+                    <button fxFlex="15" type="button" mat-icon-button color="accent" (click)="addToPlaner(exhibit.id)">
+                      <mat-icon>add_circle</mat-icon>
+                    </button>
+                    <button fxFlex="10" type="button" mat-icon-button color="secondary"
+                      (click)="showReviews(exhibit.id)">
+                      <mat-icon>comment</mat-icon>
+                    </button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
       </mat-grid-tile>
+      <div class="scrollExpansion"></div>
     </mat-grid-list>
   </mat-drawer-content>
 </mat-drawer-container>
