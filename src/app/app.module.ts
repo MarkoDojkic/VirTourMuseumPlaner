@@ -10,6 +10,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -34,6 +35,7 @@ import { ToursComponent } from './main/tours/tours.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
+    NgxSliderModule,
     ReactiveFormsModule,
     NotifierModule.withConfig({
       position: {

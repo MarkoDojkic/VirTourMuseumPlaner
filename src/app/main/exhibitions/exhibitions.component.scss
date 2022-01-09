@@ -1,15 +1,15 @@
-.floating {
+.mat-toolbar {
     position: fixed;
     z-index: 1;
-    top: 70px;
+    top: 63px;
+    padding-bottom: -10%;
 }
 
-mat-drawer-container {
-    position: fixed;
-    top: 78px;
+.mat-grid-list {
+    top: 100px;
 }
 
-mat-card {
+.mat-card {
     text-align: center;
     padding: 2px !important;
 }
@@ -39,8 +39,4 @@ mat-card {
 
 span > mat-checkbox {
     margin: 0 10px;
-}
-
-mat-grid-list {
-    margin-bottom: 3%;
 }

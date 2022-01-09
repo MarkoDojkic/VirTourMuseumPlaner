@@ -2,7 +2,7 @@ import { ExhibitionService } from './../../services/Exhibition/exhibition.servic
 import { Exhibition } from '../../model/exhibition';
 import { Component, OnInit } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
-import { DatePipe } from '@angular/common';
+import { LabelType, Options } from '@angular-slider/ngx-slider';
 import { Router } from '@angular/router';
 import { Exhibit } from 'src/app/model/exhibit';
 import Swal from 'sweetalert2';
@@ -20,43 +20,40 @@ export class ExhibitionComponent implements OnInit {
   carouselResponsiveOptions;
 
   //Filtering values
-  /*minPrice: number;
-  maxPrice: number;
-  minInStock: number;
+  //Filtering values
+  minPrice!: number;
+  maxPrice!: number;
+  minExhibitCount!: number;
+  maxExhibitCount!: number;
+  minTime!: number;
+  maxTime!: number;
+  /*minInStock: number;
   voltages: Map<string, boolean>;
   amperages: Map<string, boolean>;
   wattages: Map<string, boolean>;
   amperhours: Map<string, boolean>;
   minDrivingRange: number;
-  maxDrivingRange: number;
-  priceSliderOptions: Options;
-  priceSliderOptionsDrivingRange: Options;
-  minRating: number = 0;*/
-
-  //To order when using keyvalue pipe in amperages * otherwise it'll sort like strings *
-  /*orderByNumber = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
-    return parseInt(a.key.toString().slice(0, a.key.toString().length - 1))
-              < parseInt(b.key.toString().slice(0, b.key.toString().length - 1)) ? -1 : 1;
+  maxDrivingRange: number;*/
+  priceSliderOptions: Options = {
+    "floor": 0,
+    "ceil": 0,
+    "step": 0,
+    "hideLimitLabels": true
   };
-  
-  _transformer = (node: CategoryNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
-  }
+  exhibitCountSliderOptions: Options = {
+    "floor": 0,
+    "ceil": 0,
+    "step": 0,
+    "hideLimitLabels": true
+  };
+  timeSliderOptions: Options = {
+    "floor": 0,
+    "ceil": 0,
+    "step": 0,
+    "hideLimitLabels": true
+  };
+  //minRating: number = 0;
 
-  treeControl = new FlatTreeControl<FlatNode>(
-      node => node.level, node => node.expandable);
-
-  treeFlattener = new MatTreeFlattener(
-      this._transformer, node => node.level, node => node.expandable, node => node.children);
-
-  categoriesSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  hasChild = (_: number, node: FlatNode) => node.expandable;
-  */
   constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router) {
     this.carouselResponsiveOptions = [
       {
@@ -100,18 +97,17 @@ export class ExhibitionComponent implements OnInit {
       this.numberOfColumns = 1
   } */
 
-  returnTotalCost(exhibits: Array<Exhibit>): Number {
+  returnTotalCost(exhibits: Array<Exhibit>): number {
     return exhibits.map(e => e.price).reduce((sum, price) => sum + price, 0);
   }
 
-  returnTotalTime(exhibits: Array<Exhibit>): Number {
+  returnTotalTime(exhibits: Array<Exhibit>): number {
     return exhibits.map(e => e.time).reduce((sum, time) => sum + time, 0);
   }
 
   displayExhibitions(): void {
     this.exhibitionService.getAll().then(resolve => {
       this.exhibitions = resolve;
-      console.log(resolve.map(r => r.exhibits));
     }).catch((reject) => console.log(reject));
     setTimeout(() => { /* To give time to firestore to get items */
       /*this.selectedCategory = category;
@@ -282,37 +278,89 @@ export class ExhibitionComponent implements OnInit {
       }*/
 
       this.filteredExhibitions = this.exhibitions;
-      /*const min = Math.min.apply(Math, this.exhibitions.map(exhibition => { return getMinimalExhibitionPrice(exhibition); }));
-      const max = Math.max.apply(Math, this.exhibitions.map(exhibition => { return getMaximalExhibitionPrice(exhibition); }));
 
-      this.minPrice = min;
-      this.maxPrice = max;
+      const minP = Math.min.apply(Math, this.filteredExhibitions.map(exhibition => this.returnTotalCost(exhibition.exhibits)));
+      const maxP = Math.max.apply(Math, this.filteredExhibitions.map(exhibition => this.returnTotalCost(exhibition.exhibits)));
+      const minEC = Math.min.apply(Math, this.filteredExhibitions.map(exhibition => exhibition.exhibits.length));
+      const maxEC = Math.max.apply(Math, this.filteredExhibitions.map(exhibition => exhibition.exhibits.length));
+      const minT = Math.min.apply(Math, this.filteredExhibitions.map(exhibition => this.returnTotalTime(exhibition.exhibits)));
+      const maxT = Math.max.apply(Math, this.filteredExhibitions.map(exhibition => this.returnTotalTime(exhibition.exhibits)));
+
+
+      this.minPrice = minP;
+      this.maxPrice = maxP;
+      this.minExhibitCount = minEC;
+      this.maxExhibitCount = maxEC;
+      this.minTime = minT;
+      this.maxTime = maxT;
 
       this.priceSliderOptions = {
-        floor: min,
-        ceil: max,
-        step: (max - min) / 10,
+        floor: minP,
+        ceil: maxP,
+        step: (maxP - minP) / 10,
         translate: (value: number, label: LabelType): string => {
           switch (label) {
             case LabelType.Low:
-              return "<b>" + value + " динара</b>";
+              return "<b>" + value + " рсд</b>";
             case LabelType.High:
-              return "<b>" + value + " динара</b>";
+              return "<b>" + value + " рсд</b>";
             default:
               return value + " динара";
           }
         },
         hideLimitLabels: true
-      };*/
+      };
+
+      this.exhibitCountSliderOptions = {
+        floor: minEC,
+        ceil: maxEC,
+        step: (maxEC - minEC) / 10,
+        translate: (value: number, label: LabelType): string => {
+          switch (label) {
+            case LabelType.Low:
+              return "<b>" + value + " експоната</b>";
+            case LabelType.High:
+              return "<b>" + value + " експоната</b>";
+            default:
+              return value + " експоната";
+          }
+        },
+        hideLimitLabels: true
+      };
+
+      this.timeSliderOptions = {
+        floor: minT,
+        ceil: maxT,
+        step: (maxT - minT) / 10,
+        translate: (value: number, label: LabelType): string => {
+          switch (label) {
+            case LabelType.Low:
+              return "<b>" + value + " минута</b>";
+            case LabelType.High:
+              return "<b>" + value + " минута</b>";
+            default:
+              return value + " минута";
+          }
+        },
+        hideLimitLabels: true
+      };
     }, 1000);
   }
 
-  /* applyFilters(): void {
-    this.filteredItems = this.items.filter(item => { // First filter -> use all items array
-      return item.price >= this.minPrice && item.price <= this.maxPrice;
-    })
-  
-    if (this.minInStock != null || this.minInStock != undefined)
+  applyFilters(): void {
+    this.filteredExhibitions = this.exhibitions.filter(exhibition => // First filter -> use all items array
+      this.returnTotalCost(exhibition.exhibits) >= this.minPrice && this.returnTotalCost(exhibition.exhibits) <= this.maxPrice
+    )
+
+    this.filteredExhibitions = this.filteredExhibitions.filter(exhibition => // First filter -> use all items array
+      this.returnTotalTime(exhibition.exhibits) >= this.minTime && this.returnTotalTime(exhibition.exhibits) <= this.maxTime
+    )
+
+    this.filteredExhibitions = this.filteredExhibitions.filter(exhibition => // First filter -> use all items array
+      exhibition.exhibits.length >= this.minExhibitCount && exhibition.exhibits.length <= this.maxExhibitCount
+    )
+
+    /*if (this.minInStock != null || this.minInStock != undefined)
       this.filteredItems = this.filteredItems.filter(item => item.leftInStock >= this.minInStock); //Every other filter -> use filtered items array
   
     this.filteredItems.forEach(item => {
@@ -476,44 +524,45 @@ export class ExhibitionComponent implements OnInit {
     }
   } */
 
-  /*updateVoltages(key: string, value: MatCheckboxChange): void {
-    this.voltages.set(key, value.checked);
-    this.applyFilters();
-  }
-  
-  updateAmperages(key: string, value: MatCheckboxChange): void {
-    this.amperages.set(key, value.checked);
-    this.applyFilters();
-  }
-  
-  updateWattages(key: string, value: MatCheckboxChange): void {
-    this.wattages.set(key, value.checked);
-    this.applyFilters();
-  }
-  
-  updateAmperhours(key: string, value: MatCheckboxChange): void {
-    this.amperhours.set(key, value.checked);
-    this.applyFilters();
-  }
-  
-  updateRating(minRating: number): void {
-    this.minRating = minRating;
-    for (let i = 1; i <= 5; i++) {
-      document.querySelector("#shopRating_" + i).innerHTML = i <= minRating ? "star" : "star_outline";
+    /*updateVoltages(key: string, value: MatCheckboxChange): void {
+      this.voltages.set(key, value.checked);
+      this.applyFilters();
     }
+    
+    updateAmperages(key: string, value: MatCheckboxChange): void {
+      this.amperages.set(key, value.checked);
+      this.applyFilters();
+    }
+    
+    updateWattages(key: string, value: MatCheckboxChange): void {
+      this.wattages.set(key, value.checked);
+      this.applyFilters();
+    }
+    
+    updateAmperhours(key: string, value: MatCheckboxChange): void {
+      this.amperhours.set(key, value.checked);
+      this.applyFilters();
+    }
+    
+    updateRating(minRating: number): void {
+      this.minRating = minRating;
+      for (let i = 1; i <= 5; i++) {
+        document.querySelector("#shopRating_" + i).innerHTML = i <= minRating ? "star" : "star_outline";
+      }
+    }
+    
+    filterOutVoltage(voltageMin: number, voltageMax: number): void {
+      this.filteredItems = this.filteredItems.filter(item => {
+        var temp = item.description;
+        temp = temp.slice(temp.lastIndexOf("Максимални радни напон: "),
+          temp.lastIndexOf("V Струја кратког споја:"))
+        temp = temp.slice(24, temp.length);
+    
+        return parseInt(temp) < voltageMin || parseInt(temp) > voltageMax;
+      });
+    }
+    */
   }
-  
-  filterOutVoltage(voltageMin: number, voltageMax: number): void {
-    this.filteredItems = this.filteredItems.filter(item => {
-      var temp = item.description;
-      temp = temp.slice(temp.lastIndexOf("Максимални радни напон: "),
-        temp.lastIndexOf("V Струја кратког споја:"))
-      temp = temp.slice(24, temp.length);
-  
-      return parseInt(temp) < voltageMin || parseInt(temp) > voltageMax;
-    });
-  }
-  */
   addToPlaner(exhibitId: string) {
     if (sessionStorage.getItem("loggedInUser") == null) {
       Swal.fire({
