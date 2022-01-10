@@ -1,93 +1,57 @@
 <mat-toolbar>
-  <mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-description>Филтрирај по цени</mat-panel-description>
-      </mat-expansion-panel-header>
-      <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [options]="priceSliderOptions"
-        (userChangeEnd)="applyFilters()"></ngx-slider>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-description>Филтрирај по броју експоната</mat-panel-description>
-      </mat-expansion-panel-header>
-      <ngx-slider [(value)]="minExhibitCount" [(highValue)]="maxExhibitCount" [options]="exhibitCountSliderOptions"
-        (userChangeEnd)="applyFilters()"></ngx-slider>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-description>Филтрирај по процењеном времену обиласка</mat-panel-description>
-      </mat-expansion-panel-header>
-      <ngx-slider [(value)]="minTime" [(highValue)]="maxTime" [options]="timeSliderOptions"
-        (userChangeEnd)=" applyFilters()"></ngx-slider>
-    </mat-expansion-panel>
-    <!-- <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по цени</mat-panel-description>
-          </mat-expansion-panel-header>
-          <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [(options)]="priceSliderOptions" (userChangeEnd)="applyFilters()"></ngx-slider>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по количини</mat-panel-description>
-          </mat-expansion-panel-header>
-          <span>Најмања количина на стању: <input type="number" [(ngModel)]="minInStock" name="minInStock" (keyup)="applyFilters()"/></span>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel *ngIf="voltages != null">
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по напону</mat-panel-description>
-          </mat-expansion-panel-header>
-          <span *ngFor="let voltage of voltages | keyvalue">
-            <mat-checkbox [(ngModel)]="voltage.value" (change)="updateVoltages(voltage.key, $event)">{{voltage.key}}</mat-checkbox>
-          </span>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel *ngIf="amperages != null">
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по јачини струје пуњења</mat-panel-description>
-          </mat-expansion-panel-header>
-          <span *ngFor="let amperage of amperages | keyvalue : orderByNumber">
-            <mat-checkbox [(ngModel)]="amperage.value" (change)="updateAmperages(amperage.key, $event)">{{amperage.key}}</mat-checkbox>
-          </span>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel *ngIf="wattages != null">
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по излазној снази</mat-panel-description>
-          </mat-expansion-panel-header>
-          <span *ngFor="let wattage of wattages | keyvalue : orderByNumber">
-            <mat-checkbox [(ngModel)]="wattage.value" (change)="updateWattages(wattage.key, $event)">{{wattage.key}}</mat-checkbox>
-          </span>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel *ngIf="amperhours != null">
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по капацитету</mat-panel-description>
-          </mat-expansion-panel-header>
-          <span *ngFor="let amperhour of amperhours | keyvalue : orderByNumber">
-            <mat-checkbox [(ngModel)]="amperhour.value" (change)="updateAmperhours(amperhour.key, $event)">{{amperhour.key}}</mat-checkbox>
-          </span>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel *ngIf="selectedCategory === 'Електрична возила'">
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по домету</mat-panel-description>
-          </mat-expansion-panel-header>
-          <ngx-slider [(value)]="minDrivingRange" [(highValue)]="maxDrivingRange" [(options)]="priceSliderOptionsDrivingRange" (userChangeEnd)="applyFilters()"></ngx-slider>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-description>Филтрирај по оцени</mat-panel-description>
-          </mat-expansion-panel-header>
-          <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
-            <button mat-icon-button (mouseover)="updateRating(0)" (click)="applyFilters()" id="shopRating_0"><mat-icon>not_interested</mat-icon></button>
-            <button mat-icon-button *ngFor="let dummy of [].constructor(5); let i = index" (mouseover)="updateRating(i + 1)" (click)="applyFilters()"><mat-icon id="{{'shopRating_' + (i + 1)}}">star_outline</mat-icon></button>
-          </div>
-        </mat-expansion-panel> -->
-  </mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по цени</mat-panel-description>
+    </mat-expansion-panel-header>
+    <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [options]="priceSliderOptions"
+      (userChangeEnd)="applyFilters()"></ngx-slider>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по броју експоната</mat-panel-description>
+    </mat-expansion-panel-header>
+    <ngx-slider [(value)]="minExhibitCount" [(highValue)]="maxExhibitCount" [options]="exhibitCountSliderOptions"
+      (userChangeEnd)="applyFilters()"></ngx-slider>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по процењеном времену обиласка</mat-panel-description>
+    </mat-expansion-panel-header>
+    <ngx-slider [(value)]="minTime" [(highValue)]="maxTime" [options]="timeSliderOptions"
+      (userChangeEnd)=" applyFilters()"></ngx-slider>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="exhibitionTypes != null">
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по врсти поставке</mat-panel-description>
+    </mat-expansion-panel-header>
+    <span *ngFor="let exhibitionType of exhibitionTypes | keyvalue">
+      <mat-checkbox [(ngModel)]="exhibitionType.value" (change)="updateExhibitionTypes(exhibitionType.key, $event)">
+        {{exhibitionType.key}}</mat-checkbox>
+    </span>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="exhibitTypes != null">
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по врсти експоната</mat-panel-description>
+    </mat-expansion-panel-header>
+    <span *ngFor="let exhibitType of exhibitTypes | keyvalue">
+      <mat-checkbox [(ngModel)]="exhibitType.value" (change)="updateExhibitTypes(exhibitType.key, $event)">
+        {{exhibitType.key}}</mat-checkbox>
+    </span>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>Филтрирај по просечној оцени експоната поставки</mat-panel-description>
+    </mat-expansion-panel-header>
+    <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
+      <button mat-icon-button (mouseover)="updateRating(0)" (click)="applyFilters()" id="shopRating_0">
+        <mat-icon>not_interested</mat-icon>
+      </button>
+      <button mat-icon-button *ngFor="let dummy of [].constructor(10); let i = index" (mouseover)="updateRating(i + 1)"
+        (click)="applyFilters()">
+        <mat-icon id="{{'exhibitionRating_' + (i + 1)}}">star_outline</mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
   <mat-divider></mat-divider>
 </mat-toolbar>
 <mat-grid-list [cols]="1" rowHeight="40vh" style="min-width: 350px;" class="mat-card">
