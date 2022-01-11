@@ -164,3 +164,60 @@ app.get("/getReviews/:id", (request, response) => {
         response.send(output);
     });
 });
+
+app.post('/addNewTour/:id', (request, response) => {
+    function readFromFile(file) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+    }
+    
+    const promises = [
+        readFromFile('visitors.json'),
+        readFromFile('tours.json')
+    ];
+    
+    Promise.all(promises).then(result => {
+        var visitorsData = result[0];
+        var toursData = result[1];
+
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        if (!toursData instanceof Array) toursData = [toursData];
+        
+        var visitor = visitorsData.find(v => v.id === request.params.id);
+        var newTourData = request.body;
+        var newId = uuidv4();
+
+        visitor.planer.push({
+            "date": newTourData.dateTime,
+            "tour": newId
+        });
+
+        visitorsData.splice(visitorsData.findIndex(v => v.id === request.params.id), 1, visitor);
+        
+        fs.writeFile("visitors.json", JSON.stringify(visitorsData), (error) => { 
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+        });
+
+        toursData.push({
+            "id": newId,
+            "exhibits": newTourData.exhibits,
+            "reviews": [],
+            "status": "Текући"
+        });
+
+        fs.writeFile("tours.json", JSON.stringify(toursData), (error) => { 
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+        });
+
+        response.sendStatus(200).end();
+    });
+});

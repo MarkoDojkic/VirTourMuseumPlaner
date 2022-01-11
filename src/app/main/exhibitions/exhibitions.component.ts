@@ -1,12 +1,14 @@
-import { ExhibitionService } from './../../services/Exhibition/exhibition.service';
+import { ExhibitionService } from '../../services/exhibition/exhibition.service';
 import { Exhibition } from '../../model/exhibition';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { LabelType, Options } from '@angular-slider/ngx-slider';
 import { Router } from '@angular/router';
 import { Exhibit } from 'src/app/model/exhibit';
 import Swal from 'sweetalert2';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { UserService } from 'src/app/services/user/user.service';
+import { TourService } from 'src/app/services/tour/tour.service';
 
 @Component({
   selector: 'app-exhibitions',
@@ -17,8 +19,13 @@ export class ExhibitionComponent implements OnInit {
 
   exhibitions!: Array<Exhibition>;
   filteredExhibitions!: Array<Exhibition>;
-  filterShow = false;
-  carouselResponsiveOptions;
+  filterShow: boolean = false;
+  isTourCreationMode: boolean = false;
+  carouselResponsiveOptions: any;
+  totalExhibitsInNewTour: number = 0;
+  newTourDateTime: Date = new Date();
+  @ViewChild('calendarTemplate', { static: false })
+  calendarTemplate!: ElementRef;
 
   //Filtering values
   minPrice!: number;
@@ -49,7 +56,7 @@ export class ExhibitionComponent implements OnInit {
     "hideLimitLabels": true
   };
 
-  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router) {
+  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router, private tourService: TourService, private userService: UserService) {
     this.carouselResponsiveOptions = [
       {
         breakpoint: '1920px',
@@ -77,6 +84,10 @@ export class ExhibitionComponent implements OnInit {
   ngOnInit(): void {
     //this.onResize(null);
     this.displayExhibitions();
+  }
+
+  toggleFilters(): void {
+    this.filterShow = !this.filterShow;
   }
 
   /* onResize(_event: any | null): void {
@@ -239,7 +250,44 @@ export class ExhibitionComponent implements OnInit {
     }
   }
 
-  addToPlaner(exhibitId: string) {
+  startTourCreationMode(): void {
+    this.isTourCreationMode = true;
+    this.totalExhibitsInNewTour = 0;
+    this.newTourDateTime = new Date();
+    this.newTourDateTime.setHours(0);
+    this.newTourDateTime.setMinutes(0);
+    this.newTourDateTime.setSeconds(0);
+    sessionStorage.setItem("newPlanerExhibits", JSON.stringify([]));
+  }
+
+  endTourCreationMode(): void {
+    this.isTourCreationMode = false;
+    var selectedExhibitIds = (JSON.parse(sessionStorage.getItem("newPlanerExhibits")!) as Array<string>);
+
+    Swal.fire({
+      title: "Изаберите време и датум\nпоновог обласка",
+      html: this.calendarTemplate!.nativeElement,
+      showCancelButton: false,
+      confirmButtonText: "Додај обилазак у планер",
+      allowOutsideClick: false
+    }).then(() => {
+      this.tourService.addNewTour({
+        "exhibits": selectedExhibitIds,
+        "dateTime": this.newTourDateTime
+      }).then(resolve => {
+
+      }).catch(reject => {
+        /* console.log(reject); */
+      })
+    });
+
+    selectedExhibitIds.forEach(id => {
+      document.querySelector("#addToPlaner_" + id)?.classList.remove("mat-button-disabled");
+      document.querySelector("#addToPlaner_" + id)?.setAttribute("disabled", "false");
+    });
+  }
+
+  addToPlaner(exhibitId: string, exhibitName: string) {
     if (sessionStorage.getItem("loggedInUser") == null) {
       Swal.fire({
         title: "Нисте улоговани!",
@@ -254,38 +302,27 @@ export class ExhibitionComponent implements OnInit {
 
       return;
     }
-    //Implement logic here
-    /*
-  
-    new Observable((observer) => {
-      this.idb.getObjectStoreItem(this.idb.getIDB(this.localStorageDb),
-        "orderedProducts", this.fs.loggedInUserId + "_" + product.id)
-        .then(value => { observer.next(value); })
-        .catch(error => { observer.next(error); });
-  
-      return {
-        unsubscribe() {
-          observer.remove(observer);
-        }
-      }
-    }).subscribe(data => {
-  
-      var newQuantity = ((data as Array<Item>).length !== 1) ? 0 : data[0]["orderedQuantity"];
-  
-      if (newQuantity === product.leftInStock) this.ns.notify("error", "Није могуће додати производ! Већ се у корпи налази максимална количина!");
-      else this.ns.notify("success", "Производ успешно додат у корпу!");
-  
-      newQuantity = newQuantity + product.orderedQuantity > product.leftInStock ? product.leftInStock : newQuantity + product.orderedQuantity;
-      this.idb.putObjectStoreItem(this.idb.getIDB(this.localStorageDb),
-        "orderedProducts", {
-        id: this.fs.loggedInUserId + "_" + product.id, title: product.title, orderedQuantity: newQuantity,
-        price: product.price, description: product.description, inStock: product.leftInStock, orderedBy: this.fs.loggedInUserId
-      });
-  
-      this.ns.notify("info", "Стање у корпи за производ „" + product.title + "“ је: " + newQuantity + " комад(а)");
-    }); */
+
+    if (!this.isTourCreationMode) this.startTourCreationMode();
+
+    var selectedExhibitIds = (JSON.parse(sessionStorage.getItem("newPlanerExhibits")!) as Array<string>);
+
+    selectedExhibitIds.push(exhibitId);
+
+    sessionStorage.setItem("newPlanerExhibits", JSON.stringify(selectedExhibitIds));
+
+    this.totalExhibitsInNewTour++;
+
+    this.ns.notify("info", "Успешно сте додали експонат „" + exhibitName + "” у тренутни обилазак");
+
+    document.querySelector("#addToPlaner_" + exhibitId)?.classList.add("mat-button-disabled");
+    document.querySelector("#addToPlaner_" + exhibitId)?.setAttribute("disabled", "true");
   }
 
+  updateTourTime(newTime: string): void {
+    this.newTourDateTime.setHours(parseInt(newTime.split(":")[0]));
+    this.newTourDateTime.setMinutes(parseInt(newTime.split(":")[1]));
+  }
 
   showReviews(exhibitId: string) {
     this.exhibitionService.getReviewsForExhibit(exhibitId).then(response => {
