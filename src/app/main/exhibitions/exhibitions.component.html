@@ -1,58 +1,73 @@
-<mat-toolbar>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по цени</mat-panel-description>
-    </mat-expansion-panel-header>
-    <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [options]="priceSliderOptions"
-      (userChangeEnd)="applyFilters()"></ngx-slider>
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по броју експоната</mat-panel-description>
-    </mat-expansion-panel-header>
-    <ngx-slider [(value)]="minExhibitCount" [(highValue)]="maxExhibitCount" [options]="exhibitCountSliderOptions"
-      (userChangeEnd)="applyFilters()"></ngx-slider>
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по процењеном времену обиласка</mat-panel-description>
-    </mat-expansion-panel-header>
-    <ngx-slider [(value)]="minTime" [(highValue)]="maxTime" [options]="timeSliderOptions"
-      (userChangeEnd)=" applyFilters()"></ngx-slider>
-  </mat-expansion-panel>
-  <mat-expansion-panel *ngIf="exhibitionTypes != null">
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по врсти поставке</mat-panel-description>
-    </mat-expansion-panel-header>
-    <span *ngFor="let exhibitionType of exhibitionTypes | keyvalue">
-      <mat-checkbox [(ngModel)]="exhibitionType.value" (change)="updateExhibitionTypes(exhibitionType.key, $event)">
-        {{exhibitionType.key}}</mat-checkbox>
-    </span>
-  </mat-expansion-panel>
-  <mat-expansion-panel *ngIf="exhibitTypes != null">
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по врсти експоната</mat-panel-description>
-    </mat-expansion-panel-header>
-    <span *ngFor="let exhibitType of exhibitTypes | keyvalue">
-      <mat-checkbox [(ngModel)]="exhibitType.value" (change)="updateExhibitTypes(exhibitType.key, $event)">
-        {{exhibitType.key}}</mat-checkbox>
-    </span>
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-description>Филтрирај по просечној оцени експоната поставки</mat-panel-description>
-    </mat-expansion-panel-header>
-    <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
-      <button mat-icon-button (mouseover)="updateRating(0)" (click)="applyFilters()" id="shopRating_0">
-        <mat-icon>not_interested</mat-icon>
-      </button>
-      <button mat-icon-button *ngFor="let dummy of [].constructor(10); let i = index" (mouseover)="updateRating(i + 1)"
-        (click)="applyFilters()">
-        <mat-icon id="{{'exhibitionRating_' + (i + 1)}}">star_outline</mat-icon>
-      </button>
-    </div>
-  </mat-expansion-panel>
+<mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%">
+  <span style="margin-left: 2px;">Прикажи/Сакри филтере
+    <button type="button" mat-icon-button (click)="toggleFilters()">
+      <mat-icon [fxShow]="!filterShow">arrow_drop_down</mat-icon>
+      <mat-icon [fxShow]="filterShow">arrow_drop_down_circle</mat-icon>
+    </button>
+  </span>
+  <mat-accordion [fxShow]="filterShow" fxFlex>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по цени</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ngx-slider [(value)]="minPrice" [(highValue)]="maxPrice" [options]="priceSliderOptions"
+        (userChangeEnd)="applyFilters()"></ngx-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по броју експоната</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ngx-slider [(value)]="minExhibitCount" [(highValue)]="maxExhibitCount" [options]="exhibitCountSliderOptions"
+        (userChangeEnd)="applyFilters()"></ngx-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по процењеном времену обиласка</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ngx-slider [(value)]="minTime" [(highValue)]="maxTime" [options]="timeSliderOptions"
+        (userChangeEnd)=" applyFilters()"></ngx-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf="exhibitionTypes != null">
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по врсти поставке</mat-panel-description>
+      </mat-expansion-panel-header>
+      <span *ngFor="let exhibitionType of exhibitionTypes | keyvalue">
+        <mat-checkbox [(ngModel)]="exhibitionType.value" (change)="updateExhibitionTypes(exhibitionType.key, $event)">
+          {{exhibitionType.key}}</mat-checkbox>
+      </span>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf="exhibitTypes != null">
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по врсти експоната</mat-panel-description>
+      </mat-expansion-panel-header>
+      <span *ngFor="let exhibitType of exhibitTypes | keyvalue">
+        <mat-checkbox [(ngModel)]="exhibitType.value" (change)="updateExhibitTypes(exhibitType.key, $event)">
+          {{exhibitType.key}}</mat-checkbox>
+      </span>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>Филтрирај по просечној оцени експоната поставки</mat-panel-description>
+      </mat-expansion-panel-header>
+      <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
+        <button mat-icon-button (mouseover)="updateRating(0)" (click)="applyFilters()" id="shopRating_0">
+          <mat-icon>not_interested</mat-icon>
+        </button>
+        <button mat-icon-button *ngFor="let dummy of [].constructor(10); let i = index"
+          (mouseover)="updateRating(i + 1)" (click)="applyFilters()">
+          <mat-icon id="{{'exhibitionRating_' + (i + 1)}}">star_outline</mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
   <mat-divider></mat-divider>
+  <button type="button" mat-raised-button (click)="startTourCreationMode()" [fxShow]="!isTourCreationMode">
+    Започни креирање новог обиласка
+  </button>
+  <button type="button" mat-raised-button (click)="endTourCreationMode()" [fxShow]="isTourCreationMode"
+    matBadge="{{totalExhibitsInNewTour}}" matBadgeColor="warn">
+    Заврши креирање новог обиласка
+  </button>
 </mat-toolbar>
 <mat-grid-list [cols]="1" rowHeight="40vh" style="min-width: 350px;" class="mat-card">
   <mat-grid-tile *ngFor="let exhibition of filteredExhibitions" fxLayout="row" fxLayout.lt-md="column"
@@ -87,7 +102,8 @@
                   minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
                 <span fxFlex="25" class="descFont">Процењено време обиласка: {{ exhibit.time }} минута</span>
                 <span fxFlex="25" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
-                <button fxFlex="15" type="button" mat-icon-button color="accent" (click)="addToPlaner(exhibit.id)">
+                <button fxFlex="15" type="button" mat-icon-button color="accent"
+                  (click)="addToPlaner(exhibit.id, exhibit.title)" id="addToPlaner_{{exhibit.id}}">
                   <mat-icon>add_circle</mat-icon>
                 </button>
                 <button fxFlex="10" type="button" mat-icon-button color="secondary" (click)="showReviews(exhibit.id)">
@@ -103,3 +119,16 @@
   <div class="scrollExpansion"></div>
 </mat-grid-list>
 <notifier-container></notifier-container>
+<div fxHide="true">
+  <div #calendarTemplate fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field floatLabel="always" appearance="outline">
+      <mat-label for="newTourTime">Време обиласка</mat-label>
+      <input id="newTourTime" matInput [fxHide]="true">
+      <ngx-timepicker-field matInput [format]="24" [defaultTime]="'00:00'" [contentEditable]="true" [controlOnly]="true"
+        (timeChanged)="updateTourTime($event)" fxFlex></ngx-timepicker-field>
+    </mat-form-field>
+    <mat-calendar [(selected)]="newTourDateTime" fxFlex></mat-calendar>
+    <span fxFlex>Изабрали сте: {{ newTourDateTime.toLocaleString("sr-RS") }}</span>
+    <span fxFlex>Број укључених обилазака је: {{ totalExhibitsInNewTour }}</span>
+  </div>
+</div>

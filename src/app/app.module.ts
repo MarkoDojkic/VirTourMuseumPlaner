@@ -18,6 +18,9 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { ProfileComponent } from './main/profile/profile.component';
 import { ExhibitionComponent } from './main/exhibitions/exhibitions.component';
 import { ToursComponent } from './main/tours/tours.component';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDatepickerLocalization } from './services/MatDatepickerLocalization';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -78,9 +81,11 @@ import { ToursComponent } from './main/tours/tours.component';
       }
     }),
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule.setLocale("sr-RS")
   ],
-  providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }],
+  providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }, { provide: MAT_DATE_LOCALE, useValue: 'sr-sp' }, { provide: DateAdapter, useClass: MatDatepickerLocalization }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

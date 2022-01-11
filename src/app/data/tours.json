@@ -1744,5 +1744,20 @@
             "607c1291-d153-47de-88e3-f538faaed20f"
         ],
         "status": "Завршен"
+    },
+    {
+        "id": "89efb83e-93ec-48f5-b6ce-7e77a309288b",
+        "exhibits": [
+            "2c720998-9a1e-4c15-a6e2-130888badd3e",
+            "d1bbe622-34b5-4b9e-adaf-682f0e9dbbf1",
+            "a7eb3f0c-680d-438c-8b19-dd342264fc5d",
+            "3f68dba3-07da-4c27-a71c-0d3404de5147",
+            "5a63d418-4cda-4f32-803c-0d364aeace75",
+            "042533b1-b48a-48a2-a494-19ef53d59680",
+            "e1217bb9-dc8a-4ca4-9250-4b56eec4e248",
+            "f0114671-a6c6-4048-b4ac-f8b1e63a1cf2"
+        ],
+        "reviews": [],
+        "status": "Текући"
     }
 ]

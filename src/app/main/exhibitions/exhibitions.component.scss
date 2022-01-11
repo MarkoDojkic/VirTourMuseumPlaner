@@ -1,7 +1,7 @@
 .mat-toolbar {
     position: fixed;
     z-index: 1;
-    top: 63px;
+    top: 64px;
     padding-bottom: -10%;
 }
 
@@ -39,4 +39,12 @@
 
 span > mat-checkbox {
     margin: 0 10px;
+}
+
+.mat-accordion {
+    padding-top: 235px;
+}
+
+ngx-timepicker-field {
+    padding-left: 12% !important;
 }
