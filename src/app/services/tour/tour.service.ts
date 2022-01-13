@@ -11,12 +11,12 @@ import { CryptoService } from '../crypto/crypto.service';
 export class TourService {
   constructor(private http: HttpClient, private cs: CryptoService) { }
 
-  checkIfTourTimeSlotIsAvaiable(timeSlot: string): Promise<string> {
-    return this.http.post<string>("http://localhost:21682/checkIfTourTimeSlotIsAvaiable", timeSlot, { responseType: 'json' }).toPromise();
+  checkIfTourTimeSlotIsAvailable(timeSlot: Date): Promise<string> {
+    return this.http.post("http://localhost:21682/checkIfTourTimeSlotIsAvailable/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()), { "dateTime": timeSlot }, { responseType: 'text' }).toPromise();
   }
 
   addNewTour(newTour: any): Promise<string> {
-    return this.http.post<string>("http://localhost:21682/addNewTour/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()), newTour, { responseType: 'json' }).toPromise();
+    return this.http.post("http://localhost:21682/addNewTour/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()), newTour, { responseType: 'text' }).toPromise();
   }
 
   getReviewsForExhibit(exhibitId: string): Promise<Array<Review>> {

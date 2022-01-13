@@ -1,5 +1,5 @@
 <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%">
-  <span style="margin-left: 2px;">Прикажи/Сакри филтере
+  <span style="margin-left: 2px;">Прикажи филтере
     <button type="button" mat-icon-button (click)="toggleFilters()">
       <mat-icon [fxShow]="!filterShow">arrow_drop_down</mat-icon>
       <mat-icon [fxShow]="filterShow">arrow_drop_down_circle</mat-icon>
@@ -121,13 +121,13 @@
 <notifier-container></notifier-container>
 <div fxHide="true">
   <div #calendarTemplate fxLayout="column" fxLayoutAlign="center center">
+    <mat-calendar [(selected)]="newTourDateTime" fxFlex></mat-calendar>
     <mat-form-field floatLabel="always" appearance="outline">
       <mat-label for="newTourTime">Време обиласка</mat-label>
       <input id="newTourTime" matInput [fxHide]="true">
       <ngx-timepicker-field matInput [format]="24" [defaultTime]="'00:00'" [contentEditable]="true" [controlOnly]="true"
         (timeChanged)="updateTourTime($event)" fxFlex></ngx-timepicker-field>
     </mat-form-field>
-    <mat-calendar [(selected)]="newTourDateTime" fxFlex></mat-calendar>
     <span fxFlex>Изабрали сте: {{ newTourDateTime.toLocaleString("sr-RS") }}</span>
     <span fxFlex>Број укључених обилазака је: {{ totalExhibitsInNewTour }}</span>
   </div>
