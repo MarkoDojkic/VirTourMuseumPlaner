@@ -1,3 +1,4 @@
+import { PlanerModule } from './main/planer/planer.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { NotifierModule } from 'angular-notifier';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,16 +12,14 @@ import { MaterialModule } from './material.module';
 import { getSerbianPaginatorIntl } from './services/MatPaginatorLocalization';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-
-import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
-import { ProfileComponent } from './main/profile/profile.component';
-import { ExhibitionComponent } from './main/exhibitions/exhibitions.component';
-import { ToursComponent } from './main/tours/tours.component';
 import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDatepickerLocalization } from './services/MatDatepickerLocalization';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { ExhibitionComponent } from './main/exhibitions/exhibitions.component';
+import { ProfileComponent } from './main/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    ExhibitionComponent,
-    ToursComponent
+    ExhibitionComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +81,8 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     HttpClientModule,
     CarouselModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule.setLocale("sr-RS")
+    NgxMaterialTimepickerModule.setLocale("sr-RS"),
+    PlanerModule
   ],
   providers: [Title, { provide: MatPaginatorIntl, useValue: getSerbianPaginatorIntl() }, { provide: MAT_DATE_LOCALE, useValue: 'sr-sp' }, { provide: DateAdapter, useClass: MatDatepickerLocalization }],
   bootstrap: [AppComponent]

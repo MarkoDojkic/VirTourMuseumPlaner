@@ -1,0 +1,48 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="mat-card">
+    <input type="text" matInput placeholder="Унесите термин за претрагу планера" (keyup)="filterTours($event)" />
+    <div [fxHide.lt-sm]="true" fxFlex>
+        <mat-stepper [linear]="true" fxFlex>
+            <mat-step label="Изаберите поставку коју желите да измените" [editable]="false">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
+                    <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
+                    <button mat-raised-button color="secondary" mwlCalendarPreviousView [view]="view"
+                        [(viewDate)]="viewDate">Предходни
+                        месец</button>
+                    <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Врати на данашњи
+                        дан</button>
+                    <button mat-raised-button color="secondary" mwlCalendarNextView [view]="view" [view]="view"
+                        [(viewDate)]="viewDate">Следећи
+                        месец</button>
+                </div>
+                <br />
+                <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [locale]="locale" [weekStartsOn]="1"
+                    [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                    (eventTimesChanged)="eventTimesChanged($event)">
+                </mwl-calendar-month-view>
+            </mat-step>
+            <mat-step [editable]="false">
+                <!--  [stepControl]="secondFormGroup" [editable]="isEditable"> -->
+
+            </mat-step>
+            <mat-step>
+
+            </mat-step>
+        </mat-stepper>
+    </div>
+    <div [fxHide.gt-xs]="true" fxFlex>
+        <mat-stepper [linear]="true" orientation="vertical" fxFlex>
+            <mat-step label="Изаберите поставку коју желите да измените" [editable]="false">
+
+                <!--  [stepControl]="firstFormGroup" [editable]="isEditable"> -->
+                <span>STEP!</span>
+            </mat-step>
+            <mat-step [editable]="false">
+                <!--  [stepControl]="secondFormGroup" [editable]="isEditable"> -->
+
+            </mat-step>
+            <mat-step>
+
+            </mat-step>
+        </mat-stepper>
+    </div>
+</div>

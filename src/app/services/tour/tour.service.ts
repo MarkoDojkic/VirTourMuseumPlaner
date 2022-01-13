@@ -22,4 +22,8 @@ export class TourService {
   getReviewsForExhibit(exhibitId: string): Promise<Array<Review>> {
     return this.http.get<Array<Review>>("http://localhost:21682/getReviews/" + exhibitId, { responseType: 'json' }).toPromise();
   }
+
+  getToursData(): Promise<Array<Tour>> {
+    return this.http.get<Array<Tour>>("http://localhost:21682/getTourData/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()), { responseType: 'json' }).toPromise();
+  }
 }

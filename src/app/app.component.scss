@@ -13,5 +13,10 @@ span, button, mat-slide-toggle {
     span, button, mat-slide-toggle {
         font-size: 2.4vw;
         text-align: center;
+        padding-right: 2px !important;
+    }
+
+    .specialFix {
+        width: 74px !important;
     }
 }

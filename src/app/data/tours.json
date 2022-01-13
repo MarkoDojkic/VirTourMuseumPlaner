@@ -1759,5 +1759,22 @@
         ],
         "reviews": [],
         "status": "Текући"
+    },
+    {
+        "id": "898d8d01-38ba-4df4-b63c-3f48912f0cd4",
+        "exhibits": [
+            "77b2511a-6683-41cc-b28f-3bdad20afb92",
+            "55b96bd5-eb6e-4434-b287-33e701c805e9",
+            "9fdb640a-decb-41dd-909e-698b488affdf",
+            "4bab23c8-5455-4204-967a-2240d1aa0ddd",
+            "1040ea1b-4280-44fb-a0eb-ac90ca1f24cf",
+            "3753cefc-81df-4e99-abda-326c4a13a726",
+            "f2570ce7-0454-4f8a-bd17-d1cfeb719cfa",
+            "6c40359e-fb43-43d9-8179-c9a9fbf0d622",
+            "f4c8d605-c3cf-411f-b6e4-d2e476544c61",
+            "42cf9301-1ea7-47aa-8dcf-e6de7425c780"
+        ],
+        "reviews": [],
+        "status": "Текући"
     }
 ]

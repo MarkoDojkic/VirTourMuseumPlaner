@@ -23,7 +23,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
     imports: [
@@ -51,6 +51,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
         MatChipsModule,
         MatAutocompleteModule,
         MatDatepickerModule,
+        MatStepperModule
     ],
     exports: [
         MatButtonModule,
@@ -76,7 +77,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
         MatPaginatorModule,
         MatChipsModule,
         MatAutocompleteModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        MatStepperModule
     ]
 })
 

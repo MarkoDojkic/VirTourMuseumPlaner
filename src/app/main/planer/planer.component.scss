@@ -1,0 +1,38 @@
+div {
+    padding-top: 5%;
+    color: black;
+}
+
+div > input {
+    width: 30vw;
+    text-align: center;
+    font-size: larger;
+}
+
+mat-stepper {
+    margin-top: -10%;
+}
+
+@media screen and (max-width: 1280px) {
+    div {
+        padding-top: 8%;
+    }
+
+    div > input {
+        width: 40vw;
+        text-align: center;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    div {
+        padding-top: 12%;
+    }
+
+    div > input {
+        width: 60vw;
+        text-align: center;
+        font-size: medium;
+    }
+}

@@ -4,11 +4,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { LabelType, Options } from '@angular-slider/ngx-slider';
 import { Router } from '@angular/router';
-import { Exhibit } from 'src/app/model/exhibit';
+import { Exhibit } from '../../model/exhibit';
 import Swal from 'sweetalert2';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { UserService } from 'src/app/services/user/user.service';
-import { TourService } from 'src/app/services/tour/tour.service';
+import { UserService } from '../../services/user/user.service';
+import { TourService } from '../../services/tour/tour.service';
 
 @Component({
   selector: 'app-exhibitions',
