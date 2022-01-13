@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Visitor } from '../../model/visitor';
 import { CryptoService } from '../crypto/crypto.service';

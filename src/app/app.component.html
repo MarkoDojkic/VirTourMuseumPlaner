@@ -37,7 +37,7 @@
             <button mat-stroked-button routerLink="/exhibitions" fxFlex>
                 Поставке
             </button>
-            <button mat-stroked-button routerLink="/tours" fxFlex>
+            <button mat-stroked-button routerLink="/planer" fxFlex>
                 Моји обиласци
             </button>
             <button mat-stroked-button routerLink="/profile" fxFlex>
@@ -52,13 +52,13 @@
             <button mat-stroked-button routerLink="/exhibitions" fxFlex>
                 <mat-icon>museum</mat-icon>
             </button>
-            <button mat-stroked-button routerLink="/tours" fxFlex>
+            <button mat-stroked-button routerLink="/planer" fxFlex>
                 <mat-icon>tour</mat-icon>
             </button>
             <button mat-stroked-button routerLink="/profile" fxFlex>
                 <mat-icon>person</mat-icon>
             </button>
-            <button mat-stroked-button (click)="loginService.signOut()" color="warn" fxFlex>
+            <button class="specialFix" mat-stroked-button (click)="loginService.signOut()" color="warn">
                 <mat-icon>person_outline</mat-icon>
             </button>
         </div>

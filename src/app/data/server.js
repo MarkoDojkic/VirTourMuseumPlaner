@@ -249,3 +249,59 @@ app.post('/checkIfTourTimeSlotIsAvailable/:id', (request, response) => {
         else return response.send("WRONG_TIME");
     });
 });
+
+app.get('/getTourData/:id', (request, response) => {
+    function readFromFile(file) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+    }
+
+    const promises = [
+        readFromFile('visitors.json'),
+        readFromFile('tours.json'),
+        readFromFile('exhibits.json'),
+        readFromFile('reviews.json')
+    ];
+
+    Promise.all(promises).then(result => {
+        var visitorsData = result[0];
+        var toursData = result[1];
+        var exhibitsData = result[2];
+        var reviewsData = result[3];
+        var output = [];
+
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        if (!toursData instanceof Array) toursData = [toursData];
+        if (!exhibitsData instanceof Array) exhibitsData = [exhibitsData];
+        if (!reviewsData instanceof Array) reviewsData = [reviewsData];
+    
+        var visitor = visitorsData.find(v => v.id === request.params.id);
+        visitor.planer.forEach(plan => {
+            var tour = toursData.find(t => t.id === plan.tour);
+            var exhibits = [];
+            var reviews = [];
+            
+            tour.exhibits.forEach(exhibitId => exhibits.push(exhibitsData.find(e => e.id == exhibitId)));
+            tour.reviews.forEach(reviewId => reviews.push(reviewsData.find(r => r.id == reviewId)));
+
+            output.push({
+                "id": tour.id,
+                "exhibits": exhibits,
+                "reviews": reviews,
+                "status": tour.status,
+                "scheduledAt": plan.date
+            });
+        });
+
+        response.send(output);
+    });
+});
