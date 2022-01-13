@@ -251,6 +251,21 @@ export class ExhibitionComponent implements OnInit {
   }
 
   startTourCreationMode(): void {
+    if (sessionStorage.getItem("loggedInUser") == null) {
+      Swal.fire({
+        title: "Нисте улоговани!",
+        text: "Морате бити улоговани да бисте додали експонат у планер!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Преусмери ме на страницу за логовање",
+        cancelButtonText: "Одустани",
+      }).then(result => {
+        if (result.isConfirmed) this.router.navigate(["/login"]); //If clicked on confirm button
+      });
+
+      return;
+    }
+
     this.isTourCreationMode = true;
     this.totalExhibitsInNewTour = 0;
     this.newTourDateTime = new Date();
@@ -262,23 +277,52 @@ export class ExhibitionComponent implements OnInit {
 
   endTourCreationMode(): void {
     this.isTourCreationMode = false;
+
+    if (this.totalExhibitsInNewTour === 0) {
+      this.ns.notify("error", "Одустали сте од креирања новог обиласка.");
+      return;
+    }
+
     var selectedExhibitIds = (JSON.parse(sessionStorage.getItem("newPlanerExhibits")!) as Array<string>);
 
     Swal.fire({
-      title: "Изаберите време и датум\nпоновог обласка",
+      title: "Изаберите датум и време\nновог обиласка",
       html: this.calendarTemplate!.nativeElement,
-      showCancelButton: false,
+      showCancelButton: true,
+      showDenyButton: true,
       confirmButtonText: "Додај обилазак у планер",
-      allowOutsideClick: false
-    }).then(() => {
-      this.tourService.addNewTour({
-        "exhibits": selectedExhibitIds,
-        "dateTime": this.newTourDateTime
-      }).then(resolve => {
-
-      }).catch(reject => {
-        /* console.log(reject); */
-      })
+      cancelButtonText: "Желим да додам још експоната",
+      denyButtonText: "Желим да одустанем од креирања обиласка",
+      allowOutsideClick: false,
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+        return this.tourService.checkIfTourTimeSlotIsAvailable(this.newTourDateTime).then(resolve => {
+          //keeps returning WRONG_TIME check with Postman
+          if (resolve === "WRONG_TIME") throw new Error("timeSlotError");
+        }).catch(reject => {
+          if (reject.message === "timeSlotError") Swal.showValidationMessage("Изабрани временски слот није слободан.</br>Изаберите други датум или време.");
+          else Swal.showValidationMessage("Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+        });
+      }
+    }).then(choice => {
+      if (choice.isDismissed) {
+        Swal.close();
+        this.isTourCreationMode = true;
+        return;
+      } else if (choice.isDenied) {
+        this.ns.notify("error", "Одустали сте од креирања новог обиласка.");
+      } else {
+        this.tourService.addNewTour({
+          "exhibits": selectedExhibitIds,
+          "dateTime": this.newTourDateTime
+        }).then(resolve => {
+          console.log(resolve);
+          this.ns.notify("success", "Успешно је креиран нови обилазак и додат у планер.");
+        }).catch(reject => {
+          console.log(reject);
+          this.ns.notify("error", "Догодила се грешка приликом креирања новог обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+        });
+      }
     });
 
     selectedExhibitIds.forEach(id => {

@@ -218,6 +218,34 @@ app.post('/addNewTour/:id', (request, response) => {
             if (error) response.sendStatus(500).send("Error while writing json data").end();
         });
 
-        response.sendStatus(200).end();
+        response.send("ОК");
+    });
+});
+
+
+app.post('/checkIfTourTimeSlotIsAvailable/:id', (request, response) => {
+    fs.readFile("visitors.json", (error, buffer) => {
+        var visitorsData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        var visitor = visitorsData.find(visitor => visitor.id === request.params.id);
+        
+        var targetDateTime = new Date(request.body.dateTime);
+        var closestDateTime;
+
+        visitor.planer.map(plan => plan.date).forEach(date => {
+            if (closestDateTime === undefined || targetDateTime - date > targetDateTime - closestDateTime)
+                closestDateTime = date;
+        });
+
+        closestDateTime = new Date(closestDateTime);
+
+        if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60 * 24))) > 1) return response.sendStatus(200);
+        else if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60))) >= 1) return response.sendStatus(200);
+        else return response.send("WRONG_TIME");
     });
 });
