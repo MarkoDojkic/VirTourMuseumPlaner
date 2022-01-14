@@ -385,7 +385,7 @@ export class ExhibitionComponent implements OnInit {
                     <div _ngcontent-bjf-c268="" fxlayout="row" fxlayoutalign="space-evenly stretch" fxlayoutgap="1%" ng-reflect-fx-layout="row" ng-reflect-fx-layout-align="space-evenly stretch" ng-reflect-fx-layout-gap="1%" style="margin-bottom: 1%; flex-direction: row; box-sizing: border-box; display: flex; place-content: stretch space-evenly; align-items: stretch; max-height: 100%;">
                       <span _ngcontent-bjf-c268="" style="margin-right: 1%; width:45%">`+ review.reviewer.name + " " + review.reviewer.surname + `</span>`;
 
-          for (let i = 1; i <= 5; i++) {
+          for (let i = 1; i <= 10; i++) {
             html += `<mat-icon _ngcontent-bjf-c268="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font" style="padding-top: 6px; margin-right: 1%;">`;
             html += i > review.rating ? "star_outline" : "star";
             html += `</mat-icon>`;
