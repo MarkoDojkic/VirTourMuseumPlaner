@@ -1,5 +1,5 @@
-div {
-    padding-top: 5%;
+.spaceing {
+    padding-top: 150px;
 }
 
 div > input {
@@ -10,6 +10,15 @@ div > input {
 
 mat-stepper {
     margin-top: -10%;
+}
+
+.mat-card-image {
+    margin: 0 -16px 16px -16px;
+    display: block;
+    max-width: 300px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
 }
 
 @media screen and (max-width: 1280px) {
@@ -33,5 +42,15 @@ mat-stepper {
         width: 60vw;
         text-align: center;
         font-size: medium;
+    }
+
+
+    .mat-card-image {
+        margin: 0 -16px 16px -16px;
+        display: block;
+        max-width: 100px;
+        max-height: 200px;
+        width: auto;
+        height: auto;
     }
 }
