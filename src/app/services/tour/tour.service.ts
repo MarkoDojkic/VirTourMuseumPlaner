@@ -9,6 +9,7 @@ import { CryptoService } from '../crypto/crypto.service';
   providedIn: 'root'
 })
 export class TourService {
+
   constructor(private http: HttpClient, private cs: CryptoService) { }
 
   checkIfTourTimeSlotIsAvailable(timeSlot: Date): Promise<string> {
@@ -25,5 +26,9 @@ export class TourService {
 
   getToursData(): Promise<Array<Tour>> {
     return this.http.get<Array<Tour>>("http://localhost:21682/getTourData/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()), { responseType: 'json' }).toPromise();
+  }
+
+  cancelTour(id: string): void {
+    this.http.patch("http://localhost:21682/cancelTour/" + id, {}, {}).toPromise();
   }
 }

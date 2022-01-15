@@ -305,3 +305,24 @@ app.get('/getTourData/:id', (request, response) => {
         response.send(output);
     });
 });
+
+app.patch('/cancelTour/:id', (request, response) => {
+    fs.readFile("tours.json", (error, buffer) => {
+        var toursData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!toursData instanceof Array) toursData = [toursData];
+        
+        var tour = toursData.find(t => t.id === request.params.id);
+        tour.status = "Отказан";
+
+        toursData.splice(toursData.findIndex(t => t.id === request.params.id), 1, tour);
+        
+        fs.writeFile("tours.json", JSON.stringify(toursData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+        });
+    });
+});

@@ -1,72 +1,63 @@
-<div fxLayout="column" fxLayoutAlign="center center" class="mat-card">
-    <input type="text" matInput placeholder="Унесите термин за претрагу планера" (keyup)="filterTours($event)" />
-    <div [fxHide.lt-sm]="true" fxFlex>
-        <mat-stepper #planerStepper [linear]="true" fxFlex>
-            <mat-step label="Преглед планера" [editable]="false">
-                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
-                    <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
-                    <button mat-raised-button color="secondary" mwlCalendarPreviousView [view]="view"
-                        [(viewDate)]="viewDate">Предходни
-                        месец</button>
-                    <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Врати на данашњи
-                        дан</button>
-                    <button mat-raised-button color="secondary" mwlCalendarNextView [view]="view" [view]="view"
-                        [(viewDate)]="viewDate">Следећи
-                        месец</button>
-                </div>
-                <br />
-                <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [locale]="locale" [weekStartsOn]="1"
-                    [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
-                    (eventTimesChanged)="eventTimesChanged($event)">
-                </mwl-calendar-month-view>
-            </mat-step>
-            <mat-step label="Преглед/измена обиласка" [editable]="false">
-                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
-                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="4%">
-                        <span>{{ "Заказано за: " + currentViewingTour?.scheduledAt?.toLocaleString("sr-RS") }}</span>
-                        <span>{{ "Статус: " + currentViewingTour?.status }}</span>
-                        <div id="averageRatingPlaceholder" [fxHide]="currentViewingTour?.reviews?.length === 0"></div>
+<div class="spaceing mat-card">
+    <input type=" text" matInput placeholder="Унесите термин за претрагу планера" (keyup)="filterTours($event)" />
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
+        <div [fxHide.lt-sm]="true" fxFlex>
+            <mat-stepper #planerStepper [orientation]="(stepperOrientation | async)!" fxFlex>
+                <mat-step label="Преглед планера" [editable]="false">
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
+                        <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
+                        <button mat-raised-button color="secondary" mwlCalendarPreviousView [view]="view"
+                            [(viewDate)]="viewDate">Предходни
+                            месец</button>
+                        <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Врати на
+                            данашњи
+                            дан</button>
+                        <button mat-raised-button color="secondary" mwlCalendarNextView [view]="view" [view]="view"
+                            [(viewDate)]="viewDate">Следећи
+                            месец</button>
                     </div>
-                    <mat-card *ngFor="let exhibit of currentViewingTour?.exhibits" fxLayout="column"
-                        fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2px">
-                        <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
-                            <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
-                        <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
-                        <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
-                            <p class="descFont">{{exhibit.description}}</p>
-                        </mat-card-content>
-                        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex=40>
-                            <span fxFlex="33" class="descFont">Вредност експоната: {{
-                                exhibit.price?.toLocaleString("sr-RS", {
-                                minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
-                            <span fxFlex="33" class="descFont">Процењено време обиласка: {{ exhibit.time }}
-                                минута</span>
-                            <span fxFlex="34" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-            </mat-step>
-            <mat-step label="Преглед/измена коментара обиласка" [editable]="false">
+                    <br />
+                    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [locale]="locale"
+                        [weekStartsOn]="1" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                        (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-month-view>
+                </mat-step>
+                <mat-step label="Преглед/измена обиласка" [editable]="false">
+                    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
+                        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="4%" fxFlexFill>
+                            <span>{{ "Заказано за: " + currentViewingTour?.scheduledAt?.toLocaleString("sr-RS")
+                                }}</span>
+                            <span>{{ "Статус: " + currentViewingTour?.status }}</span>
+                            <div id="averageRatingPlaceholder" [fxHide]="currentViewingTour?.reviews?.length === 0">
+                            </div>
+                            <button mat-raised-button color="warn" (click)="planerStepper.previous()">Повратак
+                                назад</button>
+                        </div>
+                        <mat-card *ngFor="let exhibit of currentViewingTour?.exhibits" fxLayout="column"
+                            fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2%">
+                            <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
+                                <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
+                            </mat-card-header>
+                            <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
+                            <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+                            <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
+                                <p class="descFont">{{exhibit.description}}</p>
+                            </mat-card-content>
+                            <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex=40>
+                                <span fxFlex="33" class="descFont">Вредност експоната: {{
+                                    exhibit.price?.toLocaleString("sr-RS", {
+                                    minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
+                                <span fxFlex="33" class="descFont">Процењено време обиласка: {{ exhibit.time }}
+                                    минута</span>
+                                <span fxFlex="34" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+                </mat-step>
+                <mat-step label="Преглед/измена коментара обиласка" [editable]="false">
 
-            </mat-step>
-        </mat-stepper>
-    </div>
-    <div [fxHide.gt-xs]="true" fxFlex>
-        <mat-stepper [linear]="true" orientation="vertical" fxFlex>
-            <mat-step label="Изаберите поставку коју желите да измените" [editable]="false">
-
-                <!--  [stepControl]="firstFormGroup" [editable]="isEditable"> -->
-                <span>STEP!</span>
-            </mat-step>
-            <mat-step [editable]="false">
-                <!--  [stepControl]="secondFormGroup" [editable]="isEditable"> -->
-
-            </mat-step>
-            <mat-step>
-
-            </mat-step>
-        </mat-stepper>
+                </mat-step>
+            </mat-stepper>
+        </div>
     </div>
 </div>
