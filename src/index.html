@@ -1,15 +1,29 @@
 <!doctype html>
 <html lang="rs">
+
 <head>
   <meta charset="utf-8">
   <title>VirTourMuseumPlaner</title>
   <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
-  <body class="mat-typography theme-dark">
-    <app-root></app-root>
-  </body>
+
+<body class="mat-typography theme-dark">
+  <app-root></app-root>
+</body>
+
 </html>
+<script> /* Script is used for sweetalert review popup star rating */
+  function onHoverRating(selectedRating) {
+    if (selectedRating === null) selectedRating = 0;
+
+    for (let i = 1; i <= 10; i++) {
+      document.querySelector("#sweetAlertRating_rating_" + i).innerHTML = i <= selectedRating ? "star_rate" : "star_outline";
+    }
+
+    document.querySelector("#sweetAlertRating").innerHTML = selectedRating.toString();
+  }
+</script>

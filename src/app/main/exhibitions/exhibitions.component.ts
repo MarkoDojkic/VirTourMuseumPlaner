@@ -297,7 +297,6 @@ export class ExhibitionComponent implements OnInit {
       showLoaderOnConfirm: true,
       preConfirm: () => {
         return this.tourService.checkIfTourTimeSlotIsAvailable(this.newTourDateTime).then(resolve => {
-          //keeps returning WRONG_TIME check with Postman
           if (resolve === "WRONG_TIME") throw new Error("timeSlotError");
         }).catch(reject => {
           if (reject.message === "timeSlotError") Swal.showValidationMessage("Изабрани временски слот није слободан.</br>Изаберите други датум или време.");

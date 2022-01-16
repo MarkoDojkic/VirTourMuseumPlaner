@@ -1,5 +1,5 @@
 .spaceing {
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 div > input {
@@ -8,8 +8,9 @@ div > input {
     font-size: larger;
 }
 
-mat-stepper {
-    margin-top: -10%;
+.spanFix {
+    max-width: 15%;
+    text-align: center;
 }
 
 .mat-card-image {

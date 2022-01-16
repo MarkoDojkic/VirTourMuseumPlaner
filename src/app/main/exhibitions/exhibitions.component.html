@@ -128,7 +128,7 @@
       <ngx-timepicker-field matInput [format]="24" [defaultTime]="'00:00'" [contentEditable]="true" [controlOnly]="true"
         (timeChanged)="updateTourTime($event)" fxFlex></ngx-timepicker-field>
     </mat-form-field>
-    <span fxFlex>Изабрали сте: {{ newTourDateTime.toLocaleString("sr-RS") }}</span>
+    <span fxFlex>Изабрали сте: {{ newTourDateTime | date: "dd.MM.YYYY. HH:mm:ss" }}</span>
     <span fxFlex>Број укључених обилазака је: {{ totalExhibitsInNewTour }}</span>
   </div>
 </div>

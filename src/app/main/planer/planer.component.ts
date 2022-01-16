@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
 import * as moment from 'moment';
 import { TourService } from '../../services/tour/tour.service';
@@ -11,6 +12,8 @@ import { Review } from 'src/app/model/review';
 import { Observable } from 'rxjs/internal/Observable';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-planer',
@@ -27,8 +30,11 @@ export class PlanerComponent implements OnInit {
   @ViewChild('planerStepper') private planerStepper!: MatStepper;
   currentViewingTour: Tour | undefined = undefined;
   stepperOrientation!: Observable<StepperOrientation>;
+  @ViewChild('timeTemplate', { static: false })
+  timeTemplate!: ElementRef;
+  refresh: Subject<any> = new Subject();
 
-  constructor(private tourService: TourService, breakpointObserver: BreakpointObserver) {
+  constructor(private tourService: TourService, breakpointObserver: BreakpointObserver, private ns: NotifierService) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
@@ -37,9 +43,6 @@ export class PlanerComponent implements OnInit {
   ngOnInit(): void {
     registerLocaleData(serbianLocale);
     this.getPlaner();
-    setTimeout(() => {
-      this.viewDate = new Date();
-    }, 100); //Wait for planer to be fetched
   }
 
   getPlaner(): void {
@@ -52,23 +55,25 @@ export class PlanerComponent implements OnInit {
         tourEnd!.setTime(tourEnd!.getTime() + parseInt(totalTime));
 
         var startTimeTitle = "Почетак у: " + tourStart.toLocaleTimeString("sr-RS");
-        //var statusTitle = " | Статус: " + tour.status;
         var exhibitCountTitle = " | Број експоната: " + tour.exhibits.length;
         var totalTimeTitle = " | Трајање: " + tour.exhibits.map(e => e.time).reduce((total, time) => total += time, 0) + " минута";
         var totalCostTitle = " | Укупна цена: " + tour.exhibits.map(e => e.price).reduce((total, price) => total += price, 0) + " динара";
+        var averageRatingTitle = tour.status === 'Завршен' ? " | Просечна оцена: " + tour.reviews.map(r => r.rating as number).reduce((total, rating) => total += rating, 0) / tour.reviews.length : "";
 
         this.events.push({
-          title: startTimeTitle + exhibitCountTitle + totalTimeTitle + totalCostTitle,
+          title: startTimeTitle + exhibitCountTitle + totalTimeTitle + totalCostTitle + averageRatingTitle,
           start: tourStart!,
           end: tourEnd,
           color: this.getColorByStatus(tour.status),
-          draggable: true,
+          draggable: tour.status === 'Текући',
           actions: this.getActions(tour, tourStart),
           meta: {
-            id: tour.status
+            id: tour.id,
+            status: tour.status
           }
         });
       });
+      this.refresh.next();
     }).catch(reject => console.log(reject));
   }
 
@@ -79,13 +84,13 @@ export class PlanerComponent implements OnInit {
           label: '<i class="material-icons">edit</i>',
           a11yLabel: 'Edit',
           onClick: ({ event }: { event: CalendarEvent }): void => {
-            console.log("----EDIT REQUESTED----");
-            console.log(event);
-            //this.handleEvent('Edited', event);
+            this.currentViewingTour = tour;
+            this.planerStepper.selected!.completed = true;
+            this.planerStepper.next();
           },
         },
         {
-          label: '<i class="material-icons">delete_forever</i>',
+          label: '<i class="material-icons">cancel</i>',
           a11yLabel: 'Cancel',
           onClick: ({ event }: { event: CalendarEvent }): void => {
             this.tourService.cancelTour(tour.id);
@@ -104,8 +109,38 @@ export class PlanerComponent implements OnInit {
           a11yLabel: 'View',
           onClick: (): void => {
             this.currentViewingTour = tour;
+            this.planerStepper.selected!.completed = true;
             this.planerStepper.next();
-          },
+          }
+        },
+        {
+          label: '<i class="material-icons">delete_forever</i>',
+          a11yLabel: 'Remove',
+          onClick: ({ event }: { event: CalendarEvent }): void => {
+            Swal.fire({
+              title: "Потврда уклањања отказаног обиласка из планера",
+              text: "Да ли сте сигурни да желите да уклоните обилазак? Овај процес је неповратан!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonText: "Да",
+              confirmButtonColor: "red",
+              cancelButtonText: "Не",
+              cancelButtonColor: "green",
+            }).then(result => {
+              if (result.isConfirmed) {
+                this.tourService.deleteTour(tour.id).then(response => {
+                  if (response === "OK") {
+                    this.ns.notify("success", "Успешно уклоњен обилазак из планера");
+                    this.events.splice(this.events.findIndex(e => e.meta.id === tour.id), 1);
+                    this.refresh.next();
+                  } else {
+                    console.log(response);
+                    this.ns.notify("error", "Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+                  }
+                }, reject => console.log(reject));
+              }
+            });
+          }
         }
       ];
       case "Завршен": return [
@@ -113,9 +148,10 @@ export class PlanerComponent implements OnInit {
           label: '<i class="material-icons">edit</i>',
           a11yLabel: 'Edit',
           onClick: ({ event }: { event: CalendarEvent }): void => {
-            console.log("----EDIT REQUESTED----");
-            console.log(event);
-            //this.handleEvent('Edited', event);
+            this.currentViewingTour = tour;
+            this.planerStepper.selected!.completed = true;
+            this.setAverageRating(tour.reviews);
+            this.planerStepper.next();
           },
         }
       ];
@@ -145,13 +181,21 @@ export class PlanerComponent implements OnInit {
     }
   }
 
-  eventTimesChanged({
+  rescheduleTour({
     event,
     newStart,
     newEnd,
   }: CalendarEventTimesChangedEvent): void {
     this.events = this.events.map((iEvent) => {
       if (iEvent === event) {
+        this.tourService.updateTourDateTime(iEvent.meta.id, newStart).then(resolve => {
+          console.log(resolve);
+          this.ns.notify("success", "Успешно промењен датум обиласка.");
+        }).catch(reject => {
+          console.log(reject);
+          this.ns.notify("error", "Догодила се грешка приликом промене датума обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+        });
+
         return {
           ...event,
           start: newStart,
@@ -160,7 +204,6 @@ export class PlanerComponent implements OnInit {
       }
       return iEvent;
     });
-    /* this.handleEvent('Dropped or resized', event); */
   }
 
   getColorByStatus(status: string): import("calendar-utils").EventColor {
@@ -195,5 +238,166 @@ export class PlanerComponent implements OnInit {
     }
 
     document.querySelector("#averageRatingPlaceholder")!.innerHTML = html;
+  }
+
+  removeExhibitFromTour(exhibitId: string): void {
+    Swal.fire({
+      title: "Потврда уклањања експоната из изабраног текућег обиласка",
+      text: "Да ли сте сигурни да желите да уклоните експонат? Овај процес је неповратан!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Да",
+      confirmButtonColor: "red",
+      cancelButtonText: "Не",
+      cancelButtonColor: "green",
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.tourService.removeReviewFromExhibit(this.currentViewingTour?.id!, exhibitId).then(response => {
+          if (response === "OK") {
+            this.ns.notify("success", "Успешно уклоњен експонат из обиласка");
+            this.currentViewingTour?.exhibits.splice(this.currentViewingTour.exhibits.findIndex(e => e.id === exhibitId), 1);
+            document.querySelector("#expansionPanel_" + exhibitId)?.remove();
+          } else {
+            console.log(response);
+            this.ns.notify("error", "Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+          }
+        }, reject => console.log(reject));
+      }
+    });
+  }
+
+  registerNewTime(newTime: string): void {
+    var oldDate = new Date(this.currentViewingTour?.scheduledAt!);
+    console.log(this.currentViewingTour!.scheduledAt);
+    oldDate.setHours(parseInt(newTime.split(":")[0]));
+    oldDate.setMinutes(parseInt(newTime.split(":")[1]));
+    this.currentViewingTour!.scheduledAt = oldDate;
+    console.log(this.currentViewingTour!.scheduledAt);
+  }
+
+  updateTourTime(): void {
+    Swal.fire({
+      title: "Изаберите ново време изабраног обиласка",
+      html: this.timeTemplate!.nativeElement,
+      showCancelButton: true,
+      confirmButtonText: "Промени време обиласка",
+      cancelButtonText: "Одустани од промене времена обиласка",
+      allowOutsideClick: false,
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+        return this.tourService.checkIfTourTimeSlotIsAvailable(this.currentViewingTour?.scheduledAt!).then(resolve => {
+          if (resolve === "WRONG_TIME") throw new Error("timeSlotError");
+        }).catch(reject => {
+          if (reject.message === "timeSlotError") Swal.showValidationMessage("Изабрани временски слот није слободан.</br>Изаберите други датум или време.");
+          else Swal.showValidationMessage("Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+        });
+      }
+    }).then(choice => {
+      if (choice.isDismissed) {
+        this.ns.notify("error", "Одустали сте од промене времена обиласка.");
+      } else {
+        this.tourService.updateTourDateTime(this.currentViewingTour?.id!, this.currentViewingTour?.scheduledAt!).then(resolve => {
+          console.log(resolve);
+          this.ns.notify("success", "Успешно сте променили време обиласка.");
+
+          var oldEvent = this.events.find(e => e.meta.id === this.currentViewingTour?.id);
+          oldEvent!.start = this.currentViewingTour?.scheduledAt!;
+          oldEvent!.title = "Почетак у: " + oldEvent!.start.toLocaleTimeString("sr-RS") + " | Број експоната:" + oldEvent!.title.split(" | Број експоната:")[1];
+          this.events.splice(this.events.findIndex(e => e.meta.id === this.currentViewingTour?.id), 1, oldEvent!);
+        }).catch(reject => {
+          console.log(reject);
+          this.ns.notify("error", "Догодила се грешка приликом промене времена обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
+        });
+      }
+    });
+  }
+
+  editReview(exhibitId: string): void {
+    Swal.fire({
+      title: "Приказ и измена рецензије изабраног обиђеног експоната",
+      customClass: { popup: "sweetAlertDisplayFix" },
+      html: `
+      <div _ngcontent-bjf-c268="" fxlayout="column" fxlayoutalign="center center" fxlayoutgap="2%" ng-reflect-fx-layout="column" ng-reflect-fx-layout-align="center stretch" ng-reflect-fx-layout-gap="2%" style="flex-direction: column; box-sizing: border-box; display: flex; place-content: stretch center; align-items: stretch; max-width: 100%;" class="mat-card">      
+        <span>Оцена (за негативну оцену пређите мишем лево од прве звездице):</span>
+        <div _ngcontent-bjf-c269="" fxlayout="row" fxlayoutalign="center center" fxlayoutgap="2%">
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(0)" style="color: transparent; width: 0.5px;"></button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(1)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_1">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(2)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_2">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(3)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_3">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(4)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_4">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(5)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_5">star_outline</mat-icon>
+          </button>
+          <br>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(6)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_6">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(7)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_7">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(8)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_8">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(9)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_9">star_outline</mat-icon>
+          </button>
+          <button _ngcontent-hdn-c273="" mat-icon-button="" class="mat-focus-indicator ng-tns-c273-0 mat-icon-button mat-button-base" onmouseover="onHoverRating(10)">
+              <mat-icon _ngcontent-ynd-c273="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" id="sweetAlertRating_rating_10">star_outline</mat-icon>
+          </button>
+        </div>
+        <span hidden="true" id="sweetAlertRating">`+ this.currentViewingTour?.reviews[this.currentViewingTour.exhibits.findIndex(e => e.id === exhibitId)].rating + `</span>
+        
+        <span>Коментар (максимална дужина 510 карактера):</span><br>
+        <textarea maxlength="510" id="sweetAlertReview" rows="10" cols="50" style="resize:none; font-size:inherit">`+ this.currentViewingTour?.reviews[this.currentViewingTour.exhibits.findIndex(e => e.id === exhibitId)].comment + `</textarea><br>
+      </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: "Измени рецензију",
+      confirmButtonColor: "green",
+      cancelButtonText: "Одустани",
+      cancelButtonColor: "red",
+      allowOutsideClick: false
+    }).then(response => {
+      if (response.isConfirmed) {
+        var newRating: any = parseInt(Swal.getPopup()!.querySelector("#sweetAlertRating")!.innerHTML);
+        var newComment: string = (Swal.getPopup()!.querySelector("#sweetAlertReview")! as HTMLTextAreaElement).value.trim();
+        var oldReview: Review = this.currentViewingTour!.reviews[this.currentViewingTour!.exhibits.findIndex(e => e.id === exhibitId)];
+
+        if (newRating === oldReview.rating && newComment === oldReview.comment) return; /* No new data */
+
+        oldReview.rating = newRating;
+        oldReview.comment = newComment;
+
+        this.tourService.updateReview(oldReview).then(() => {
+          Swal.fire({
+            title: "Подаци рецензије успешно промењени",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonText: "У реду",
+            allowOutsideClick: false
+          }).finally(() => {
+            this.setAverageRating(this.currentViewingTour!.reviews);
+          });
+        }, reject => {
+          /* console.error(reject); */
+          Swal.fire({
+            title: "Грешка приликом промене података",
+            text: "Није могуће променити податке рецензије. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.",
+            icon: "error",
+            showCancelButton: false,
+            confirmButtonText: "У реду",
+            allowOutsideClick: false
+          });
+        });
+      }
+    });
   }
 }
