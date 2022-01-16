@@ -1,7 +1,7 @@
 import { Visitor } from 'src/app/model/visitor';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgModel, NgForm, AbstractControl, FormControl } from '@angular/forms';
-import { UserService } from 'src/app/services/user/user.service';
+import { VisitorService } from 'src/app/services/visitor/visitor.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild("favoritesInput") favoritesInput!: ElementRef<HTMLInputElement>;
 
-  constructor(private userService: UserService) { }
+  constructor(private visitorService: VisitorService) { }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
     var hasEditedLoginData = false;
     var isPasswordChanged = false;
 
-    this.userService.getLoggedInVisitor().then((resolve) => visitorData! = resolve).then(() => {
+    this.visitorService.getLoggedInVisitor().then((resolve) => visitorData! = resolve).then(() => {
       if (form.controls["name"].dirty && form.controls["name"].valid) visitorData!.name = form.controls["name"].value;
       if (form.controls["surname"].dirty && form.controls["surname"].valid) visitorData!.surname = form.controls["surname"].value;
       if (form.controls["email"].dirty && form.controls["email"].valid) {
@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit {
 
       visitorData.favorites = this.favorites;
 
-      this.userService.updateData(visitorData!, hasEditedLoginData, isPasswordChanged);
+      this.visitorService.updateData(visitorData!, hasEditedLoginData, isPasswordChanged);
 
       setTimeout(() => {
         form.controls["name"].reset();
@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit {
   }
 
   updateFieldData() {
-    this.userService.getLoggedInVisitor().then((resolve) => {
+    this.visitorService.getLoggedInVisitor().then((resolve) => {
       this.userName = resolve.name.toString();
       this.userSurname = resolve.surname.toString();
       this.userEmail = resolve.email.toString();

@@ -8,7 +8,7 @@ import { LoginService } from '../login/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class VisitorService {
   constructor(private http: HttpClient, private cs: CryptoService, private loginService: LoginService) { }
 
   getLoggedInVisitor(): Promise<Visitor> {

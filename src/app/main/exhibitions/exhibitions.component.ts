@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { Exhibit } from '../../model/exhibit';
 import Swal from 'sweetalert2';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { UserService } from '../../services/user/user.service';
+import { VisitorService } from '../../services/visitor/visitor.service';
 import { TourService } from '../../services/tour/tour.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class ExhibitionComponent implements OnInit {
     "hideLimitLabels": true
   };
 
-  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router, private tourService: TourService, private userService: UserService) {
+  constructor(private exhibitionService: ExhibitionService, private ns: NotifierService, private router: Router, private tourService: TourService, private visitorService: VisitorService) {
     this.carouselResponsiveOptions = [
       {
         breakpoint: '1920px',
