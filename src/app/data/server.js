@@ -326,3 +326,115 @@ app.patch('/cancelTour/:id', (request, response) => {
         });
     });
 });
+
+app.patch('/updateTourDateTime/:visitorId/:tourId', (request, response) => {
+    fs.readFile("visitors.json", (error, buffer) => {
+        var vistorData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!vistorData instanceof Array) vistorData = [vistorData];
+        
+        var visitor = vistorData.find(v => v.id === request.params.visitorId);
+        
+        visitor.planer.splice(visitor.planer.findIndex(p => p.tour === request.params.tourId), 1, {
+            "date": request.body.date,
+            "tour": request.params.tourId
+        });
+
+        vistorData.splice(vistorData.findIndex(v => v.id === visitor.id), 1, visitor);
+        
+        fs.writeFile("visitors.json", JSON.stringify(vistorData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else response.sendStatus(200);
+        });
+    });
+});
+
+app.patch('/removeExhibitFromTour/:tourId/:exhibitId', (request, response) => {
+    fs.readFile("tours.json", (error, buffer) => {
+        var toursData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!toursData instanceof Array) toursData = [toursData];
+        
+        var tour = toursData.find(t => t.id === request.params.tourId);
+        
+        tour.exhibits.splice(tour.exhibits.findIndex(e => e.id === request.params.exhibitId), 1);
+
+        toursData.splice(toursData.findIndex(t => t.id === request.params.tourId), 1, tour);
+        
+        fs.writeFile("tours.json", JSON.stringify(toursData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else response.sendStatus(200);
+        });
+    });
+});
+
+app.delete('/removeTour/:visitorId/:tourId', (request, response) => {
+    function readFromFile(file) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+    }
+
+    const promises = [
+        readFromFile('visitors.json'),
+        readFromFile('tours.json')
+    ];
+
+    Promise.all(promises).then(result => {
+        var visitorsData = result[0];
+        var toursData = result[1];
+
+        if (!visitorsData instanceof Array) visitorsData = [visitorsData];
+        if (!toursData instanceof Array) toursData = [toursData];
+    
+        var visitor = visitorsData.find(v => v.id === request.params.visitorId);
+        visitor.planer.splice(visitor.planer.findIndex(p => p.tour === request.params.tourId), 1);
+        visitorsData.splice(visitorsData.findIndex(v => v.id === request.params.visitorId), 1, visitor);
+        toursData.splice(toursData.findIndex(t => t.id === request.params.tourId), 1);
+        
+        fs.writeFile("tours.json", JSON.stringify(toursData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else {
+                fs.writeFile("visitors.json", JSON.stringify(visitorsData), (error) => {
+                    if (error) response.sendStatus(500).send("Error while writing json data").end();
+                    else response.sendStatus(200);
+                });
+            }
+        });
+    });
+});
+
+app.patch('/updateReview/:reviewId', (request, response) => {
+    fs.readFile("reviews.json", (error, buffer) => {
+        var reviewsData = JSON.parse(buffer);
+        if (error) {
+            console.log(error);
+            response.sendStatus(405).send(error).end();
+            return;
+        }
+        if (!reviewsData instanceof Array) reviewsData = [reviewsData];
+        
+        reviewsData.splice(reviewsData.findIndex(r => r.id === request.params.reviewId), 1, request.body.review);
+        
+        fs.writeFile("reviews.json", JSON.stringify(reviewsData), (error) => {
+            if (error) response.sendStatus(500).send("Error while writing json data").end();
+            else response.sendStatus(200);
+        });
+    });
+});

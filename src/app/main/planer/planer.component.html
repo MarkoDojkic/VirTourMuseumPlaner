@@ -1,63 +1,105 @@
 <div class="spaceing mat-card">
-    <input type=" text" matInput placeholder="Унесите термин за претрагу планера" (keyup)="filterTours($event)" />
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
-        <div [fxHide.lt-sm]="true" fxFlex>
-            <mat-stepper #planerStepper [orientation]="(stepperOrientation | async)!" fxFlex>
-                <mat-step label="Преглед планера" [editable]="false">
+    <mat-stepper #planerStepper [linear]="true" [orientation]="(stepperOrientation | async)!" fxFlexFill>
+        <mat-step label="Преглед планера" [completed]="false" fxFlex>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1%" fxFlex>
+                <input type=" text" matInput placeholder="Унесите термин за претрагу планера"
+                    (keyup)="filterTours($event)" />
+                <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
+                <button mat-raised-button color="secondary" mwlCalendarPreviousView [view]="view"
+                    [(viewDate)]="viewDate">Предходни
+                    месец</button>
+                <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Врати на
+                    данашњи
+                    дан</button>
+                <button mat-raised-button color="secondary" mwlCalendarNextView [view]="view" [view]="view"
+                    [(viewDate)]="viewDate">Следећи
+                    месец</button>
+                <span class="spanFix">Да би сте померили обилазак превуците га на други дан.</span>
+            </div>
+            <br />
+            <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [locale]="locale" [weekStartsOn]="1"
+                [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                (eventTimesChanged)="rescheduleTour($event)" [refresh]="refresh">
+            </mwl-calendar-month-view>
+        </mat-step>
+        <mat-step label="Преглед/измена обиласка" [completed]="false" fxFlex>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="4%" fxFlexFill>
+                <span fxFlex="30">Заказано за: {{ currentViewingTour?.scheduledAt | date: "dd.MM.YYYY. HH:mm:ss"
+                    }}</span>
+                <span fxFlex="30">{{ "Статус: " + currentViewingTour?.status }}</span>
+                <div id="averageRatingPlaceholder" [fxHide]="currentViewingTour?.status !== 'Завршен'" fxFlex="25">
+                </div>
+                <button mat-raised-button color="primary" (click)="updateTourTime()"
+                    [fxHide]="currentViewingTour?.status !== 'Текући'" fxFlex="25">
+                    Измени време обиласка</button>
+                <button mat-raised-button color="warn" (click)="planerStepper.reset()" fxFlex="15">
+                    Повратак назад</button>
+            </div>
+            <mat-card *ngFor="let exhibit of currentViewingTour?.exhibits" fxLayout="column"
+                fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2%"
+                [fxHide]="currentViewingTour?.status !== 'Отказан'">
+                <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
+                    <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
+                <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+                <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
+                    <p class="descFont">{{exhibit.description}}</p>
+                </mat-card-content>
+                <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex=40>
+                    <span fxFlex="33" class="descFont">Вредност експоната: {{
+                        exhibit.price?.toLocaleString("sr-RS", {
+                        minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
+                    <span fxFlex="33" class="descFont">Процењено време обиласка: {{ exhibit.time }}
+                        минута</span>
+                    <span fxFlex="34" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
+                </mat-card-actions>
+            </mat-card>
+            <mat-expansion-panel *ngFor="let exhibit of currentViewingTour?.exhibits" fxLayout="column"
+                fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2%" [id]="'expansionPanel_' + exhibit.id"
+                [fxHide]="currentViewingTour?.status === 'Отказан'">
+                <mat-expansion-panel-header class="titleFont" fxFlexFill>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
-                        <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
-                        <button mat-raised-button color="secondary" mwlCalendarPreviousView [view]="view"
-                            [(viewDate)]="viewDate">Предходни
-                            месец</button>
-                        <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Врати на
-                            данашњи
-                            дан</button>
-                        <button mat-raised-button color="secondary" mwlCalendarNextView [view]="view" [view]="view"
-                            [(viewDate)]="viewDate">Следећи
-                            месец</button>
+                        <span>{{exhibit.title}}</span>
+                        <button mat-raised-button color="warn" (click)="removeExhibitFromTour(exhibit.id)"
+                            [fxHide]="currentViewingTour?.status !== 'Текући'">
+                            Уклони експонат из тренутног обиласка</button>
                     </div>
-                    <br />
-                    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [locale]="locale"
-                        [weekStartsOn]="1" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
-                        (eventTimesChanged)="eventTimesChanged($event)">
-                    </mwl-calendar-month-view>
-                </mat-step>
-                <mat-step label="Преглед/измена обиласка" [editable]="false">
+                </mat-expansion-panel-header>
+                <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
+                    <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
+                    <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
                     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
-                        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="4%" fxFlexFill>
-                            <span>{{ "Заказано за: " + currentViewingTour?.scheduledAt?.toLocaleString("sr-RS")
-                                }}</span>
-                            <span>{{ "Статус: " + currentViewingTour?.status }}</span>
-                            <div id="averageRatingPlaceholder" [fxHide]="currentViewingTour?.reviews?.length === 0">
-                            </div>
-                            <button mat-raised-button color="warn" (click)="planerStepper.previous()">Повратак
-                                назад</button>
+                        <p class="descFont">{{exhibit.description}}</p>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <span [fxFlex]="currentViewingTour?.status !== 'Завршен' ? 33 : 25"
+                                class="descFont">Вредност експоната: {{
+                                exhibit.price?.toLocaleString("sr-RS", {
+                                minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
+                            <span [fxFlex]="currentViewingTour?.status !== 'Завршен' ? 33 : 25"
+                                class="descFont">Процењено време обиласка: {{ exhibit.time }}
+                                минута</span>
+                            <span [fxFlex]="currentViewingTour?.status !== 'Завршен' ? 34 : 25" class="descFont">Земља
+                                порекла: {{ exhibit.countryOfOrigin }}</span>
+                            <button mat-raised-button color="primary" (click)="editReview(exhibit.id)"
+                                [fxHide]="currentViewingTour?.status !== 'Завршен'" fxFlex="25">Измени
+                                коментар</button>
                         </div>
-                        <mat-card *ngFor="let exhibit of currentViewingTour?.exhibits" fxLayout="column"
-                            fxLayoutAlign="center center" fxFlexFill fxLayoutGap="2%">
-                            <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
-                                <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
-                            </mat-card-header>
-                            <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
-                            <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
-                            <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
-                                <p class="descFont">{{exhibit.description}}</p>
-                            </mat-card-content>
-                            <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxFlex=40>
-                                <span fxFlex="33" class="descFont">Вредност експоната: {{
-                                    exhibit.price?.toLocaleString("sr-RS", {
-                                    minimumFractionDigits: 2,maximumFractionDigits: 2 }) }} динара</span>
-                                <span fxFlex="33" class="descFont">Процењено време обиласка: {{ exhibit.time }}
-                                    минута</span>
-                                <span fxFlex="34" class="descFont">Земља порекла: {{ exhibit.countryOfOrigin }}</span>
-                            </mat-card-actions>
-                        </mat-card>
                     </div>
-                </mat-step>
-                <mat-step label="Преглед/измена коментара обиласка" [editable]="false">
-
-                </mat-step>
-            </mat-stepper>
-        </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-step>
+    </mat-stepper>
+</div>
+<notifier-container></notifier-container>
+<div fxHide="true">
+    <div #timeTemplate fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label for="newTourTime">Време обиласка</mat-label>
+            <input id="newTourTime" matInput [fxHide]="true">
+            <ngx-timepicker-field matInput [format]="24" [defaultTime]="'00:00'" [contentEditable]="true"
+                [controlOnly]="true" (timeChanged)="registerNewTime($event)" fxFlex></ngx-timepicker-field>
+        </mat-form-field>
+        <span fxFlex>Изабрали сте: {{ currentViewingTour?.scheduledAt | date: "dd.MM.YYYY. HH:mm:ss" }}</span>
     </div>
 </div>

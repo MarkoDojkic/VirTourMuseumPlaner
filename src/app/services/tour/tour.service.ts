@@ -31,4 +31,20 @@ export class TourService {
   cancelTour(id: string): void {
     this.http.patch("http://localhost:21682/cancelTour/" + id, {}, {}).toPromise();
   }
+
+  removeReviewFromExhibit(tourId: string, exhibitId: string): Promise<string> {
+    return this.http.patch("http://localhost:21682/removeExhibitFromTour/" + tourId + "/" + exhibitId, {}, { responseType: 'text' }).toPromise();
+  }
+
+  updateTourDateTime(tourId: string, newTourDateTime: Date): Promise<string> {
+    return this.http.patch("http://localhost:21682/updateTourDateTime/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()) + "/" + tourId, { "date": newTourDateTime }, { responseType: 'text' }).toPromise();
+  }
+
+  deleteTour(tourId: string): Promise<string> {
+    return this.http.delete("http://localhost:21682/removeTour/" + this.cs.decrypt(environment.cryptoKey, sessionStorage.getItem("loggedInUser")!.toString()) + "/" + tourId, { responseType: 'text' }).toPromise();
+  }
+
+  updateReview(review: Review): Promise<string> {
+    return this.http.patch("http://localhost:21682/updateReview/" + review.id, { "review": review }, { responseType: 'text' }).toPromise();
+  }
 }
