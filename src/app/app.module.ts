@@ -20,6 +20,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { ExhibitionComponent } from './main/exhibitions/exhibitions.component';
 import { ProfileComponent } from './main/profile/profile.component';
+import { ChatComponent } from './main/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileComponent } from './main/profile/profile.component';
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    ExhibitionComponent
+    ExhibitionComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
