@@ -14,6 +14,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import { Subject } from 'rxjs';
+import 'moment-duration-format';
 
 @Component({
   selector: 'app-planer',

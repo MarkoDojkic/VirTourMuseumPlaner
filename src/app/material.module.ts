@@ -24,6 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -51,7 +52,8 @@ import { MatStepperModule } from '@angular/material/stepper';
         MatChipsModule,
         MatAutocompleteModule,
         MatDatepickerModule,
-        MatStepperModule
+        MatStepperModule,
+        MatDialogModule
     ],
     exports: [
         MatButtonModule,
@@ -78,7 +80,8 @@ import { MatStepperModule } from '@angular/material/stepper';
         MatChipsModule,
         MatAutocompleteModule,
         MatDatepickerModule,
-        MatStepperModule
+        MatStepperModule,
+        MatDialogModule
     ]
 })
 

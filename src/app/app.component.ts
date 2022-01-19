@@ -2,9 +2,8 @@ import { filter } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import * as moment from 'moment';
-import 'moment-duration-format';
 import { LoginService } from './services/login/login.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +14,8 @@ import { LoginService } from './services/login/login.service';
 export class AppComponent implements OnInit {
 
   constructor(private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title, public loginService: LoginService) { }
+    private activatedRoute: ActivatedRoute, private titleService: Title,
+    public loginService: LoginService) { }
 
   ngOnInit() {
     //Code from: https://www.c-sharpcorner.com/article/angular-dynamic-page-title-based-on-route/
@@ -26,6 +25,8 @@ export class AppComponent implements OnInit {
       const rt = this.getChild(this.activatedRoute);
       rt.data.subscribe((data: { title: string; }) => { this.titleService.setTitle(data.title) });
     });
+
+    setTimeout(() => (document!.querySelector("df-messenger")!.shadowRoot!.querySelector("df-messenger-chat")!.shadowRoot!.querySelector("df-messenger-user-input")!.shadowRoot!.querySelector(".input-box-wrapper > input")! as HTMLInputElement).placeholder = "Овде укуцај питање за паметног агента...", 1000);
   }
 
   isDarkMode = true; /* Initially dark mode is on */

@@ -244,6 +244,15 @@ $theme: (
     //-webkit-text-fill-color: mat-color(map-get(mat-get-color-config($theme), foreground), text);
     transition: background-color 5000s ease-in-out 0s;
   } ///To remove autocomplete background on some browsers
+
+  df-messenger {
+    --df-messenger-bot-message: #47ff4a;
+    --df-messenger-button-titlebar-color: #47ff4a;
+    --df-messenger-chat-background-color: #ffffff;
+    --df-messenger-font-color: rgb(0, 0, 0);
+    --df-messenger-send-icon: #a0ff47;
+    --df-messenger-user-message: #fcff47;
+  }
 }
 
 .theme-dark {
@@ -275,6 +284,15 @@ $theme: (
         event-color-primary: $bg-dark-secondary
       )
   );
+
+  df-messenger {
+    --df-messenger-bot-message: #5f00b8;
+    --df-messenger-button-titlebar-color: #5f00b8;
+    --df-messenger-chat-background-color: #000000;
+    --df-messenger-font-color: #ffffff;
+    --df-messenger-send-icon: #0300b8;
+    --df-messenger-user-message: #b800b5;
+  }
 }
 
 // Specific component overrides, pieces that are not in line with the general theming
