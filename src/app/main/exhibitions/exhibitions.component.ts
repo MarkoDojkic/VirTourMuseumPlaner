@@ -229,7 +229,7 @@ export class ExhibitionComponent implements OnInit {
       setTimeout(() => {
         if (totalReviews !== 0 && Math.round(sumOfRatings / totalReviews) < this.minRating)
           this.filteredExhibitions.splice(this.filteredExhibitions.findIndex(fE => fE.id === exhibition.id), 1)
-      }, 1); //wait forEach
+      }, 1000); //wait forEach
     });
   }
 
