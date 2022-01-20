@@ -75,7 +75,7 @@ export class PlanerComponent implements OnInit {
         });
       });
       this.refresh.next();
-    }).catch(reject => console.log(reject));
+    }).catch(reject => console.log(null /*reject*/));
   }
 
   getActions(tour: Tour, date: Date): CalendarEventAction[] {
@@ -135,10 +135,10 @@ export class PlanerComponent implements OnInit {
                     this.events.splice(this.events.findIndex(e => e.meta.id === tour.id), 1);
                     this.refresh.next();
                   } else {
-                    console.log(response);
+                    //console.log(response);
                     this.ns.notify("error", "Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
                   }
-                }, reject => console.log(reject));
+                }, reject => console.log(null/*reject*/));
               }
             });
           }
@@ -190,10 +190,10 @@ export class PlanerComponent implements OnInit {
     this.events = this.events.map((iEvent) => {
       if (iEvent === event) {
         this.tourService.updateTourDateTime(iEvent.meta.id, newStart).then(resolve => {
-          console.log(resolve);
+          //console.log(resolve);
           this.ns.notify("success", "Успешно промењен датум обиласка.");
         }).catch(reject => {
-          console.log(reject);
+          //console.log(reject);
           this.ns.notify("error", "Догодила се грешка приликом промене датума обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
         });
 
@@ -259,21 +259,19 @@ export class PlanerComponent implements OnInit {
             this.currentViewingTour?.exhibits.splice(this.currentViewingTour.exhibits.findIndex(e => e.id === exhibitId), 1);
             document.querySelector("#expansionPanel_" + exhibitId)?.remove();
           } else {
-            console.log(response);
+            //console.log(response);
             this.ns.notify("error", "Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
           }
-        }, reject => console.log(reject));
+        }, reject => console.log(null /*reject*/));
       }
     });
   }
 
   registerNewTime(newTime: string): void {
     var oldDate = new Date(this.currentViewingTour?.scheduledAt!);
-    console.log(this.currentViewingTour!.scheduledAt);
     oldDate.setHours(parseInt(newTime.split(":")[0]));
     oldDate.setMinutes(parseInt(newTime.split(":")[1]));
     this.currentViewingTour!.scheduledAt = oldDate;
-    console.log(this.currentViewingTour!.scheduledAt);
   }
 
   updateTourTime(): void {
@@ -298,7 +296,7 @@ export class PlanerComponent implements OnInit {
         this.ns.notify("error", "Одустали сте од промене времена обиласка.");
       } else {
         this.tourService.updateTourDateTime(this.currentViewingTour?.id!, this.currentViewingTour?.scheduledAt!).then(resolve => {
-          console.log(resolve);
+          //console.log(resolve);
           this.ns.notify("success", "Успешно сте променили време обиласка.");
 
           var oldEvent = this.events.find(e => e.meta.id === this.currentViewingTour?.id);
@@ -306,7 +304,7 @@ export class PlanerComponent implements OnInit {
           oldEvent!.title = "Почетак у: " + oldEvent!.start.toLocaleTimeString("sr-RS") + " | Број експоната:" + oldEvent!.title.split(" | Број експоната:")[1];
           this.events.splice(this.events.findIndex(e => e.meta.id === this.currentViewingTour?.id), 1, oldEvent!);
         }).catch(reject => {
-          console.log(reject);
+          //console.log(reject);
           this.ns.notify("error", "Догодила се грешка приликом промене времена обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
         });
       }

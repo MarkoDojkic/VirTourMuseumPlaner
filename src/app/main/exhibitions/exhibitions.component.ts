@@ -114,7 +114,7 @@ export class ExhibitionComponent implements OnInit {
   displayExhibitions(): void {
     this.exhibitionService.getAll().then(resolve => {
       this.exhibitions = resolve;
-    }).catch((reject) => console.log(reject));
+    }).catch((reject) => console.log(null/*reject*/));
     setTimeout(() => { /* To give time to firestore to get items */
       this.exhibitionTypes = new Map(this.exhibitions.map(exhibition => {
         return [exhibition.type, true];
@@ -315,10 +315,10 @@ export class ExhibitionComponent implements OnInit {
           "exhibits": selectedExhibitIds,
           "dateTime": this.newTourDateTime
         }).then(resolve => {
-          console.log(resolve);
+          //console.log(resolve);
           this.ns.notify("success", "Успешно је креиран нови обилазак и додат у планер.");
         }).catch(reject => {
-          console.log(reject);
+          //console.log(reject);
           this.ns.notify("error", "Догодила се грешка приликом креирања новог обилазка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
         });
       }

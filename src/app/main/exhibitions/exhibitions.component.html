@@ -92,8 +92,7 @@
               <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
                 <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
               </mat-card-header>
-              <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
-              <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+              <img mat-card-image [src]="'assets/' + exhibit.imageURL" alt="Photo of {{exhibit.title}}" />
               <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
                 <p class="descFont">{{exhibit.description}}</p>
               </mat-card-content>

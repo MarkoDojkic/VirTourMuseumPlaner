@@ -3,7 +3,7 @@
         "id": "ae6eeb5b-fd4e-435c-8e01-2e6d2a50a3f6",
         "title": "Do amet cillum enim deserunt",
         "description": "Id esse elit deserunt aliquip incididunt eu amet pariatur fugiat eu. Consequat cillum cillum aliquip nisi culpa ullamco deserunt nulla id elit. Aliqua cupidatat tempor ea reprehenderit cillum.",
-        "imageURL": "images/ae6eeb5b-fd4e-435c-8e01-2e6d2a50a3f6.png",
+        "imageURL": "ae6eeb5b-fd4e-435c-8e01-2e6d2a50a3f6.png",
         "price": 135,
         "time": 7,
         "countryOfOrigin": "Uzbekistan"
@@ -12,25 +12,25 @@
         "id": "b34cbb98-751d-4b57-bfba-388b47671712",
         "title": "Ex dolor aute aute",
         "description": "Ut ex tempor minim minim. Ut laborum occaecat duis Lorem sunt laborum reprehenderit veniam cillum excepteur magna. Labore enim et pariatur labore laboris sint cillum occaecat sit. Ea commodo officia enim aliqua duis occaecat consequat sunt culpa proident esse do voluptate sit.",
-        "imageURL": "images/b34cbb98-751d-4b57-bfba-388b47671712.png",
+        "imageURL": "b34cbb98-751d-4b57-bfba-388b47671712.png",
         "price": 180,
         "time": 8,
         "countryOfOrigin": "Thailand"
     },
     {
         "id": "e1217bb9-dc8a-4ca4-9250-4b56eec4e248",
-        "title": "Enim eiusmod laborum",
-        "description": "Exercitation dolor dolore excepteur Lorem incididunt fugiat nostrud veniam qui mollit proident veniam. Do voluptate magna nisi sit. Ex adipisicing ipsum dolor excepteur duis ullamco mollit dolor est est duis. Laboris eu duis labore culpa culpa dolore est elit nulla minim eu minim fugiat.",
-        "imageURL": "images/e1217bb9-dc8a-4ca4-9250-4b56eec4e248.png",
+        "title": "Интел Парагон суперкомјпутер",
+        "description": "Заснован на Touchstone Delta суперкомјпутеру који је Интел направио у Цалтецх-у, Парагон је паралелни суперкомпјутер који користи 2.048 (касније повећано на више од четири хиљаде) Интел и860 процесора. Више од сто парагона је инсталирано током животног века система, а сваки је коштао чак пет милиона долара. Парагон на Калтеху је 1992. године проглашен најбржим суперкомпјутером на свету. Парагон системи су коришћени у многим научним областима, укључујући студије атмосферских и океанских токова и истраживања енергије.",
+        "imageURL": "e1217bb9-dc8a-4ca4-9250-4b56eec4e248.png",
         "price": 135,
         "time": 7,
-        "countryOfOrigin": "Mozambique"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "a74e92d6-8251-4ef2-9fdd-99ff8b2eb7ca",
         "title": "Velit nostrud id",
         "description": "Occaecat incididunt enim laboris velit esse sit fugiat deserunt duis minim duis. Id duis labore irure ad sint veniam laboris dolore cupidatat cupidatat qui id ad. Magna excepteur enim mollit occaecat. Lorem reprehenderit et commodo eiusmod ipsum aute. Voluptate nisi amet mollit non velit ea veniam cillum qui et velit dolor eiusmod.",
-        "imageURL": "images/a74e92d6-8251-4ef2-9fdd-99ff8b2eb7ca.png",
+        "imageURL": "a74e92d6-8251-4ef2-9fdd-99ff8b2eb7ca.png",
         "price": 105,
         "time": 7,
         "countryOfOrigin": "Kuwait"
@@ -39,7 +39,7 @@
         "id": "74fdecae-8f82-4702-a8fb-2e543b70bf92",
         "title": "Consequat elit adipisicing amet",
         "description": "Duis ullamco do culpa cupidatat ut consequat veniam exercitation labore proident. Sit consectetur et culpa officia enim. Irure non cillum in excepteur consectetur ut laboris pariatur velit. Consequat ad ipsum esse duis excepteur velit dolore Lorem et ullamco adipisicing aliquip ex ipsum. Qui est consequat commodo nulla voluptate anim esse commodo esse proident.",
-        "imageURL": "images/74fdecae-8f82-4702-a8fb-2e543b70bf92.png",
+        "imageURL": "74fdecae-8f82-4702-a8fb-2e543b70bf92.png",
         "price": 270,
         "time": 9,
         "countryOfOrigin": "Ghana"
@@ -48,25 +48,25 @@
         "id": "1fcdab7d-0bd1-42bd-83ed-6c76fc3b4aec",
         "title": "Commodo tempor quis",
         "description": "Fugiat labore et laborum aliqua. Anim proident commodo mollit tempor esse reprehenderit ut do minim eu et officia occaecat excepteur. Mollit exercitation dolor incididunt laborum anim ullamco. Aliqua magna non velit anim ullamco est non magna excepteur adipisicing tempor aliquip. Elit mollit sint incididunt sit exercitation ea ut.",
-        "imageURL": "images/1fcdab7d-0bd1-42bd-83ed-6c76fc3b4aec.png",
+        "imageURL": "1fcdab7d-0bd1-42bd-83ed-6c76fc3b4aec.png",
         "price": 225,
         "time": 8,
         "countryOfOrigin": "Qatar"
     },
     {
         "id": "97f9ed60-dc29-43ea-ae8d-f1c182f821d9",
-        "title": "Ex excepteur",
-        "description": "Pariatur culpa Lorem cupidatat esse voluptate consequat cillum. Sunt amet commodo veniam amet laborum est pariatur qui sint laboris. Tempor eu sint adipisicing amet consectetur. In cillum non ex proident fugiat anim non id culpa dolore duis aliquip. Eu cillum sit dolor commodo anim aliqua excepteur mollit deserunt irure laborum aliquip cupidatat pariatur.",
-        "imageURL": "images/97f9ed60-dc29-43ea-ae8d-f1c182f821d9.png",
+        "title": "Acorn Archimedes микрокомпјутер",
+        "description": "Ацорн-ов АРМ РИСЦ микропроцесор се први пут користи у рачунарском систему компаније Арцхимедес. Једна од водећих британских компјутерских компанија, Ацорн, наставила је линију Арцхимедес, која је нарасла на скоро двадесет различитих модела, до 1990-их. Ацорн је издвојио АРМ као сопствену компанију за лиценцирање дизајна микропроцесора, што је заузврат трансформисало мобилно рачунарство са АРМ-овим процесорима мале снаге, високих перформанси и системима на чипу (СоЦ).",
+        "imageURL": "97f9ed60-dc29-43ea-ae8d-f1c182f821d9.png",
         "price": 360,
         "time": 8,
-        "countryOfOrigin": "Ukraine"
+        "countryOfOrigin": "Велика Британија"
     },
     {
         "id": "d9d0fa9c-6e97-4e25-a6a1-719bfcef1179",
         "title": "Ex anim consectetur",
         "description": "Sunt in minim et mollit ea non commodo minim laborum minim nisi nisi. Do cillum duis adipisicing exercitation voluptate. Ad incididunt id irure nostrud sint aute sunt duis laboris qui deserunt quis et mollit. Deserunt ea laboris culpa dolor amet mollit est exercitation velit culpa reprehenderit. Sunt nostrud ut est et officia sint et Lorem non.",
-        "imageURL": "images/d9d0fa9c-6e97-4e25-a6a1-719bfcef1179.png",
+        "imageURL": "d9d0fa9c-6e97-4e25-a6a1-719bfcef1179.png",
         "price": 135,
         "time": 8,
         "countryOfOrigin": "Rwanda"
@@ -75,7 +75,7 @@
         "id": "48dd4b87-8ddc-4024-a524-8c5c0e734ed7",
         "title": "Mollit eiusmod anim sint magna",
         "description": "Exercitation magna laborum adipisicing sint officia eu non id proident nisi tempor amet laborum. Ex consectetur et do fugiat dolor magna tempor nisi quis do. In anim sit ipsum pariatur eiusmod commodo anim officia. Do commodo minim esse labore laborum. Nostrud minim in do aliquip tempor dolor occaecat aute ullamco aute occaecat dolore proident.",
-        "imageURL": "images/48dd4b87-8ddc-4024-a524-8c5c0e734ed7.png",
+        "imageURL": "48dd4b87-8ddc-4024-a524-8c5c0e734ed7.png",
         "price": 195,
         "time": 10,
         "countryOfOrigin": "Norway"
@@ -84,25 +84,25 @@
         "id": "d80fe7b9-3b50-425a-b70b-40ea386b983a",
         "title": "Consectetur quis ex laboris laborum",
         "description": "Laborum commodo deserunt enim deserunt eu consectetur veniam aliqua nisi exercitation. Et minim ipsum quis id veniam culpa velit occaecat proident exercitation aliqua. Aute cupidatat laborum nostrud nisi.",
-        "imageURL": "images/d80fe7b9-3b50-425a-b70b-40ea386b983a.png",
+        "imageURL": "d80fe7b9-3b50-425a-b70b-40ea386b983a.png",
         "price": 75,
         "time": 5,
         "countryOfOrigin": "East Timor"
     },
     {
         "id": "3023b245-f37b-4f34-bd85-086a1b04c569",
-        "title": "Labore",
-        "description": "Lorem incididunt laboris mollit laboris eiusmod esse laborum. Officia commodo consequat reprehenderit incididunt dolor exercitation veniam labore eiusmod labore ex. Laborum quis minim officia et non. Mollit mollit cillum voluptate tempor cillum cupidatat nostrud mollit reprehenderit dolor deserunt quis nulla pariatur. Do cillum amet et eiusmod sit duis nulla quis officia esse ut.",
-        "imageURL": "images/3023b245-f37b-4f34-bd85-086a1b04c569.png",
+        "title": "Sega Saturn 1",
+        "description": "Сега Сатурн је конзола за кућне видео игре коју је развила Сега и објављена 22. новембра 1994. у Јапану, 11. маја 1995. у Северној Америци и 8. јула 1995. у Европи. Део пете генерације конзола за видео игре, био је наследник успешног Сега Генесис. Сатурн има дуал-ЦПУ архитектуру и осам процесора. Његове игре су у ЦД-РОМ формату, а библиотека игара садржи неколико портова аркадних игара као и оригиналних игара.",
+        "imageURL": "3023b245-f37b-4f34-bd85-086a1b04c569.png",
         "price": 75,
         "time": 6,
-        "countryOfOrigin": "Tajikistan"
+        "countryOfOrigin": "Japan"
     },
     {
         "id": "db7c3326-7f1a-42df-a95c-718506c608c2",
         "title": "Commodo eiusmod ex",
         "description": "Deserunt et voluptate incididunt nulla labore. Qui excepteur ad aliquip labore. Fugiat in amet elit sit ad voluptate mollit Lorem incididunt duis.",
-        "imageURL": "images/db7c3326-7f1a-42df-a95c-718506c608c2.png",
+        "imageURL": "db7c3326-7f1a-42df-a95c-718506c608c2.png",
         "price": 270,
         "time": 7,
         "countryOfOrigin": "Bouvet Island"
@@ -111,70 +111,70 @@
         "id": "1f8659d3-1ed4-4e46-88dd-3c2f8e95b53a",
         "title": "Consectetur exercitation dolore excepteur enim",
         "description": "Dolore fugiat do officia ipsum veniam. Ea laboris irure qui aliqua minim do non nulla aliquip consequat pariatur adipisicing. Amet non tempor eu esse et commodo id magna ipsum cillum tempor pariatur.",
-        "imageURL": "images/1f8659d3-1ed4-4e46-88dd-3c2f8e95b53a.png",
+        "imageURL": "1f8659d3-1ed4-4e46-88dd-3c2f8e95b53a.png",
         "price": 120,
         "time": 10,
         "countryOfOrigin": "Peru"
     },
     {
         "id": "1040ea1b-4280-44fb-a0eb-ac90ca1f24cf",
-        "title": "Sit",
-        "description": "Esse nulla ex ullamco voluptate pariatur enim Lorem adipisicing in aliqua. Do ea amet ad tempor consectetur. Irure aute et dolor commodo irure nisi reprehenderit aliqua esse occaecat quis velit quis. Voluptate veniam consequat esse occaecat.",
-        "imageURL": "images/1040ea1b-4280-44fb-a0eb-ac90ca1f24cf.png",
+        "title": "Neo Geo",
+        "description": "Нео Гео, стилизован као НЕО•ГЕО и такође написан као НЕОГЕО, је аркадна системска плоча заснована на кертриџима и четврта генерација кућне конзоле за видео игре коју је 26. априла 1990. објавила јапанска компанија за игре СНК Цорпоратион. Био је то први систем у СНК-овој Нео Гео породици. Нео Гео је био на тржишту као 24-битни; његов ЦПУ је технички 16/32-битни систем заснован на 68000 са 8-битним З80 копроцесором, док његов ГПУ чипсет има 24-битну графичку магистралу података.",
+        "imageURL": "1040ea1b-4280-44fb-a0eb-ac90ca1f24cf.png",
         "price": 90,
         "time": 10,
-        "countryOfOrigin": "Cook Islands"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "6d5a8a60-e08b-46e8-9d0d-37bd8afa2abb",
         "title": "Proident enim officia cillum elit",
         "description": "Sint deserunt eu et consequat est laboris Lorem labore eu voluptate do. Veniam est sint occaecat minim nostrud mollit enim exercitation consectetur ullamco amet qui ad. Enim anim aliquip ad anim minim. Quis velit minim cillum excepteur proident fugiat minim et reprehenderit culpa. Elit nostrud consectetur sit Lorem occaecat officia deserunt fugiat culpa sunt voluptate consequat ad laboris.",
-        "imageURL": "images/6d5a8a60-e08b-46e8-9d0d-37bd8afa2abb.png",
+        "imageURL": "6d5a8a60-e08b-46e8-9d0d-37bd8afa2abb.png",
         "price": 60,
         "time": 8,
         "countryOfOrigin": "Cocos (Keeling Islands)"
     },
     {
         "id": "9fdb640a-decb-41dd-909e-698b488affdf",
-        "title": "Reprehenderit non enim eu magna",
-        "description": "Est sint deserunt officia incididunt id eu excepteur duis ipsum aliqua et minim adipisicing laborum. Esse laboris incididunt proident eiusmod labore incididunt labore eu Lorem fugiat ut. Excepteur elit laborum ut Lorem aute ipsum commodo irure sunt deserunt consequat. Cillum excepteur et veniam qui enim nisi dolor velit exercitation qui sint occaecat.",
-        "imageURL": "images/9fdb640a-decb-41dd-909e-698b488affdf.png",
+        "title": "Аппле мекнитош (Apple Macintosh)",
+        "description": "Аппле представља Мацинтосх са телевизијском рекламом током Супер Бовл-а 1984., која игра на тему тоталитаризма у књизи Џорџа Орвела из 1984. Оглас је приказивао уништење „Великог брата“ – прикривено спомињање ИБМ-а – кроз моћ личног рачунара који се налази у Мацинтосх-у. Мацинтосх је био први успешан рачунар вођен мишем са графичким корисничким интерфејсом и био је заснован на микропроцесору Моторола 68000. Његова цена је била 2.500 долара.",
+        "imageURL": "9fdb640a-decb-41dd-909e-698b488affdf.png",
         "price": 105,
         "time": 8,
-        "countryOfOrigin": "Pitcairn"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "3f68dba3-07da-4c27-a71c-0d3404de5147",
-        "title": "Consectetur consequat ex magna",
-        "description": "Consectetur voluptate ea ea esse Lorem culpa reprehenderit. Ullamco eiusmod minim officia voluptate deserunt labore excepteur deserunt fugiat pariatur aute anim. Proident nostrud non adipisicing ut.",
-        "imageURL": "images/3f68dba3-07da-4c27-a71c-0d3404de5147.png",
+        "title": "Интелов Touchstone Delta суперкомпјутерски систем",
+        "description": "Достигавши 32 гигафлопса (32 милијарде операција са плутајућим зарезом у секунди), Интелов Тоуцхстоне Делта има 512 процесора који раде независно, распоређених у дводимензионалну комуникациону „мрежу“. Истраживачи са Цалтецх-а су користили овај прототип суперкомпјутера за пројекте као што су обрада сателитских слика у реалном времену и за симулацију молекуларних модела у истраживању АИДС-а. Он би послужио као модел за неколико других значајних вишепроцесорских система који би били међу најбржим на свету.",
+        "imageURL": "3f68dba3-07da-4c27-a71c-0d3404de5147.png",
         "price": 30,
         "time": 10,
-        "countryOfOrigin": "Viet Nam"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "827889db-3d56-473b-b069-c52032ea8882",
         "title": "Nulla irure",
         "description": "Pariatur consequat commodo amet ex quis et. Aliquip adipisicing minim commodo labore ea dolore nostrud commodo magna nostrud occaecat. Minim fugiat laboris dolor dolore nisi deserunt pariatur enim nisi tempor enim do sint. Fugiat labore ipsum aliqua elit ea officia. Sint voluptate nisi magna mollit.",
-        "imageURL": "images/827889db-3d56-473b-b069-c52032ea8882.png",
+        "imageURL": "827889db-3d56-473b-b069-c52032ea8882.png",
         "price": 60,
         "time": 7,
         "countryOfOrigin": "France, Metropolitan"
     },
     {
         "id": "25e4966c-7221-4fc2-a0f7-503c7d1fb733",
-        "title": "Veniam commodo anim mollit",
-        "description": "Non nostrud aute quis labore quis cupidatat cupidatat minim et consectetur. Dolor magna consequat aute duis est nisi eu ad mollit veniam et. Veniam magna velit eiusmod commodo reprehenderit cillum enim duis. Laboris dolor sit officia consequat aliqua qui labore nostrud dolore exercitation eu elit eiusmod duis. Eiusmod ex incididunt magna ullamco occaecat labore aliquip ipsum enim.",
-        "imageURL": "images/25e4966c-7221-4fc2-a0f7-503c7d1fb733.png",
+        "title": "Compaq Deskpro 386",
+        "description": "Цомпак је победио ИБМ на тржишту када је најавио Дескпро 386, први рачунар на тржишту који користи Интелов нови 80386 чип, 32-битни микропроцесор са 275.000 транзистора на сваком чипу. Са 4 милиона операција у секунди и 4 килобајта меморије, 80386 је давао рачунарима исту брзину и снагу као старији мејнфрејмови и мини рачунари. 386 чип је са собом донео увођење 32-битне архитектуре, што је значајно побољшање у односу на 16-битну архитектуру претходних микропроцесора. Имао је два режима рада, један који је одражавао сегментирану меморију старијих к86 чипова, омогућавајући потпуну компатибилност уназад, и један који је у потпуности искористио предности његове напредније технологије. Нови чип је учинио графичка оперативна окружења за ИБМ ПЦ и рачунаре компатибилне са ПЦ практичним. Архитектура која је дозвољавала Виндовс и ИБМ ОС/2 остала је у наредним чиповима.",
+        "imageURL": "25e4966c-7221-4fc2-a0f7-503c7d1fb733.png",
         "price": 105,
         "time": 7,
-        "countryOfOrigin": "Mauritius"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "406c0eb9-5d29-4e2b-8f6d-1b814f1bab51",
         "title": "Magna culpa",
         "description": "Commodo qui consequat excepteur consequat. Ipsum tempor voluptate consequat tempor fugiat consequat enim exercitation qui. Aliqua minim minim laborum in duis aliqua Lorem duis sit ad velit mollit duis.",
-        "imageURL": "images/406c0eb9-5d29-4e2b-8f6d-1b814f1bab51.png",
+        "imageURL": "406c0eb9-5d29-4e2b-8f6d-1b814f1bab51.png",
         "price": 315,
         "time": 5,
         "countryOfOrigin": "Tonga"
@@ -183,7 +183,7 @@
         "id": "8c4e323f-5f17-421f-a1ce-ff2e2fe33431",
         "title": "Consequat fugiat sint ipsum duis",
         "description": "Culpa occaecat dolor esse culpa do quis magna enim. Occaecat fugiat consectetur in nostrud. Magna sunt mollit anim qui esse ad culpa consequat ea irure ut id. Enim exercitation labore culpa dolore nulla fugiat voluptate sint adipisicing aliquip fugiat laborum culpa.",
-        "imageURL": "images/8c4e323f-5f17-421f-a1ce-ff2e2fe33431.png",
+        "imageURL": "8c4e323f-5f17-421f-a1ce-ff2e2fe33431.png",
         "price": 225,
         "time": 9,
         "countryOfOrigin": "Saudi Arabia"
@@ -192,25 +192,16 @@
         "id": "24978fc8-ae5e-49f2-bc4c-c4b5979c760f",
         "title": "Non ad ullamco adipisicing ipsum",
         "description": "Quis culpa consequat minim ipsum do laborum exercitation mollit ad aute aliqua et consectetur et. Nisi esse sunt anim culpa proident eiusmod aliqua exercitation ea. Cupidatat dolore ut irure do nisi in enim magna sit aliquip sit quis magna. Nulla id reprehenderit tempor fugiat anim cillum consectetur quis.",
-        "imageURL": "images/24978fc8-ae5e-49f2-bc4c-c4b5979c760f.png",
+        "imageURL": "24978fc8-ae5e-49f2-bc4c-c4b5979c760f.png",
         "price": 105,
         "time": 10,
         "countryOfOrigin": "Bahrain"
     },
     {
-        "id": "5f90643b-ce9d-4af6-9b1e-cbd822b2a8af",
-        "title": "Ut proident",
-        "description": "Velit quis cupidatat quis sit voluptate mollit nulla esse ullamco. Veniam ipsum nulla Lorem consectetur quis anim fugiat exercitation. Labore deserunt minim consequat quis ipsum enim culpa sunt et culpa pariatur cupidatat amet ea. Culpa occaecat in cupidatat dolore consectetur tempor eiusmod voluptate in qui irure do.",
-        "imageURL": "images/5f90643b-ce9d-4af6-9b1e-cbd822b2a8af.png",
-        "price": 300,
-        "time": 7,
-        "countryOfOrigin": "Chad"
-    },
-    {
         "id": "616bd25b-1bcb-422a-b453-c46ba4ea0dfc",
         "title": "Minim exercitation",
         "description": "Id veniam sint voluptate sunt dolore elit. Voluptate proident dolor excepteur cupidatat duis. Labore excepteur Lorem qui exercitation ut et mollit dolor culpa. Irure ad in cillum dolor occaecat elit laborum pariatur commodo ut fugiat deserunt eu do.",
-        "imageURL": "images/616bd25b-1bcb-422a-b453-c46ba4ea0dfc.png",
+        "imageURL": "616bd25b-1bcb-422a-b453-c46ba4ea0dfc.png",
         "price": 345,
         "time": 5,
         "countryOfOrigin": "Montserrat"
@@ -219,7 +210,7 @@
         "id": "2ac5cb00-cd41-42ed-b2d1-750f2e972566",
         "title": "In aliquip aute exercitation do",
         "description": "Id consectetur et ad adipisicing id amet. Qui consectetur qui ex mollit. Cupidatat consectetur consectetur qui labore. Eiusmod minim aliqua laborum magna qui non consequat in aliquip incididunt aliquip nulla sit. Anim elit nisi esse pariatur exercitation laboris do exercitation deserunt occaecat tempor.",
-        "imageURL": "images/2ac5cb00-cd41-42ed-b2d1-750f2e972566.png",
+        "imageURL": "2ac5cb00-cd41-42ed-b2d1-750f2e972566.png",
         "price": 195,
         "time": 6,
         "countryOfOrigin": "Andorra"
@@ -228,61 +219,61 @@
         "id": "83d7f4be-d7bc-4430-921b-5e1df3a87164",
         "title": "Consectetur",
         "description": "Enim voluptate nisi officia occaecat adipisicing ex nisi cillum. Adipisicing labore et occaecat ad ea ut velit in eiusmod proident cupidatat reprehenderit. Esse elit tempor nisi cupidatat aliquip dolore fugiat sint id velit. Esse adipisicing nostrud ea deserunt enim cupidatat esse ipsum Lorem duis sit voluptate veniam aute.",
-        "imageURL": "images/83d7f4be-d7bc-4430-921b-5e1df3a87164.png",
+        "imageURL": "83d7f4be-d7bc-4430-921b-5e1df3a87164.png",
         "price": 90,
         "time": 5,
         "countryOfOrigin": "Lithuania"
     },
     {
         "id": "40142fe2-eb08-4afa-8623-bb45b0910676",
-        "title": "Sit minim velit cupidatat",
-        "description": "Laborum aute aliquip enim minim sit eu qui. Occaecat commodo occaecat laboris sint elit sunt irure laboris eu. Laborum aliqua laborum deserunt laborum exercitation eiusmod eiusmod aliqua. Velit tempor ipsum nisi minim velit consectetur exercitation consequat.",
-        "imageURL": "images/40142fe2-eb08-4afa-8623-bb45b0910676.png",
+        "title": "HP 2116A",
+        "description": "2116А је први ХП-ов рачунар. Развијен је као свестран инструмент контролер за ХП-ову растућу породицу програма за тестирање и мерење производа. Повезао се са великим бројем стандардних лабораторијских инструмената, омогућавајући корисницима да компјутеризују своје системе инструмената. 2116А је такође означио ХП-ову прву употребу интегрисаних кола у комерцијалном производу.",
+        "imageURL": "40142fe2-eb08-4afa-8623-bb45b0910676.png",
         "price": 30,
         "time": 9,
-        "countryOfOrigin": "Tanzania"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "2c720998-9a1e-4c15-a6e2-130888badd3e",
-        "title": "Laborum commodo et officia",
-        "description": "Duis magna ea amet tempor dolore enim qui. Velit excepteur consequat deserunt cupidatat sint ex consectetur adipisicing cupidatat dolore amet ad. Officia sit minim reprehenderit laboris consectetur laboris eiusmod sint exercitation amet. Commodo nostrud minim laborum aliquip ad reprehenderit non aute officia nulla do commodo magna. Cupidatat adipisicing pariatur ullamco enim ullamco aliqua anim non et.",
-        "imageURL": "images/2c720998-9a1e-4c15-a6e2-130888badd3e.png",
+        "title": "PlayStation 1",
+        "description": "PlayStation је играчка конзола коју је развила јапанска фирма Сони почетком деведесетих. Конзола је изашла на тржиште у децембру 1994. у Јапану. До 2006. године продата је у 100 милиона примерака. Сони PlayStation је прва Сонијева играчка конзола, и заједно са Нинтендо 64 конзолом и Сегиним Сатурном чини 5. генерацију конзола за видео-игре",
+        "imageURL": "2c720998-9a1e-4c15-a6e2-130888badd3e.png",
         "price": 360,
         "time": 5,
-        "countryOfOrigin": "Marshall Islands"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "87ba7c94-fd96-4822-91cd-596150743c36",
-        "title": "Nostrud ad velit",
-        "description": "Officia sit id ut cupidatat esse voluptate veniam nostrud fugiat anim id voluptate ullamco. Minim proident ex fugiat commodo in anim laborum labore id deserunt officia commodo. Elit in consectetur do consectetur aute voluptate ut minim veniam.",
-        "imageURL": "images/87ba7c94-fd96-4822-91cd-596150743c36.png",
+        "title": "Franklin Ace 1000",
+        "description": "Створена скоро пет година након оригиналног Аппле ИИ, Франклинова главна логичка плоча Аце 1000 је скоро идентична оној у Аппле ИИ+ рачунару, а касније су клонирани и други модели. Френклин је успео да снизи Аппле-ове цене чак и док је нудио неке функције које нису биле доступне на оригиналу. У почетку, Френклин је победио на суду дозвољавајући им да наставе са клонирањем машина, али 1988. Аппле је добио тужбу против Франклина због ауторских права, приморавајући их да престану да праве Apple-2 'клонове'.",
+        "imageURL": "87ba7c94-fd96-4822-91cd-596150743c36.png",
         "price": 270,
         "time": 7,
-        "countryOfOrigin": "Reunion"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "72b75da9-b055-41d4-a198-bf6b32e0ffbd",
         "title": "Irure et culpa sit",
         "description": "Eu adipisicing non eu cupidatat aliquip fugiat et et laborum. Adipisicing cillum labore nostrud irure eu laborum voluptate laborum quis dolore. Eu eu sit veniam ea et anim tempor ut minim.",
-        "imageURL": "images/72b75da9-b055-41d4-a198-bf6b32e0ffbd.png",
+        "imageURL": "72b75da9-b055-41d4-a198-bf6b32e0ffbd.png",
         "price": 360,
         "time": 9,
         "countryOfOrigin": "Guyana"
     },
     {
         "id": "77b2511a-6683-41cc-b28f-3bdad20afb92",
-        "title": "Nisi magna dolor nulla",
-        "description": "In do culpa Lorem quis irure et et. Culpa in do irure minim culpa sit in exercitation consectetur occaecat excepteur officia magna ex. Anim pariatur adipisicing sit adipisicing nostrud elit ipsum dolor adipisicing quis ad in eiusmod. Duis eu cillum laborum adipisicing duis. Consequat exercitation fugiat ea officia aliqua do culpa labore quis sit in.",
-        "imageURL": "images/77b2511a-6683-41cc-b28f-3bdad20afb92.png",
+        "title": "Tianhe 1 (Млечни пут 1) суперрачунар",
+        "description": "Са максималном брзином од преко петафлопа (хиљаду трилиона прорачуна у секунди), Тианхе 1 (превод: Млечни пут 1) је развио Кинески национални универзитет за одбрамбену технологију користећи Интел Ксеон процесоре у комбинацији са АМД графичким процесорским јединицама (ГПУ) . Надограђени и бржи Тианхе-1А је такође користио Интел Ксеон ЦПУ, али је прешао на нВидиа Тесла ГПУ и додао више од 2.000 Феи-Танг (базираних на СПАРЦ) процесора. Машине је користила Кинеска академија наука за покретање огромних симулација соларне енергије, као и за неке од најсложенијих молекуларних студија икада предузетих.",
+        "imageURL": "77b2511a-6683-41cc-b28f-3bdad20afb92.png",
         "price": 105,
         "time": 8,
-        "countryOfOrigin": "Brazil"
+        "countryOfOrigin": "Кина"
     },
     {
         "id": "5e06226c-64f2-4e86-8ddd-0a3764e26998",
         "title": "Reprehenderit elit exercitation",
         "description": "Aute aute aute exercitation Lorem veniam excepteur ad pariatur qui. Aute exercitation Lorem dolor esse sunt ad laboris officia deserunt. Anim pariatur proident mollit occaecat reprehenderit aute minim consequat mollit. Magna elit nisi est consectetur sint. Fugiat esse qui pariatur cupidatat aute irure.",
-        "imageURL": "images/5e06226c-64f2-4e86-8ddd-0a3764e26998.png",
+        "imageURL": "5e06226c-64f2-4e86-8ddd-0a3764e26998.png",
         "price": 165,
         "time": 10,
         "countryOfOrigin": "Korea (North)"
@@ -291,7 +282,7 @@
         "id": "42eb275f-4ea9-4d9d-be36-9773861984bb",
         "title": "Fugiat incididunt amet ullamco reprehenderit",
         "description": "Ipsum ipsum ad ex nostrud ea cillum deserunt eiusmod ullamco incididunt proident in. Laboris consectetur velit do consectetur nisi reprehenderit mollit pariatur ad laboris. Minim do eiusmod sint ut exercitation exercitation aute nisi occaecat aliqua Lorem. Nisi aute velit eu Lorem in culpa amet enim id voluptate adipisicing.",
-        "imageURL": "images/42eb275f-4ea9-4d9d-be36-9773861984bb.png",
+        "imageURL": "42eb275f-4ea9-4d9d-be36-9773861984bb.png",
         "price": 120,
         "time": 5,
         "countryOfOrigin": "Turkmenistan"
@@ -300,61 +291,61 @@
         "id": "29d5a38e-926e-4fda-9c05-a338c6072c2b",
         "title": "Reprehenderit adipisicing laborum enim",
         "description": "Officia proident ex do incididunt sit sunt reprehenderit consectetur nisi ex labore ullamco officia deserunt. Mollit quis Lorem eiusmod voluptate irure aute qui voluptate ex quis in nostrud. In et pariatur do ad officia ea laboris culpa aute.",
-        "imageURL": "images/29d5a38e-926e-4fda-9c05-a338c6072c2b.png",
+        "imageURL": "29d5a38e-926e-4fda-9c05-a338c6072c2b.png",
         "price": 15,
         "time": 10,
         "countryOfOrigin": "Malaysia"
     },
     {
         "id": "f0114671-a6c6-4048-b4ac-f8b1e63a1cf2",
-        "title": "Dolore sit non",
-        "description": "Consequat duis amet duis irure ea cupidatat laborum nostrud occaecat ipsum eu enim nisi do. In duis occaecat Lorem irure id consequat cupidatat ex sunt eu anim. Exercitation velit veniam irure do voluptate officia dolore minim occaecat aliquip. Aliquip fugiat est incididunt dolore fugiat nisi exercitation cupidatat aute amet. Laborum Lorem excepteur nulla enim deserunt aliquip consequat.",
-        "imageURL": "images/f0114671-a6c6-4048-b4ac-f8b1e63a1cf2.png",
+        "title": "Machintosh Powerbook 150",
+        "description": "Apple's Macintosh Portable meets with little success in the marketplace and leads to a complete redesign of Apple's line of portable computers. All three PowerBooks introduced featured a built-in trackball, internal floppy drive, and palm rests, which would eventually become typical of 1990s laptop design. The PowerBook 100 was the entry-level machine, while the PowerBook 140 was more powerful and had a larger memory. The PowerBook 170 was the high-end model, featuring an active matrix display, faster processor, as well as a floating point unit. The PowerBook line of computers was discontinued in 2006.",
+        "imageURL": "f0114671-a6c6-4048-b4ac-f8b1e63a1cf2.png",
         "price": 210,
         "time": 8,
-        "countryOfOrigin": "New Zealand"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "6d05fcf1-a5bb-429d-bd0c-28f84182d092",
         "title": "Ea elit Lorem nisi",
         "description": "Elit occaecat exercitation anim laborum laborum elit sit commodo est eu nostrud esse. Occaecat eiusmod deserunt excepteur ipsum. Exercitation veniam reprehenderit laboris do in mollit dolor magna ex anim ipsum minim in. Commodo amet Lorem duis cillum nulla tempor laboris fugiat qui exercitation nisi est. Exercitation culpa occaecat velit aliquip labore ipsum duis aute ex ullamco velit Lorem.",
-        "imageURL": "images/6d05fcf1-a5bb-429d-bd0c-28f84182d092.png",
+        "imageURL": "6d05fcf1-a5bb-429d-bd0c-28f84182d092.png",
         "price": 300,
         "time": 7,
         "countryOfOrigin": "Sudan"
     },
     {
         "id": "64382de8-d776-41ad-bbfd-286829a14b51",
-        "title": "Eu id do reprehenderit et",
-        "description": "Est proident magna et sunt nulla. Fugiat nulla exercitation cillum cupidatat do fugiat qui. Pariatur aliqua excepteur labore amet et enim ipsum eu mollit. Proident qui id mollit non ullamco do reprehenderit proident ex duis dolor.",
-        "imageURL": "images/64382de8-d776-41ad-bbfd-286829a14b51.png",
+        "title": "Нинтендо 64 N64",
+        "description": "Нинтендо 64 је конзола за кућне видео игре коју је развио Нинтендо. Наследник Супер Нинтендо Ентертаинмент Систем-а, објављен је 23. јуна 1996. у Јапану, 29. септембра 1996. у Северној Америци и 1. марта 1997. у Европи и Аустралији. Била је то последња велика кућна конзола која је користила кертриџе као примарни формат за складиштење све до Нинтендо Свитцх-а 2017. Као конзола пете генерације, такмичила се првенствено са Сони ПлаиСтатион-ом, Сега Сатурном и накратко Сега Дреамцаст-ом.",
+        "imageURL": "64382de8-d776-41ad-bbfd-286829a14b51.png",
         "price": 285,
         "time": 5,
-        "countryOfOrigin": "Antigua and Barbuda"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "c8b1884c-eeee-4095-9702-c709d058a2be",
-        "title": "Nulla fugiat et",
-        "description": "Pariatur quis commodo cillum aute laborum. Veniam Lorem sint laboris excepteur veniam irure adipisicing aute labore et velit duis ipsum ut. Occaecat laboris velit ad in dolore exercitation cillum cupidatat sunt nulla.",
-        "imageURL": "images/c8b1884c-eeee-4095-9702-c709d058a2be.png",
+        "title": "IBM PC Jr.",
+        "description": "ПЦ Јр. се продаје као кућни рачунар, али је прескуп и ограничен у перформансама да би се такмичио са многим другим машинама на том тржишту. Њена „цхицлет“ тастатура је такође критикована због лоше ергономије. Док се ПЦ Јр. продавао слабо, ПЦ/АТ се продавао у милионима. Понудио је повећане перформансе и капацитет складиштења у односу на оригинални ИБМ ПЦ и продат је за око 4.000 долара. Такође је укључивао више меморије и смештене флопи дискове високе густине од 1,2 мегабајта од 5 1/4 инча.",
+        "imageURL": "c8b1884c-eeee-4095-9702-c709d058a2be.png",
         "price": 195,
         "time": 9,
-        "countryOfOrigin": "Somalia"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "fa85c866-1170-44ab-b0a0-a0580d1f1837",
-        "title": "Sit duis voluptate aute",
-        "description": "Enim velit veniam do nostrud dolore elit ut. Quis do incididunt sint excepteur veniam proident nisi cillum minim sunt ex. Culpa laborum velit minim reprehenderit in sint.",
-        "imageURL": "images/fa85c866-1170-44ab-b0a0-a0580d1f1837.png",
+        "title": "Apple-1",
+        "description": "Дизајниран од стране Санивејла, родом из Калифорније, Стевеа Возниака, а који је продао његов пријатељ Стив Џобс, Аппле-1 је рачунар на једној плочи за хобисте. Са наруџбом за 50 склопљених система из продавнице компјутера Тхе Бите Схоп у Маунтин Вјуу у Калифорнији, пар је основао нову компанију, назвавши је Аппле Цомпутер, Инц. Све у свему, око 200 плоча је продато пре него што је Аппле најавио следеће- на Аппле ИИ годину дана касније као рачунар спреман за употребу за потрошаче, модел који се продавао у милионима скоро две деценије.",
+        "imageURL": "fa85c866-1170-44ab-b0a0-a0580d1f1837.png",
         "price": 375,
         "time": 7,
-        "countryOfOrigin": "Turkey"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "a77090e9-b3e8-4c8f-94ae-1cf77b91e6dd",
         "title": "Non",
         "description": "Do id pariatur id id ex laboris anim ex exercitation. Deserunt consequat veniam sunt aliqua occaecat ex enim enim ipsum ad adipisicing. Consequat non laboris aliquip aute.",
-        "imageURL": "images/a77090e9-b3e8-4c8f-94ae-1cf77b91e6dd.png",
+        "imageURL": "a77090e9-b3e8-4c8f-94ae-1cf77b91e6dd.png",
         "price": 90,
         "time": 7,
         "countryOfOrigin": "Greece"
@@ -363,7 +354,7 @@
         "id": "47f19aff-2787-48c8-bae2-f6287a079a28",
         "title": "Sunt",
         "description": "Nulla laboris nostrud esse incididunt consectetur aliquip incididunt qui nulla enim. Sit cupidatat voluptate occaecat velit amet minim fugiat aliquip anim ea anim enim. Nostrud aliquip elit ad dolore et. Cillum proident minim aliqua cupidatat irure laborum. Sunt in quis incididunt consequat adipisicing laborum.",
-        "imageURL": "images/47f19aff-2787-48c8-bae2-f6287a079a28.png",
+        "imageURL": "47f19aff-2787-48c8-bae2-f6287a079a28.png",
         "price": 255,
         "time": 5,
         "countryOfOrigin": "Jamaica"
@@ -372,43 +363,43 @@
         "id": "47e7f59f-e55a-4170-9e89-d1e57f3a7384",
         "title": "Culpa",
         "description": "Laboris eiusmod eiusmod id aliqua sint commodo eu irure deserunt enim. Consequat tempor esse aliqua qui dolor cillum. Laboris culpa duis velit irure cupidatat anim in anim irure. Sint proident mollit aute enim labore ut mollit. Sit ullamco incididunt consequat magna id irure et irure enim esse.",
-        "imageURL": "images/47e7f59f-e55a-4170-9e89-d1e57f3a7384.png",
+        "imageURL": "47e7f59f-e55a-4170-9e89-d1e57f3a7384.png",
         "price": 180,
         "time": 5,
         "countryOfOrigin": "Niue"
     },
     {
         "id": "066daac4-96f7-4842-8d19-f379c33f7a3c",
-        "title": "Fugiat est",
-        "description": "Labore consectetur consequat culpa veniam sit sit. Occaecat Lorem esse irure magna commodo exercitation irure pariatur anim exercitation veniam. Ad minim nostrud occaecat aliqua adipisicing duis sunt sint deserunt elit esse nostrud ipsum cupidatat.",
-        "imageURL": "images/066daac4-96f7-4842-8d19-f379c33f7a3c.png",
+        "title": "IBM 7030 (“Stretch”)",
+        "description": "ИБМ-ова 7000 серија маинфраме рачунара је прва компанија која користи транзисторе. На врху линије био је модел 7030, такође познат као 'Стретцх'. Девет компјутера, који су садржали десетине напредних дизајнерских иновација, продато је, углавном, националним лабораторијама и великим научним корисницима. Посебна верзија, позната као ХАРВЕСТ, развијена је за Агенцију за националну безбедност САД (НСА). Знање и технологије развијене за Стретцх пројекат су одиграле главну улогу у дизајну, управљању и производњи каснијег ИБМ Систем/360 – најуспешније породице рачунара у историји ИБМ-а.",
+        "imageURL": "066daac4-96f7-4842-8d19-f379c33f7a3c.png",
         "price": 300,
         "time": 10,
-        "countryOfOrigin": "Kazakhstan"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "9b92f9ed-917c-41a6-a679-f2d3e663709b",
         "title": "Sint velit magna ex",
         "description": "Sunt duis do excepteur qui in laborum sunt aliquip reprehenderit cillum voluptate. Sit mollit ea do esse duis elit consequat qui eu occaecat elit proident. Laborum aliquip exercitation occaecat dolor anim fugiat ex sit sint amet.",
-        "imageURL": "images/9b92f9ed-917c-41a6-a679-f2d3e663709b.png",
+        "imageURL": "9b92f9ed-917c-41a6-a679-f2d3e663709b.png",
         "price": 375,
         "time": 7,
         "countryOfOrigin": "French Guiana"
     },
     {
         "id": "3b0433a6-968d-47f8-a6e4-15d37ff28623",
-        "title": "Ipsum",
-        "description": "Ullamco ipsum sit labore deserunt incididunt. Do Lorem nisi culpa commodo amet Lorem sunt ullamco. Adipisicing mollit reprehenderit esse elit officia aliquip sit velit nisi laborum mollit duis. Elit dolore pariatur aute aliqua tempor dolore eiusmod consequat culpa sunt est dolor. Voluptate eiusmod labore veniam anim dolor consequat magna nisi.",
-        "imageURL": "images/3b0433a6-968d-47f8-a6e4-15d37ff28623.png",
+        "title": "Virtual Boy",
+        "description": "Virtual Boy је 32-битна столна преносива конзола за видео игре коју је развио и произвео Нинтендо. Објављена 1995. године, рекламирана је као прва конзола способна да приказује стереоскопску '3Д' графику. Плејер користи конзолу као екран на глави, постављајући главу на окулар да би видео црвени монохроматски екран. Игре користе ефекат паралаксе да би створиле илузију дубине. Продаја није успела да испуни циљеве, а Нинтендо је прекинуо дистрибуцију и развој игара 1996. године, након што је објавио само 22 игре за систем.",
+        "imageURL": "3b0433a6-968d-47f8-a6e4-15d37ff28623.png",
         "price": 315,
         "time": 10,
-        "countryOfOrigin": "Netherlands"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "27c372d6-b99a-43ce-83ee-3578e03a87b8",
         "title": "Nulla eu",
         "description": "Esse excepteur Lorem do duis. Amet deserunt aute ullamco amet elit nisi esse dolore. Sit consequat dolore nulla velit. Irure aute adipisicing voluptate consequat ex ipsum adipisicing.",
-        "imageURL": "images/27c372d6-b99a-43ce-83ee-3578e03a87b8.png",
+        "imageURL": "27c372d6-b99a-43ce-83ee-3578e03a87b8.png",
         "price": 255,
         "time": 9,
         "countryOfOrigin": "Czech Republic"
@@ -417,7 +408,7 @@
         "id": "69f31007-56a4-4b15-8fe2-e93f7b6dbd6b",
         "title": "Consectetur enim enim occaecat ipsum",
         "description": "Do incididunt excepteur magna dolor ad. Eu do sit duis consequat magna officia mollit nostrud amet. Aliquip qui do magna aute irure officia sit velit dolor sint et fugiat.",
-        "imageURL": "images/69f31007-56a4-4b15-8fe2-e93f7b6dbd6b.png",
+        "imageURL": "69f31007-56a4-4b15-8fe2-e93f7b6dbd6b.png",
         "price": 90,
         "time": 7,
         "countryOfOrigin": "India"
@@ -426,7 +417,7 @@
         "id": "3546abcd-5eb1-42e6-811c-1ffef715540c",
         "title": "Mollit Lorem ad exercitation",
         "description": "Minim eiusmod eiusmod officia fugiat do sunt nisi eiusmod pariatur eiusmod nulla minim labore. Culpa minim qui non sit enim. Incididunt nulla duis magna et eiusmod commodo cillum minim est quis.",
-        "imageURL": "images/3546abcd-5eb1-42e6-811c-1ffef715540c.png",
+        "imageURL": "3546abcd-5eb1-42e6-811c-1ffef715540c.png",
         "price": 30,
         "time": 9,
         "countryOfOrigin": "Angola"
@@ -435,7 +426,7 @@
         "id": "82c66438-7373-452f-83bd-be0cd9730748",
         "title": "Est",
         "description": "Et magna nulla sunt eu. Quis Lorem in labore mollit nisi sunt est nisi quis. Nostrud nulla Lorem excepteur minim Lorem quis incididunt voluptate aliqua.",
-        "imageURL": "images/82c66438-7373-452f-83bd-be0cd9730748.png",
+        "imageURL": "82c66438-7373-452f-83bd-be0cd9730748.png",
         "price": 165,
         "time": 7,
         "countryOfOrigin": "Armenia"
@@ -444,7 +435,7 @@
         "id": "c37aaf17-5989-4bb9-81eb-39705edece94",
         "title": "Amet duis quis occaecat dolor",
         "description": "Cillum ad incididunt adipisicing minim. Ea do incididunt consectetur dolore aute pariatur laborum culpa laboris laboris. Duis enim nostrud ea est.",
-        "imageURL": "images/c37aaf17-5989-4bb9-81eb-39705edece94.png",
+        "imageURL": "c37aaf17-5989-4bb9-81eb-39705edece94.png",
         "price": 120,
         "time": 9,
         "countryOfOrigin": "Gibraltar"
@@ -453,7 +444,7 @@
         "id": "a14c621b-8b9c-4d67-a44c-e3a3949e33e4",
         "title": "Magna pariatur dolor enim laboris",
         "description": "Eiusmod excepteur cupidatat eu qui veniam nostrud elit ea excepteur pariatur mollit in. Eu ut culpa eu non tempor id. Aliquip aliqua voluptate enim do veniam irure excepteur ipsum sit. Ex anim consequat dolore aute.",
-        "imageURL": "images/a14c621b-8b9c-4d67-a44c-e3a3949e33e4.png",
+        "imageURL": "a14c621b-8b9c-4d67-a44c-e3a3949e33e4.png",
         "price": 375,
         "time": 10,
         "countryOfOrigin": "Norfolk Island"
@@ -462,7 +453,7 @@
         "id": "2a2a95a7-85ff-40cb-b99f-f23bde8bf35c",
         "title": "Voluptate culpa laboris dolor",
         "description": "Pariatur Lorem minim enim excepteur et duis. Commodo consequat sit commodo et anim Lorem magna dolor nostrud elit minim laboris aute proident. Dolore culpa proident amet cupidatat nisi est reprehenderit sit qui nostrud dolore. Ut nisi pariatur nisi nisi elit.",
-        "imageURL": "images/2a2a95a7-85ff-40cb-b99f-f23bde8bf35c.png",
+        "imageURL": "2a2a95a7-85ff-40cb-b99f-f23bde8bf35c.png",
         "price": 270,
         "time": 5,
         "countryOfOrigin": "Saint Vincent and The Grenadines"
@@ -471,7 +462,7 @@
         "id": "1b9a192f-53de-4382-a008-416ae97c102f",
         "title": "Amet occaecat et incididunt",
         "description": "Excepteur adipisicing cupidatat commodo consequat nulla do. Enim excepteur officia irure aliqua ex tempor est dolor anim officia amet do. Veniam tempor excepteur in aute Lorem cupidatat laborum aliqua quis adipisicing aliqua excepteur.",
-        "imageURL": "images/1b9a192f-53de-4382-a008-416ae97c102f.png",
+        "imageURL": "1b9a192f-53de-4382-a008-416ae97c102f.png",
         "price": 180,
         "time": 5,
         "countryOfOrigin": "Oman"
@@ -480,7 +471,7 @@
         "id": "8d2a4ff5-59b4-43cd-87c6-e9a897521ee5",
         "title": "Minim mollit exercitation adipisicing ut",
         "description": "Magna sit labore eiusmod laborum non exercitation enim quis. Id tempor incididunt magna reprehenderit velit nisi et culpa. Dolor sunt proident ea proident ea dolore adipisicing adipisicing laboris est.",
-        "imageURL": "images/8d2a4ff5-59b4-43cd-87c6-e9a897521ee5.png",
+        "imageURL": "8d2a4ff5-59b4-43cd-87c6-e9a897521ee5.png",
         "price": 150,
         "time": 6,
         "countryOfOrigin": "Iraq"
@@ -489,7 +480,7 @@
         "id": "967415eb-9eb5-419d-979d-04477b49ac58",
         "title": "Officia cillum duis sint",
         "description": "Magna adipisicing culpa ex nulla in enim reprehenderit. Non in sunt est cupidatat cillum in ullamco. Id do consequat elit eiusmod ex eu ea sit. Cillum nulla nulla ut sint occaecat nulla cillum laboris reprehenderit laborum ullamco eu cillum. Do cillum adipisicing occaecat ipsum qui esse mollit eiusmod eu ullamco.",
-        "imageURL": "images/967415eb-9eb5-419d-979d-04477b49ac58.png",
+        "imageURL": "967415eb-9eb5-419d-979d-04477b49ac58.png",
         "price": 90,
         "time": 6,
         "countryOfOrigin": "Tokelau"
@@ -498,43 +489,34 @@
         "id": "682978c0-f182-4f84-9897-d9cc60fdfbe4",
         "title": "Elit consequat qui nostrud",
         "description": "In dolor est culpa cupidatat nostrud ad excepteur. Veniam aute nisi labore nostrud. Eiusmod consequat laboris amet aliqua culpa anim reprehenderit elit ea ipsum in. Ex cillum eiusmod veniam ullamco in ut adipisicing cupidatat et.",
-        "imageURL": "images/682978c0-f182-4f84-9897-d9cc60fdfbe4.png",
+        "imageURL": "682978c0-f182-4f84-9897-d9cc60fdfbe4.png",
         "price": 360,
         "time": 10,
         "countryOfOrigin": "Libya"
     },
     {
         "id": "f40de358-f586-4692-8795-381f8652f28b",
-        "title": "Occaecat",
-        "description": "Labore excepteur nisi dolore et irure ea sit enim. Est sint dolor laboris anim duis qui occaecat proident mollit Lorem labore esse. Officia nulla ex irure culpa eiusmod consectetur. Aute occaecat elit tempor fugiat ad dolor nulla ex id culpa. Non irure in velit amet aliqua labore aliqua laboris tempor dolore duis ipsum nulla.",
-        "imageURL": "images/f40de358-f586-4692-8795-381f8652f28b.png",
+        "title": "Суперкомпјутер НАСА Амес истраживачког центра",
+        "description": "Назван у част спејс шатла који се распао при поновном уласку, суперкомпјутер Цолумбиа је важан део НАСА-иног повратка свемирским летовима са људском посадом након катастрофе 2003. године. Колумбија је коришћена у анализи свемирских возила, укључујући проучавање катастрофе у Колумбији, али и у астрофизици, моделирању времена и океана. Приликом свог представљања, био је наведен као други најбржи суперкомпјутер на свету и овај јединствени систем је повећао НАСА-ин капацитет суперрачунара 10 пута. Систем је држан у НАСА Амес истраживачком центру до 2013. године, када је уклоњен да би се направио простор за два нова суперкомпјутера.",
+        "imageURL": "f40de358-f586-4692-8795-381f8652f28b.png",
         "price": 15,
         "time": 5,
-        "countryOfOrigin": "Japan"
-    },
-    {
-        "id": "8b2d05ba-a322-4c9a-b715-1734bf45121c",
-        "title": "Eiusmod elit ex non elit",
-        "description": "Excepteur commodo fugiat adipisicing dolore consequat ipsum. Cillum anim et labore aliquip. Dolore officia nulla duis reprehenderit Lorem culpa ipsum laboris incididunt labore.",
-        "imageURL": "images/8b2d05ba-a322-4c9a-b715-1734bf45121c.png",
-        "price": 375,
-        "time": 7,
-        "countryOfOrigin": "Liechtenstein"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "0ca80b3c-ec79-424f-a149-51b16b6e21a3",
-        "title": "Laborum laboris minim nulla",
-        "description": "Anim eu qui fugiat est adipisicing Lorem id veniam id ad dolore adipisicing sint ullamco. Magna elit quis ea in magna eu eu ipsum cupidatat est ut excepteur. Tempor ipsum do sunt cillum consequat ea sunt exercitation.",
-        "imageURL": "images/0ca80b3c-ec79-424f-a149-51b16b6e21a3.png",
+        "title": "Комодор (Commodore) 64 систем",
+        "description": "Ц64, као што је познатији, продаје се за 595 долара, долази са 64 КБ РАМ-а и има импресивну графику. Хиљаде софтверских наслова објављено је током животног века модела Ц64 и до тренутка када је укинут 1993. године, продат је више од 22 милиона јединица. Препознат је у Гинисовој књизи светских рекорда из 2006. године као најпродаванији појединачни рачунар свих времена.",
+        "imageURL": "0ca80b3c-ec79-424f-a149-51b16b6e21a3.png",
         "price": 300,
         "time": 7,
-        "countryOfOrigin": "Latvia"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "c89e5c3d-faab-4ef2-a86e-d5306e927dbd",
         "title": "Pariatur",
         "description": "Excepteur do enim occaecat culpa in cillum irure eiusmod. Et laboris aliqua anim proident sint esse aute laborum ullamco nulla consectetur. Cillum commodo duis ad nostrud aute officia.",
-        "imageURL": "images/c89e5c3d-faab-4ef2-a86e-d5306e927dbd.png",
+        "imageURL": "c89e5c3d-faab-4ef2-a86e-d5306e927dbd.png",
         "price": 360,
         "time": 7,
         "countryOfOrigin": "Macedonia"
@@ -543,7 +525,7 @@
         "id": "dd059bf6-aff2-4aa5-a6ad-2f98adb63890",
         "title": "Cupidatat cupidatat aliqua do est",
         "description": "Et fugiat enim esse laborum aliqua qui ipsum. Irure consectetur anim eiusmod excepteur cupidatat ipsum consectetur velit commodo commodo voluptate. Sit esse do consectetur Lorem consequat aute sint sunt exercitation enim laborum laborum irure pariatur. Reprehenderit aliqua irure Lorem est commodo eu. Proident velit elit id elit ex.",
-        "imageURL": "images/dd059bf6-aff2-4aa5-a6ad-2f98adb63890.png",
+        "imageURL": "dd059bf6-aff2-4aa5-a6ad-2f98adb63890.png",
         "price": 105,
         "time": 10,
         "countryOfOrigin": "Lebanon"
@@ -552,7 +534,7 @@
         "id": "bc2290ac-6e27-47da-af68-ce1aba989ef4",
         "title": "Cupidatat consectetur irure Lorem non",
         "description": "Sunt occaecat consequat eu sit. Ullamco enim anim laboris nulla sit. Cillum laborum nulla ex enim do culpa velit nulla sunt amet mollit laboris ex quis. Occaecat ullamco ex pariatur in cillum ut labore magna officia aliqua.",
-        "imageURL": "images/bc2290ac-6e27-47da-af68-ce1aba989ef4.png",
+        "imageURL": "bc2290ac-6e27-47da-af68-ce1aba989ef4.png",
         "price": 45,
         "time": 6,
         "countryOfOrigin": "Benin"
@@ -561,7 +543,7 @@
         "id": "4d620129-cccc-42ea-87f0-60347aec2b97",
         "title": "Ad officia deserunt",
         "description": "Mollit dolore ut enim amet eiusmod nostrud. Enim culpa ipsum mollit occaecat dolore esse duis aliqua non voluptate non nisi. Non dolore ipsum pariatur aliqua ipsum. Quis esse culpa labore commodo adipisicing nostrud incididunt.",
-        "imageURL": "images/4d620129-cccc-42ea-87f0-60347aec2b97.png",
+        "imageURL": "4d620129-cccc-42ea-87f0-60347aec2b97.png",
         "price": 330,
         "time": 9,
         "countryOfOrigin": "Guam"
@@ -570,7 +552,7 @@
         "id": "07f9636b-230c-4cc5-bdf5-23dd99d954db",
         "title": "Non laboris officia enim",
         "description": "Id consectetur dolor nulla qui ipsum incididunt. Nulla occaecat consectetur duis ullamco id aliqua minim adipisicing. Occaecat ad occaecat dolor minim laboris duis dolor commodo. Consequat adipisicing veniam nisi proident esse ullamco et ipsum velit officia fugiat tempor.",
-        "imageURL": "images/07f9636b-230c-4cc5-bdf5-23dd99d954db.png",
+        "imageURL": "07f9636b-230c-4cc5-bdf5-23dd99d954db.png",
         "price": 360,
         "time": 5,
         "countryOfOrigin": "Hungary"
@@ -579,7 +561,7 @@
         "id": "cb792f79-479d-4e46-81a8-218ce3dd13be",
         "title": "Do veniam culpa excepteur consectetur",
         "description": "Aliquip dolor esse veniam aliquip magna dolor nulla cillum exercitation enim anim enim. Ut aliqua irure esse proident. Irure consectetur aliquip ea minim dolore reprehenderit exercitation ipsum magna excepteur. Et ipsum ea ipsum enim commodo irure.",
-        "imageURL": "images/cb792f79-479d-4e46-81a8-218ce3dd13be.png",
+        "imageURL": "cb792f79-479d-4e46-81a8-218ce3dd13be.png",
         "price": 225,
         "time": 8,
         "countryOfOrigin": "Greenland"
@@ -588,7 +570,7 @@
         "id": "22e30ea3-af5f-4593-9e35-f2d0d4deb018",
         "title": "Ad ea enim",
         "description": "Aliqua esse laboris nisi dolor. Velit do tempor pariatur anim. Culpa magna culpa ex enim eu laboris. Commodo laborum eiusmod irure tempor veniam.",
-        "imageURL": "images/22e30ea3-af5f-4593-9e35-f2d0d4deb018.png",
+        "imageURL": "22e30ea3-af5f-4593-9e35-f2d0d4deb018.png",
         "price": 285,
         "time": 10,
         "countryOfOrigin": "Nepal"
@@ -597,7 +579,7 @@
         "id": "58dbf2b2-ca81-42d6-85c9-1c48da1772aa",
         "title": "Pariatur cupidatat",
         "description": "Qui laborum pariatur ut sunt culpa. Consequat sunt exercitation eu consequat id proident minim ex exercitation magna. Anim magna sunt occaecat sint nostrud laborum exercitation officia eu veniam fugiat. Cillum et adipisicing enim occaecat eiusmod ex Lorem. Adipisicing irure ea occaecat fugiat enim anim dolore quis esse labore nostrud ea reprehenderit non.",
-        "imageURL": "images/58dbf2b2-ca81-42d6-85c9-1c48da1772aa.png",
+        "imageURL": "58dbf2b2-ca81-42d6-85c9-1c48da1772aa.png",
         "price": 330,
         "time": 8,
         "countryOfOrigin": "Dominica"
@@ -606,7 +588,7 @@
         "id": "6c40359e-fb43-43d9-8179-c9a9fbf0d622",
         "title": "Aliqua commodo exercitation in",
         "description": "Dolore mollit culpa deserunt culpa consectetur. Non minim aliquip consequat qui nisi. Duis adipisicing nisi consectetur mollit.",
-        "imageURL": "images/6c40359e-fb43-43d9-8179-c9a9fbf0d622.png",
+        "imageURL": "6c40359e-fb43-43d9-8179-c9a9fbf0d622.png",
         "price": 105,
         "time": 10,
         "countryOfOrigin": "Ethiopia"
@@ -615,7 +597,7 @@
         "id": "3630c9d8-ce18-466a-bf42-5421265ad0bb",
         "title": "Eu eu consequat cupidatat mollit",
         "description": "Labore consectetur quis nostrud commodo laboris aliquip deserunt officia sit irure aute laborum. Cupidatat magna adipisicing minim aute magna. Laboris sunt excepteur laborum labore occaecat nisi aliqua laboris dolor pariatur id sit proident nulla.",
-        "imageURL": "images/3630c9d8-ce18-466a-bf42-5421265ad0bb.png",
+        "imageURL": "3630c9d8-ce18-466a-bf42-5421265ad0bb.png",
         "price": 60,
         "time": 9,
         "countryOfOrigin": "Samoa"
@@ -624,7 +606,7 @@
         "id": "0511a6f0-5cbb-4ba5-864d-c0d9f5d91656",
         "title": "Ipsum deserunt excepteur sunt consequat",
         "description": "Adipisicing ea nulla cillum sint dolore culpa sint ut minim. Veniam ut sunt mollit ullamco anim elit mollit sint consequat. Consequat dolore sint occaecat aliqua eiusmod velit aliquip proident anim laboris reprehenderit. Aliqua eiusmod consectetur eiusmod duis veniam in laborum non magna.",
-        "imageURL": "images/0511a6f0-5cbb-4ba5-864d-c0d9f5d91656.png",
+        "imageURL": "0511a6f0-5cbb-4ba5-864d-c0d9f5d91656.png",
         "price": 165,
         "time": 6,
         "countryOfOrigin": "Cuba"
@@ -633,7 +615,7 @@
         "id": "ded2ec24-21a8-4f30-b36e-21e22d597338",
         "title": "Sit fugiat cupidatat",
         "description": "Irure occaecat veniam sint do irure velit amet ut. Sint excepteur ex do nisi mollit eiusmod qui consequat qui. Sunt tempor esse occaecat eiusmod enim laborum. Sunt irure sunt tempor enim irure pariatur dolore sit. Deserunt excepteur ut id tempor consequat dolore irure.",
-        "imageURL": "images/ded2ec24-21a8-4f30-b36e-21e22d597338.png",
+        "imageURL": "ded2ec24-21a8-4f30-b36e-21e22d597338.png",
         "price": 165,
         "time": 5,
         "countryOfOrigin": "Nauru"
@@ -642,7 +624,7 @@
         "id": "65436e1e-97df-47eb-ab47-007d576e0948",
         "title": "Ipsum ut eu in ex",
         "description": "Esse ut eiusmod officia tempor fugiat pariatur laboris voluptate culpa laboris. Do sit sit fugiat velit ullamco commodo. Consequat duis nulla ea labore irure laborum incididunt quis fugiat tempor deserunt. Occaecat anim officia ea nisi laborum duis ea. Excepteur minim qui esse et amet non minim non non duis.",
-        "imageURL": "images/65436e1e-97df-47eb-ab47-007d576e0948.png",
+        "imageURL": "65436e1e-97df-47eb-ab47-007d576e0948.png",
         "price": 210,
         "time": 5,
         "countryOfOrigin": "Faroe Islands"
@@ -651,52 +633,43 @@
         "id": "fd4da3f2-7869-4642-bab5-23cf59c2265f",
         "title": "In deserunt duis elit duis",
         "description": "Dolor fugiat ex magna Lorem anim eu aliqua Lorem reprehenderit nisi. Dolor eu nulla nostrud proident et aliqua velit commodo quis. Consequat ipsum nisi quis ea in nulla ullamco dolore eu deserunt incididunt. Nisi elit magna qui quis culpa aliqua.",
-        "imageURL": "images/fd4da3f2-7869-4642-bab5-23cf59c2265f.png",
+        "imageURL": "fd4da3f2-7869-4642-bab5-23cf59c2265f.png",
         "price": 135,
         "time": 9,
         "countryOfOrigin": "Suriname"
     },
     {
         "id": "5a63d418-4cda-4f32-803c-0d364aeace75",
-        "title": "Magna ut",
-        "description": "Eu fugiat anim occaecat incididunt duis do sint dolor minim tempor ipsum cillum aliquip occaecat. Officia adipisicing proident pariatur non exercitation anim aliquip nostrud consectetur cupidatat. Exercitation incididunt ea dolore non voluptate consequat esse sunt nulla.",
-        "imageURL": "images/5a63d418-4cda-4f32-803c-0d364aeace75.png",
+        "title": "Диференцијална машина Чарса Бебича #2",
+        "description": "На основу другог дизајна Чарлса Бебиџа за машину за механичко рачунање, тим у Музеју науке у Лондону покушава да докаже да би дизајн функционисао како је планирано. Предвођен кустосом Дороном Свадеом, тим је направио Бебиџову машину за шест година, користећи технике које су биле доступне Бебиџу у то време, доказујући да је Бебиџов дизајн био тачан и да је могао да буде направљен у његово време.",
+        "imageURL": "5a63d418-4cda-4f32-803c-0d364aeace75.png",
         "price": 60,
         "time": 9,
-        "countryOfOrigin": "United States"
+        "countryOfOrigin": "Велика Британија"
     },
     {
         "id": "65644b50-c3f7-4fa1-9434-bbd41f61a547",
         "title": "Deserunt eu",
         "description": "Qui ut cupidatat ad aliquip. Et ad officia officia adipisicing ipsum duis anim aute culpa aliqua labore esse magna nulla. Ad sit consectetur fugiat eiusmod excepteur consectetur. Qui duis dolor culpa voluptate qui aliqua nostrud aute. Laborum eiusmod reprehenderit magna aute laborum cupidatat qui eu.",
-        "imageURL": "images/65644b50-c3f7-4fa1-9434-bbd41f61a547.png",
+        "imageURL": "65644b50-c3f7-4fa1-9434-bbd41f61a547.png",
         "price": 225,
         "time": 6,
         "countryOfOrigin": "Italy"
     },
     {
         "id": "4bab23c8-5455-4204-967a-2240d1aa0ddd",
-        "title": "Excepteur",
-        "description": "Ipsum amet ut excepteur velit aliquip commodo esse cillum elit voluptate velit consequat occaecat. Nostrud non amet duis duis fugiat sint officia. Reprehenderit fugiat commodo in do pariatur quis elit consectetur incididunt consequat aute. Aliqua cillum elit reprehenderit est nisi labore veniam aute.",
-        "imageURL": "images/4bab23c8-5455-4204-967a-2240d1aa0ddd.png",
+        "title": "Micral",
+        "description": "Заснован на Интел 8008 микропроцесору, Мицрал је један од најранијих комерцијалних персоналних рачунара без комплета. Дизајнер Тхи Труонг је развио рачунар док је Пхилиппе Кахн написао софтвер. Труонг, оснивач и председник француске компаније Р2Е, креирао је Мицрал као замену за мини рачунаре у ситуацијама које нису захтевале високе перформансе, као што су контрола процеса и наплата путарине. Продат за 1.750 долара, Мицрал никада није продро на америчко тржиште. 1979. Труонг је продао Р2Е Буллу.",
+        "imageURL": "4bab23c8-5455-4204-967a-2240d1aa0ddd.png",
         "price": 300,
         "time": 9,
-        "countryOfOrigin": "Guatemala"
-    },
-    {
-        "id": "e01aae3f-1301-45e6-a036-154de423ce99",
-        "title": "Dolor occaecat",
-        "description": "Id consequat id reprehenderit et mollit aute amet id deserunt. Commodo et in labore sint do ipsum. Nostrud eu adipisicing labore officia est aliquip proident dolore dolore laboris officia excepteur consectetur sit. Lorem id consectetur irure consectetur ea velit ipsum esse tempor dolore ad cillum.",
-        "imageURL": "images/e01aae3f-1301-45e6-a036-154de423ce99.png",
-        "price": 225,
-        "time": 6,
-        "countryOfOrigin": "Heard and McDonald Islands"
+        "countryOfOrigin": "Француска"
     },
     {
         "id": "b6fc8b4e-f565-4935-a149-aa6e388a9daf",
         "title": "Irure mollit proident anim",
         "description": "Pariatur anim id officia incididunt laboris. Cillum velit minim fugiat amet elit eiusmod. Voluptate adipisicing nostrud ut ea dolore dolor sunt sit.",
-        "imageURL": "images/b6fc8b4e-f565-4935-a149-aa6e388a9daf.png",
+        "imageURL": "b6fc8b4e-f565-4935-a149-aa6e388a9daf.png",
         "price": 105,
         "time": 7,
         "countryOfOrigin": "Chile"
@@ -705,7 +678,7 @@
         "id": "ca90e63a-d03e-47af-bb85-8dddae8cceb6",
         "title": "Magna id",
         "description": "Tempor irure pariatur qui aliqua tempor amet officia ad et elit dolor est consequat. Dolore aute aliqua irure ut nostrud reprehenderit laboris sit laboris labore exercitation. Adipisicing Lorem qui ex quis. Commodo ut sit exercitation deserunt ut excepteur quis.",
-        "imageURL": "images/ca90e63a-d03e-47af-bb85-8dddae8cceb6.png",
+        "imageURL": "ca90e63a-d03e-47af-bb85-8dddae8cceb6.png",
         "price": 150,
         "time": 5,
         "countryOfOrigin": "Wallis and Futuna Islands"
@@ -714,7 +687,7 @@
         "id": "771310ef-0c30-493b-a19e-16cb142b5c2f",
         "title": "Lorem sint magna",
         "description": "Deserunt in reprehenderit magna officia adipisicing. Id non voluptate et eu. Commodo velit et et aute ipsum laborum amet aute anim occaecat reprehenderit qui. Cupidatat aliqua do duis commodo et velit anim amet laborum commodo ullamco veniam.",
-        "imageURL": "images/771310ef-0c30-493b-a19e-16cb142b5c2f.png",
+        "imageURL": "771310ef-0c30-493b-a19e-16cb142b5c2f.png",
         "price": 285,
         "time": 6,
         "countryOfOrigin": "Sweden"
@@ -723,34 +696,25 @@
         "id": "20a6d94e-2b94-4f8d-9e3b-9d32a8703c4f",
         "title": "Irure",
         "description": "Ea et ex duis esse labore dolore anim non cupidatat enim exercitation ut quis occaecat. Laboris velit reprehenderit voluptate et mollit officia ea dolor officia pariatur ut nulla. Dolor sunt ipsum pariatur velit ipsum incididunt sunt nulla. Id laboris eu qui duis duis dolore culpa voluptate ipsum sunt.",
-        "imageURL": "images/20a6d94e-2b94-4f8d-9e3b-9d32a8703c4f.png",
+        "imageURL": "20a6d94e-2b94-4f8d-9e3b-9d32a8703c4f.png",
         "price": 375,
         "time": 6,
         "countryOfOrigin": "Afghanistan"
     },
     {
         "id": "5e622045-393b-4ac6-ba02-ba0e7888f563",
-        "title": "Duis non",
-        "description": "Sint nostrud mollit consequat tempor amet culpa ullamco excepteur minim sunt. Laboris cupidatat qui aliqua qui. Proident cillum minim aliquip pariatur magna magna est. Adipisicing exercitation eu ex laborum commodo commodo nisi enim non.",
-        "imageURL": "images/5e622045-393b-4ac6-ba02-ba0e7888f563.png",
+        "title": "Рачунар за навођење (Apollo Guidance Computer) ",
+        "description": "Дизајниран од стране научника и инжењера у лабораторији за инструментацију МИТ-а, Аполло Гуиданце Цомпутер (АГЦ) је кулминација вишегодишњег рада на смањењу величине рачунара свемирске летелице Аполло са величине седам фрижидера један поред другог на компактну јединицу која тежи само 70 лбс. и заузимају запремину мању од 1 кубне стопе. Први лет АГЦ-а био је на Аполу 7. Годину дана касније, усмеравао је Аполо 11 на површину Месеца. Астронаути су комуницирали са рачунаром тако што су укуцавали двоцифрене кодове у јединицу екрана и тастатуре (ДСКИ). АГЦ је била једна од најранијих употреба интегрисаних кола и користила је меморију језгра, као и меморију магнетног конопа само за читање. Астронаути су били одговорни за унос више од 10.000 команди у АГЦ за свако путовање између Земље и Месеца.",
+        "imageURL": "5e622045-393b-4ac6-ba02-ba0e7888f563.png",
         "price": 360,
         "time": 5,
-        "countryOfOrigin": "Central African Republic"
-    },
-    {
-        "id": "01b4d4fe-d6ec-4840-9ba7-349704420c81",
-        "title": "Ad minim quis ipsum elit",
-        "description": "Id amet Lorem in deserunt excepteur mollit quis voluptate. Occaecat id aliqua velit cillum reprehenderit nostrud incididunt. Ea consectetur in cupidatat irure. Fugiat amet adipisicing esse non officia ullamco ex. Sit in est minim ad aliqua amet veniam.",
-        "imageURL": "images/01b4d4fe-d6ec-4840-9ba7-349704420c81.png",
-        "price": 120,
-        "time": 10,
-        "countryOfOrigin": "Croatia (Hrvatska)"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "4c5de847-779e-4ced-90cc-0ecbf00a3eef",
         "title": "Sunt voluptate excepteur incididunt",
         "description": "Nulla tempor fugiat ullamco excepteur commodo. Amet do irure excepteur deserunt adipisicing. Aliquip minim nisi id nulla ipsum ullamco tempor nostrud consectetur dolore.",
-        "imageURL": "images/4c5de847-779e-4ced-90cc-0ecbf00a3eef.png",
+        "imageURL": "4c5de847-779e-4ced-90cc-0ecbf00a3eef.png",
         "price": 345,
         "time": 6,
         "countryOfOrigin": "Yugoslavia"
@@ -759,25 +723,25 @@
         "id": "a631a8e9-8e48-44a1-b0d8-99d772c258df",
         "title": "Cupidatat irure nostrud nulla reprehenderit",
         "description": "Dolore commodo ut officia incididunt eu enim. Amet duis labore mollit nisi cillum non commodo eiusmod ullamco consequat voluptate. Esse occaecat non magna veniam dolor ut officia laboris magna laborum eu. Incididunt amet aliqua ipsum commodo commodo proident aliquip. Duis dolore sint eiusmod occaecat adipisicing exercitation dolore occaecat qui adipisicing consequat culpa laboris.",
-        "imageURL": "images/a631a8e9-8e48-44a1-b0d8-99d772c258df.png",
+        "imageURL": "a631a8e9-8e48-44a1-b0d8-99d772c258df.png",
         "price": 330,
         "time": 6,
         "countryOfOrigin": "Palau"
     },
     {
         "id": "bbfdd479-a4c9-47ca-b933-b3a8fbb50c1d",
-        "title": "In dolor aute",
-        "description": "Eiusmod officia laborum dolor ullamco officia adipisicing irure quis cupidatat velit et aliqua aute. Sit enim nisi veniam voluptate sit et non nisi velit nulla minim. Magna consectetur occaecat sit quis eu laboris est. In consectetur incididunt non excepteur ullamco aliquip laborum exercitation incididunt occaecat excepteur do labore. Eiusmod voluptate aliqua consectetur amet eu ad.",
-        "imageURL": "images/bbfdd479-a4c9-47ca-b933-b3a8fbb50c1d.png",
+        "title": "Sony Walkman (Вокмен)",
+        "description": "Валкман је бренд преносивих аудио плејера које производи Сони. Оригинални Валкман, објављен 1979. године, био је преносиви касетофон. Његова популарност учинила је 'валкман' незваничним термином за личне стерео уређаје било ког произвођача или бренда. До 2010. године, када је производња стала, Сони је направио око 200 милиона Валкман-а заснованих на касетама.",
+        "imageURL": "bbfdd479-a4c9-47ca-b933-b3a8fbb50c1d.png",
         "price": 360,
         "time": 8,
-        "countryOfOrigin": "Swaziland"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "a1db9118-028f-43b7-8f9d-b0b1075301dd",
         "title": "Esse nostrud",
         "description": "In sunt sit elit sit consequat ex sint. Quis adipisicing consectetur nisi officia aute anim proident et velit elit adipisicing. Enim aliqua eu exercitation reprehenderit voluptate voluptate amet labore cillum sunt mollit nisi.",
-        "imageURL": "images/a1db9118-028f-43b7-8f9d-b0b1075301dd.png",
+        "imageURL": "a1db9118-028f-43b7-8f9d-b0b1075301dd.png",
         "price": 375,
         "time": 8,
         "countryOfOrigin": "Northern Mariana Islands"
@@ -786,25 +750,25 @@
         "id": "e1ae9051-9d0f-4de6-af49-d0486ad7f778",
         "title": "Pariatur labore mollit",
         "description": "Pariatur laboris aliqua nisi sunt adipisicing tempor. Velit officia irure commodo et adipisicing et veniam voluptate laborum pariatur enim quis. Veniam consectetur amet incididunt culpa amet ullamco culpa aliquip sit eu dolore quis Lorem.",
-        "imageURL": "images/e1ae9051-9d0f-4de6-af49-d0486ad7f778.png",
+        "imageURL": "e1ae9051-9d0f-4de6-af49-d0486ad7f778.png",
         "price": 165,
         "time": 10,
         "countryOfOrigin": "Jordan"
     },
     {
         "id": "d1bbe622-34b5-4b9e-adaf-682f0e9dbbf1",
-        "title": "Esse non laboris nulla",
-        "description": "Laboris tempor aute duis et voluptate amet incididunt incididunt duis sit. Eiusmod cupidatat esse in aliquip minim in irure ullamco irure laboris proident cillum ipsum. Id laboris consequat quis Lorem voluptate et eiusmod aute anim officia laboris. Ea nisi tempor culpa id aliqua elit.",
-        "imageURL": "images/d1bbe622-34b5-4b9e-adaf-682f0e9dbbf1.png",
+        "title": "DEC PDP-1",
+        "description": "Типичан рачунарски систем ПДП-1, који се продаје за око 120.000 долара, укључује графички дисплеј катодне цеви, улаз/излаз папирне траке, не треба климатизацију и захтева само једног оператера; све то постаје стандард за мини рачунаре. Његов велики обим заинтригирао је ране хакере на МИТ-у, који су написали прву компјутеризовану видео игру, СпацеВар!, као и програме за пуштање музике. Продато је више од 50 ПДП-1.",
+        "imageURL": "d1bbe622-34b5-4b9e-adaf-682f0e9dbbf1.png",
         "price": 135,
         "time": 10,
-        "countryOfOrigin": "French Polynesia"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "e0a62a49-cc69-430c-ab42-784e1ca9dba2",
         "title": "Officia",
         "description": "Quis laboris sit officia aliquip exercitation dolore tempor do eiusmod minim voluptate nulla. Et consequat consequat enim laborum nulla pariatur dolore sunt pariatur officia. Laboris nisi proident duis excepteur officia eiusmod veniam officia sint. Excepteur voluptate voluptate elit veniam. Id qui dolor ea sint adipisicing minim.",
-        "imageURL": "images/e0a62a49-cc69-430c-ab42-784e1ca9dba2.png",
+        "imageURL": "e0a62a49-cc69-430c-ab42-784e1ca9dba2.png",
         "price": 135,
         "time": 9,
         "countryOfOrigin": "Mongolia"
@@ -813,7 +777,7 @@
         "id": "42cf9301-1ea7-47aa-8dcf-e6de7425c780",
         "title": "Veniam",
         "description": "Veniam ea officia aute velit laborum cupidatat ipsum deserunt tempor irure. Ex enim aute pariatur sit nostrud consequat ea. Officia non ut laboris amet cupidatat ex culpa. Est duis laboris amet duis ipsum velit commodo aliqua dolore esse.",
-        "imageURL": "images/42cf9301-1ea7-47aa-8dcf-e6de7425c780.png",
+        "imageURL": "42cf9301-1ea7-47aa-8dcf-e6de7425c780.png",
         "price": 150,
         "time": 8,
         "countryOfOrigin": "Martinique"
@@ -822,7 +786,7 @@
         "id": "f55de72d-13e0-40da-bcf0-88366cacf0ee",
         "title": "Id proident",
         "description": "Ut aute do cillum amet deserunt veniam irure eiusmod voluptate. Magna pariatur sunt qui ut. Non dolore ipsum laboris Lorem ut Lorem esse. Voluptate est excepteur eu enim ad fugiat exercitation. Fugiat id commodo incididunt qui.",
-        "imageURL": "images/f55de72d-13e0-40da-bcf0-88366cacf0ee.png",
+        "imageURL": "f55de72d-13e0-40da-bcf0-88366cacf0ee.png",
         "price": 150,
         "time": 5,
         "countryOfOrigin": "Paraguay"
@@ -831,7 +795,7 @@
         "id": "0cf61aba-5d56-4549-8560-7b2f3a4ee213",
         "title": "Exercitation est dolor",
         "description": "Lorem elit nisi est excepteur deserunt enim Lorem et laborum nulla anim esse. Do labore nulla labore et culpa in anim elit occaecat labore ipsum. Voluptate culpa quis cillum qui aliqua. Tempor qui nulla laborum reprehenderit est.",
-        "imageURL": "images/0cf61aba-5d56-4549-8560-7b2f3a4ee213.png",
+        "imageURL": "0cf61aba-5d56-4549-8560-7b2f3a4ee213.png",
         "price": 165,
         "time": 6,
         "countryOfOrigin": "Togo"
@@ -840,43 +804,43 @@
         "id": "ab2956be-8cd5-4231-998f-ffbc114a40fb",
         "title": "Excepteur",
         "description": "Voluptate nostrud proident ipsum laboris consectetur mollit mollit sint fugiat. Esse dolor irure est commodo aliqua tempor. Consectetur voluptate est culpa veniam aliqua enim eiusmod non occaecat nisi sint commodo consequat.",
-        "imageURL": "images/ab2956be-8cd5-4231-998f-ffbc114a40fb.png",
+        "imageURL": "ab2956be-8cd5-4231-998f-ffbc114a40fb.png",
         "price": 15,
         "time": 7,
         "countryOfOrigin": "Equatorial Guinea"
     },
     {
         "id": "a7eb3f0c-680d-438c-8b19-dd342264fc5d",
-        "title": "Aliqua et ullamco",
-        "description": "Dolor sint nisi labore voluptate qui in deserunt amet cillum Lorem aliquip. Ipsum minim non proident nisi ad est. Enim et in culpa quis. Eiusmod labore cillum amet aliquip reprehenderit amet ad adipisicing dolore do sint aliqua eiusmod. Do exercitation ullamco culpa minim incididunt aute dolore excepteur.",
-        "imageURL": "images/a7eb3f0c-680d-438c-8b19-dd342264fc5d.png",
+        "title": "NEAC 2203",
+        "description": "Рани транзисторизовани рачунар, НЕАЦ (Ниппон Елецтриц Аутоматиц Цомпутер) укључује ЦПУ, конзолу, читач папирне траке и јединице за бушење, штампач и магнетну траку. Продавао се искључиво у Јапану, али је могао да обрађује абецедна и јапанска кана знакова. Продато је само тридесетак НЕАЦ-ова. Управљао је првим јапанским онлајн системом резервација у реалном времену за Кинки Ниппон Раилваис 1960. Последњи је повучен 1979. године.",
+        "imageURL": "a7eb3f0c-680d-438c-8b19-dd342264fc5d.png",
         "price": 300,
         "time": 8,
-        "countryOfOrigin": "Poland"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "5630ad5c-5f51-42ad-ab4f-a4e8de692751",
         "title": "Eiusmod voluptate",
         "description": "Commodo et tempor non irure. Irure est qui ad magna aliquip amet id cupidatat ut cupidatat magna fugiat. Cillum anim minim Lorem ipsum cillum ex do quis laboris aute amet officia non eu. Ipsum ut excepteur qui dolore ad.",
-        "imageURL": "images/5630ad5c-5f51-42ad-ab4f-a4e8de692751.png",
+        "imageURL": "5630ad5c-5f51-42ad-ab4f-a4e8de692751.png",
         "price": 135,
         "time": 8,
         "countryOfOrigin": "Virgin Islands (US)"
     },
     {
         "id": "370af10b-d482-4e7f-87bb-99779c159ddc",
-        "title": "Incididunt aute dolore",
-        "description": "Ex magna proident officia aute do ea elit ut commodo pariatur dolor id dolor ex. Occaecat eiusmod deserunt veniam nulla tempor sit velit labore ea. Ea deserunt esse cillum sit consequat consectetur duis minim ad mollit voluptate aliqua. Sint veniam sit pariatur labore velit id eu excepteur irure quis culpa amet. Laboris officia ut voluptate adipisicing ullamco elit deserunt ex occaecat est labore anim aute.",
-        "imageURL": "images/370af10b-d482-4e7f-87bb-99779c159ddc.png",
+        "title": "Kenbak-1",
+        "description": "Један од најранијих персоналних рачунара, Кенбак-1 се оглашава за 750 долара у часопису Сциентифиц Америцан. Дизајниран од стране Џона В. Бланкенбејкера користећи стандардна средње- и мала интегрисана кола, Кенбак-1 се ослањао на прекидаче за улаз и светла за излаз из своје 256-бајтне меморије. Године 1973, након продаје само 40 машина, Кенбак Цорпоратион је затворила своја врата.",
+        "imageURL": "370af10b-d482-4e7f-87bb-99779c159ddc.png",
         "price": 285,
         "time": 5,
-        "countryOfOrigin": "Belgium"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "257c90b0-5af9-45af-b1f8-475d91ede8e7",
         "title": "Duis minim commodo",
         "description": "Aliqua ullamco labore exercitation mollit labore dolor officia nostrud voluptate laborum quis ad. Commodo do pariatur in irure quis officia id. Aute reprehenderit aliqua laboris excepteur deserunt velit labore cillum eiusmod consectetur. Labore nulla ullamco ullamco commodo sit labore irure quis magna. Occaecat aliquip esse dolore aliqua dolore consequat tempor labore velit ullamco.",
-        "imageURL": "images/257c90b0-5af9-45af-b1f8-475d91ede8e7.png",
+        "imageURL": "257c90b0-5af9-45af-b1f8-475d91ede8e7.png",
         "price": 300,
         "time": 8,
         "countryOfOrigin": "Fiji"
@@ -885,43 +849,43 @@
         "id": "f2570ce7-0454-4f8a-bd17-d1cfeb719cfa",
         "title": "Cillum ex magna",
         "description": "Proident eu ea adipisicing anim tempor nisi occaecat nisi ea occaecat. Est aliqua pariatur non consequat. Commodo do eu non proident laboris ad cillum excepteur cillum eiusmod ut reprehenderit.",
-        "imageURL": "images/f2570ce7-0454-4f8a-bd17-d1cfeb719cfa.png",
+        "imageURL": "f2570ce7-0454-4f8a-bd17-d1cfeb719cfa.png",
         "price": 360,
         "time": 5,
         "countryOfOrigin": "Finland"
     },
     {
         "id": "042533b1-b48a-48a2-a494-19ef53d59680",
-        "title": "Magna",
-        "description": "Eu esse dolore ex enim velit ut ut consequat quis veniam culpa cillum culpa. Enim veniam duis id ex tempor. Minim adipisicing deserunt ut consequat eiusmod consequat culpa nostrud exercitation non ipsum officia ea fugiat.",
-        "imageURL": "images/042533b1-b48a-48a2-a494-19ef53d59680.png",
+        "title": "АСИЦ црвени (ASIC Red) суперрачунар",
+        "description": "Иницијативи за напредно стратешко рачунарство (АСЦИ) био је потребан суперкомпјутер да помогне у одржавању нуклеарног арсенала САД након забране подземних нуклеарних тестирања. АСЦИ Ред, заснован на дизајну Интел Парагона, направио је ИБМ и испоручен у Сандиа Натионал Лабораториес. До 2000. године био је најбржи суперкомпјутер на свету, способан да постигне врхунске перформансе од 1,3 терафлопса (око 1,3 трилиона прорачуна у секунди).",
+        "imageURL": "042533b1-b48a-48a2-a494-19ef53d59680.png",
         "price": 180,
         "time": 8,
-        "countryOfOrigin": "Canada"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "f9003e80-27c7-4584-a43f-6e6d45ef6962",
         "title": "Labore deserunt",
         "description": "Elit culpa duis qui proident ipsum incididunt ullamco excepteur ut quis fugiat irure aliquip qui. Eiusmod aliquip magna in voluptate deserunt consequat deserunt est nostrud id non nulla sint id. Aliqua laborum amet aliquip cillum culpa ut ad laboris non reprehenderit deserunt.",
-        "imageURL": "images/f9003e80-27c7-4584-a43f-6e6d45ef6962.png",
+        "imageURL": "f9003e80-27c7-4584-a43f-6e6d45ef6962.png",
         "price": 240,
         "time": 5,
         "countryOfOrigin": "Kenya"
     },
     {
         "id": "14e17ce3-854e-403a-837a-bf25a47ef04d",
-        "title": "Ex sit ex",
-        "description": "Exercitation reprehenderit non do non enim sint incididunt. Id ut id nulla do est aliqua dolor nulla cupidatat aliqua reprehenderit. Non adipisicing ex sunt enim minim amet officia esse cupidatat occaecat irure consectetur id enim. Qui irure eiusmod aute nisi laborum est excepteur sint voluptate Lorem ad. Reprehenderit ut voluptate Lorem voluptate tempor veniam pariatur Lorem labore.",
-        "imageURL": "images/14e17ce3-854e-403a-837a-bf25a47ef04d.png",
+        "title": "Sony Playstation VR",
+        "description": "Playstation VR (ПС ВР, познат по свом кодном називу 'Project Morpheus' током развоја) је слушалица за виртуелну стварност коју је развио Сони Интерацтиве Ентертаинмент,] која је објављена у октобру 2016.",
+        "imageURL": "14e17ce3-854e-403a-837a-bf25a47ef04d.png",
         "price": 15,
         "time": 5,
-        "countryOfOrigin": "Saint Kitts and Nevis"
+        "countryOfOrigin": "Јапан"
     },
     {
         "id": "599dd78d-d961-4358-9eda-f7dffc964e7a",
         "title": "Enim cupidatat ullamco",
         "description": "Quis in do veniam duis cillum esse cupidatat. Officia magna ipsum excepteur nulla laboris. Lorem amet anim ex elit est velit Lorem. Exercitation adipisicing elit minim proident officia duis esse labore tempor quis aliquip nostrud do culpa.",
-        "imageURL": "images/599dd78d-d961-4358-9eda-f7dffc964e7a.png",
+        "imageURL": "599dd78d-d961-4358-9eda-f7dffc964e7a.png",
         "price": 60,
         "time": 5,
         "countryOfOrigin": "Romania"
@@ -930,7 +894,7 @@
         "id": "ed2077bf-fe27-4b82-b357-89049fcac0fa",
         "title": "Ea fugiat sit excepteur",
         "description": "Sunt dolor proident qui id quis exercitation in ut et. Exercitation aliqua excepteur aute laborum et fugiat. Amet laboris quis mollit deserunt irure et mollit officia occaecat labore. Consequat sint adipisicing tempor do tempor elit qui velit.",
-        "imageURL": "images/ed2077bf-fe27-4b82-b357-89049fcac0fa.png",
+        "imageURL": "ed2077bf-fe27-4b82-b357-89049fcac0fa.png",
         "price": 225,
         "time": 7,
         "countryOfOrigin": "Kyrgyzstan"
@@ -939,7 +903,7 @@
         "id": "c4ad565f-cb1b-45a5-844b-11b620fb721b",
         "title": "Enim adipisicing velit elit qui",
         "description": "Sunt laboris magna deserunt esse nisi. Sint cupidatat tempor cillum dolore ullamco magna consectetur exercitation exercitation eiusmod consectetur incididunt id. Adipisicing tempor mollit nisi et dolor ex excepteur duis voluptate.",
-        "imageURL": "images/c4ad565f-cb1b-45a5-844b-11b620fb721b.png",
+        "imageURL": "c4ad565f-cb1b-45a5-844b-11b620fb721b.png",
         "price": 285,
         "time": 9,
         "countryOfOrigin": "Zaire"
@@ -948,7 +912,7 @@
         "id": "f4c8d605-c3cf-411f-b6e4-d2e476544c61",
         "title": "Voluptate anim",
         "description": "Excepteur duis nulla ad velit ipsum aliqua ipsum nostrud ea dolore sit enim exercitation exercitation. Magna reprehenderit quis amet aliqua occaecat deserunt sint nostrud. Ad tempor enim dolor commodo laborum est pariatur qui. Ullamco exercitation elit adipisicing cillum sint ad officia sit pariatur reprehenderit. Pariatur elit excepteur elit voluptate.",
-        "imageURL": "images/f4c8d605-c3cf-411f-b6e4-d2e476544c61.png",
+        "imageURL": "f4c8d605-c3cf-411f-b6e4-d2e476544c61.png",
         "price": 255,
         "time": 7,
         "countryOfOrigin": "Korea (South)"
@@ -957,7 +921,7 @@
         "id": "75e050dc-bccd-43f1-9de2-7e2aef060ff2",
         "title": "Nulla ut esse velit",
         "description": "Est exercitation occaecat laborum exercitation qui aute dolor sit. Cupidatat quis culpa nulla fugiat magna excepteur pariatur voluptate consectetur. Commodo sint anim aute reprehenderit id pariatur minim sint irure. Dolor enim mollit aliquip minim pariatur consequat mollit ullamco ex cillum laborum esse dolore do.",
-        "imageURL": "images/75e050dc-bccd-43f1-9de2-7e2aef060ff2.png",
+        "imageURL": "75e050dc-bccd-43f1-9de2-7e2aef060ff2.png",
         "price": 180,
         "time": 7,
         "countryOfOrigin": "Madagascar"
@@ -966,7 +930,7 @@
         "id": "f79de4d5-ae52-4d04-9ea5-d0ba270ba33e",
         "title": "Cupidatat do occaecat velit quis",
         "description": "Lorem qui laboris eu sint in nisi. Non officia dolor aute id mollit eiusmod veniam quis sunt cupidatat ea ullamco laboris cupidatat. Deserunt qui incididunt consectetur aute laborum magna ea veniam adipisicing ad pariatur. Irure magna quis culpa ex ad consequat eiusmod consectetur proident dolore ex sunt quis ad.",
-        "imageURL": "images/f79de4d5-ae52-4d04-9ea5-d0ba270ba33e.png",
+        "imageURL": "f79de4d5-ae52-4d04-9ea5-d0ba270ba33e.png",
         "price": 165,
         "time": 5,
         "countryOfOrigin": "France"
@@ -975,7 +939,7 @@
         "id": "301bae0c-db9c-4795-bc21-c8d1e1cc9815",
         "title": "Et quis",
         "description": "Occaecat sunt quis velit dolor ullamco. Fugiat duis amet occaecat nisi aliqua adipisicing enim tempor nostrud sint est cillum. Consectetur commodo duis nostrud reprehenderit in.",
-        "imageURL": "images/301bae0c-db9c-4795-bc21-c8d1e1cc9815.png",
+        "imageURL": "301bae0c-db9c-4795-bc21-c8d1e1cc9815.png",
         "price": 180,
         "time": 6,
         "countryOfOrigin": "Taiwan"
@@ -984,7 +948,7 @@
         "id": "18a2e80d-98ca-4ab8-840d-6dad4db08e07",
         "title": "Esse quis eu laboris",
         "description": "Dolore enim sunt qui pariatur eiusmod. Sint minim duis veniam amet in. Irure consequat velit officia commodo ut ad ipsum officia duis eu ullamco dolore.",
-        "imageURL": "images/18a2e80d-98ca-4ab8-840d-6dad4db08e07.png",
+        "imageURL": "18a2e80d-98ca-4ab8-840d-6dad4db08e07.png",
         "price": 255,
         "time": 7,
         "countryOfOrigin": "Lesotho"
@@ -993,25 +957,16 @@
         "id": "a7b852b1-4d6e-4201-9626-53cc3fffdfdb",
         "title": "Id excepteur ad minim",
         "description": "Excepteur ad et velit qui eu elit mollit ullamco officia. Enim ad commodo exercitation in est dolor voluptate minim velit do nisi. Irure sit culpa veniam culpa magna proident id ullamco. Ea ea fugiat elit incididunt magna reprehenderit elit culpa duis ad dolor consequat enim labore. Do nostrud mollit nostrud aliquip incididunt labore.",
-        "imageURL": "images/a7b852b1-4d6e-4201-9626-53cc3fffdfdb.png",
+        "imageURL": "a7b852b1-4d6e-4201-9626-53cc3fffdfdb.png",
         "price": 345,
         "time": 5,
         "countryOfOrigin": "Mauritania"
     },
     {
-        "id": "b8e8d3d7-ab72-4aad-ba91-6d65fcc2ca9d",
-        "title": "Aute",
-        "description": "Sit id magna et exercitation id. Incididunt velit Lorem magna reprehenderit labore fugiat pariatur est deserunt nostrud deserunt non sunt. Eu veniam fugiat cillum non quis cupidatat aliquip laborum ullamco ex. Sit cillum eu ex dolore exercitation duis esse et minim ex duis labore Lorem cupidatat. Incididunt excepteur veniam magna consequat.",
-        "imageURL": "images/b8e8d3d7-ab72-4aad-ba91-6d65fcc2ca9d.png",
-        "price": 285,
-        "time": 8,
-        "countryOfOrigin": "Costa Rica"
-    },
-    {
         "id": "3cec7e07-56a2-431c-80cb-ed3696034c53",
         "title": "Eiusmod incididunt veniam pariatur",
         "description": "Ipsum culpa dolore nulla officia ipsum officia aliqua aliquip ea. Adipisicing Lorem cillum anim ad veniam do nostrud. Labore qui ut proident laboris nostrud aliqua deserunt Lorem. Duis eiusmod amet et reprehenderit eiusmod.",
-        "imageURL": "images/3cec7e07-56a2-431c-80cb-ed3696034c53.png",
+        "imageURL": "3cec7e07-56a2-431c-80cb-ed3696034c53.png",
         "price": 135,
         "time": 9,
         "countryOfOrigin": "Dominican Republic"
@@ -1020,7 +975,7 @@
         "id": "0ae3c09a-36da-4d9d-9702-c53efbe87a5a",
         "title": "Consequat nisi deserunt",
         "description": "Proident velit nisi quis ut commodo ex amet eu do et reprehenderit reprehenderit. Officia et dolor ea aliqua excepteur officia cillum. Deserunt qui nostrud duis Lorem. Ad nisi ut ullamco incididunt quis exercitation esse nisi. Amet do nisi Lorem proident id laboris.",
-        "imageURL": "images/0ae3c09a-36da-4d9d-9702-c53efbe87a5a.png",
+        "imageURL": "0ae3c09a-36da-4d9d-9702-c53efbe87a5a.png",
         "price": 15,
         "time": 5,
         "countryOfOrigin": "Luxembourg"
@@ -1029,7 +984,7 @@
         "id": "84950761-26df-436a-ba51-80808652dec9",
         "title": "Magna eiusmod non sit ullamco",
         "description": "Nisi quis in duis esse enim sint. Velit elit in ipsum culpa non sunt excepteur eiusmod elit deserunt in. Exercitation id voluptate aliqua do Lorem aliquip consectetur consectetur do laborum. Duis ut est anim excepteur occaecat irure labore. Culpa nisi ad in commodo aliquip consectetur nulla enim do.",
-        "imageURL": "images/84950761-26df-436a-ba51-80808652dec9.png",
+        "imageURL": "84950761-26df-436a-ba51-80808652dec9.png",
         "price": 90,
         "time": 5,
         "countryOfOrigin": "Iceland"
@@ -1038,25 +993,25 @@
         "id": "613aacce-cc47-41ac-bd09-99e4ecec5da5",
         "title": "Nostrud ad",
         "description": "Anim tempor do reprehenderit nostrud occaecat exercitation nostrud commodo sit sunt aliquip. Eu amet ad proident velit amet aute Lorem et. Commodo commodo duis proident eiusmod dolore eu ea minim esse culpa aliqua aliqua est sint. Do velit incididunt est ipsum amet Lorem ipsum incididunt officia consectetur anim.",
-        "imageURL": "images/613aacce-cc47-41ac-bd09-99e4ecec5da5.png",
+        "imageURL": "613aacce-cc47-41ac-bd09-99e4ecec5da5.png",
         "price": 165,
         "time": 7,
         "countryOfOrigin": "Cote D'Ivoire (Ivory Coast)"
     },
     {
         "id": "150f4aaa-1c97-463a-b61b-e3057d8423bc",
-        "title": "Ex",
-        "description": "Commodo minim ea labore veniam aute laborum id sit esse fugiat deserunt ut dolor. Elit aute eu non nostrud. Pariatur officia culpa consequat nulla magna. Amet irure mollit deserunt ut consequat ipsum pariatur occaecat in do. Veniam magna consequat quis ex pariatur qui officia fugiat.",
-        "imageURL": "images/150f4aaa-1c97-463a-b61b-e3057d8423bc.png",
+        "title": "Amdahl 470",
+        "description": "Џин Амдал, отац ИБМ Систем/360, покреће сопствену компанију Амдахл Цорпоратион, како би се такмичио са ИБМ-ом у системима за мејнфрејм рачунаре. 470В/6 је био први производ компаније и покретао је исти софтвер као ИБМ Систем/370 рачунари, али је коштао мање и био је мањи и бржи.",
+        "imageURL": "150f4aaa-1c97-463a-b61b-e3057d8423bc.png",
         "price": 240,
         "time": 9,
-        "countryOfOrigin": "Zimbabwe"
+        "countryOfOrigin": "САД"
     },
     {
         "id": "a599ed2d-6bd4-413f-91b8-8aba2137b448",
         "title": "Non voluptate nulla",
         "description": "Quis veniam amet deserunt ea elit laboris sit. Et tempor excepteur cillum consequat. Veniam officia incididunt sit ut aliqua Lorem. Deserunt pariatur sit nisi minim irure labore qui laboris qui in ex veniam nulla.",
-        "imageURL": "images/a599ed2d-6bd4-413f-91b8-8aba2137b448.png",
+        "imageURL": "a599ed2d-6bd4-413f-91b8-8aba2137b448.png",
         "price": 270,
         "time": 6,
         "countryOfOrigin": "Syria"
@@ -1065,36 +1020,36 @@
         "id": "d1d8c175-6193-40ef-b8cb-5e61ba259902",
         "title": "Ad pariatur reprehenderit",
         "description": "Non aliquip duis eiusmod laboris sit incididunt sint. Esse mollit aliquip duis officia. Aliquip reprehenderit et duis veniam aliqua anim do duis aliquip proident culpa voluptate reprehenderit elit. Eu id esse adipisicing quis anim aute.",
-        "imageURL": "images/d1d8c175-6193-40ef-b8cb-5e61ba259902.png",
+        "imageURL": "d1d8c175-6193-40ef-b8cb-5e61ba259902.png",
         "price": 195,
         "time": 5,
         "countryOfOrigin": "Grenada"
     },
     {
         "id": "55b96bd5-eb6e-4434-b287-33e701c805e9",
-        "title": "Quis deserunt do",
-        "description": "Dolor ea culpa tempor occaecat mollit cupidatat consectetur aliquip. Adipisicing ex proident veniam elit minim veniam ad ad tempor occaecat sunt incididunt sint. Cillum officia consequat nulla ipsum minim. Consectetur ex velit amet in exercitation aliqua laborum veniam culpa cupidatat enim et fugiat. Ea sint commodo aliquip qui ullamco eu esse.",
-        "imageURL": "images/55b96bd5-eb6e-4434-b287-33e701c805e9.png",
+        "title": "Ардуино УНО",
+        "description": "Враћајући се у хобистичку еру личног рачунарства 1970-их, Ардуино почиње као пројекат Интерацтион Десигн Институте, Ивреа, Италија. Свака Ардуино плоча величине кредитне картице састојала се од јефтиног микроконтролера и сигналних конектора што је Ардуино чинило идеалним за употребу у било којој апликацији која се повезује са или надгледа спољашњи свет. Ардуино је користио интегрисано развојно окружење засновано на Јави и корисници су могли да приступе библиотеци програма, названој 'Виринг', која је омогућавала поједностављено програмирање. Ардуино је убрзо постао главна рачунарска платформа светског покрета 'Макер'.",
+        "imageURL": "55b96bd5-eb6e-4434-b287-33e701c805e9.png",
         "price": 75,
         "time": 9,
-        "countryOfOrigin": "Cape Verde"
+        "countryOfOrigin": "Италија"
     },
     {
         "id": "272cc905-7032-4bd1-ae13-14911be4dd09",
         "title": "Voluptate excepteur",
         "description": "Laboris excepteur deserunt cillum duis eiusmod tempor labore eiusmod eu pariatur consequat non adipisicing voluptate. Do cillum magna cillum reprehenderit laboris mollit minim occaecat id incididunt eu enim proident. Id laborum do tempor do anim amet proident fugiat cillum.",
-        "imageURL": "images/272cc905-7032-4bd1-ae13-14911be4dd09.png",
+        "imageURL": "272cc905-7032-4bd1-ae13-14911be4dd09.png",
         "price": 105,
         "time": 8,
         "countryOfOrigin": "Macau"
     },
     {
         "id": "3753cefc-81df-4e99-abda-326c4a13a726",
-        "title": "Irure",
-        "description": "Anim Lorem consequat voluptate cupidatat pariatur officia duis sint. Do irure sit nostrud ut do. Tempor ad exercitation eiusmod ex do excepteur nisi Lorem. Aliqua incididunt pariatur et ea. Irure consequat mollit velit culpa Lorem aliquip nulla aute magna nulla ullamco.",
-        "imageURL": "images/3753cefc-81df-4e99-abda-326c4a13a726.png",
+        "title": "Game boy color",
+        "imageURL": "3753cefc-81df-4e99-abda-326c4a13a726.png",
+        "description": "ГБЦ има екран у боји, а не монохроматски, али нема позадинско осветљење. Нешто је дебљи и виши и има нешто мањи екран од Гаме Бои Поцкет, његовог непосредног претходника у линији Гаме Бои. Као и код оригиналног Гаме Бои-а, има прилагођени 8-битни процесор компаније Схарп који се сматра хибридом између Интел 8080 и Зилог З80.[6] Амерички енглески правопис имена система, Гаме Бои Цолор, остаје доследан широм света.",
         "price": 240,
         "time": 9,
-        "countryOfOrigin": "Micronesia"
+        "countryOfOrigin": "Јапан"
     }
 ]
