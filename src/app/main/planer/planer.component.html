@@ -41,8 +41,7 @@
                 <mat-card-header class="marginOverride" fxLayoutAlign="center center" fxFlex=20>
                     <mat-card-title class="titleFont">{{exhibit.title}}</mat-card-title>
                 </mat-card-header>
-                <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
-                <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+                <img mat-card-image [src]="'assets/' + exhibit.imageURL" alt="Photo of {{exhibit.title}}" />
                 <mat-card-content class="marginOverride" fxLayoutAlign="center center" fxFlex=40>
                     <p class="descFont">{{exhibit.description}}</p>
                 </mat-card-content>
@@ -67,8 +66,7 @@
                     </div>
                 </mat-expansion-panel-header>
                 <div fxLayout="row" fxLayoutAlign="space-evenly stretch" fxLayoutGap="2%">
-                    <img mat-card-image src="assets/images/temp.png" alt="Photo of {{exhibit.title}}" />
-                    <!-- [src]="'assets/' + exhibit.imageURL | async" *fix this not working, path is correct when images become avaiable -->
+                    <img mat-card-image [src]="'assets/' + exhibit.imageURL" alt="Photo of {{exhibit.title}}" />
                     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2%">
                         <p class="descFont">{{exhibit.description}}</p>
                         <div fxLayout="row" fxLayoutAlign="center center">
@@ -100,6 +98,6 @@
             <ngx-timepicker-field matInput [format]="24" [defaultTime]="'00:00'" [contentEditable]="true"
                 [controlOnly]="true" (timeChanged)="registerNewTime($event)" fxFlex></ngx-timepicker-field>
         </mat-form-field>
-        <span fxFlex>Изабрали сте: {{ currentViewingTour?.scheduledAt | date: "dd.MM.YYYY. HH:mm:ss" }}</span>
+        <span fxFlex>Изабрали сте: {{ newTourTime | date: "dd.MM.YYYY. HH:mm:ss" }}</span>
     </div>
 </div>
