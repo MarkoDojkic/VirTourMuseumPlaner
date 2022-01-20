@@ -17,7 +17,7 @@ app.post('/register', (request, response) => {
         var visitorsData = JSON.parse(buffer);
         
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -40,7 +40,7 @@ app.post('/login', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
         var visitorsData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -56,7 +56,7 @@ app.get("/getUser/:id", (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
         var visitorsData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -69,7 +69,7 @@ app.post('/update/:id', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
         var visitorsData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -91,7 +91,7 @@ app.get('/getExhibitions', (request, response) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    //console.log(err);
                     reject(err);
                 }
                 else {
@@ -128,7 +128,7 @@ app.get("/getReviews/:id", (request, response) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    //console.log(err);
                     reject(err);
                 }
                 else {
@@ -170,7 +170,7 @@ app.post('/addNewTour/:id', (request, response) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    //console.log(err);
                     reject(err);
                 }
                 else {
@@ -227,7 +227,7 @@ app.post('/checkIfTourTimeSlotIsAvailable/:id', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
         var visitorsData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -255,7 +255,7 @@ app.get('/getTourData/:id', (request, response) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    //console.log(err);
                     reject(err);
                 }
                 else {
@@ -310,7 +310,7 @@ app.patch('/cancelTour/:id', (request, response) => {
     fs.readFile("tours.json", (error, buffer) => {
         var toursData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -331,7 +331,7 @@ app.patch('/updateTourDateTime/:visitorId/:tourId', (request, response) => {
     fs.readFile("visitors.json", (error, buffer) => {
         var vistorData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -357,7 +357,7 @@ app.patch('/removeExhibitFromTour/:tourId/:exhibitId', (request, response) => {
     fs.readFile("tours.json", (error, buffer) => {
         var toursData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }
@@ -381,7 +381,7 @@ app.delete('/removeTour/:visitorId/:tourId', (request, response) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    //console.log(err);
                     reject(err);
                 }
                 else {
@@ -424,7 +424,7 @@ app.patch('/updateReview/:reviewId', (request, response) => {
     fs.readFile("reviews.json", (error, buffer) => {
         var reviewsData = JSON.parse(buffer);
         if (error) {
-            console.log(error);
+            //console.log(error);
             response.sendStatus(405).send(error).end();
             return;
         }

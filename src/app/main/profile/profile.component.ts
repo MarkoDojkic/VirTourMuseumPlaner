@@ -90,7 +90,7 @@ export class ProfileComponent implements OnInit {
       this.userMobilePhone = resolve.mobilePhone!.toString();
       this.favorites = resolve.favorites!;
     }, (reject) => {
-      console.log(reject);
+      //console.log(reject);
     });
   }
 

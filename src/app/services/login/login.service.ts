@@ -41,7 +41,7 @@ export class LoginService {
         this.router.navigate(["/profile"]);
       });
     }, (reject) => {
-      console.log(reject);
+      //console.log(reject);
       Swal.fire({
         title: "Логовање неуспешно!",
         text: "Проверите поново да ли сте исправно унели\nВашу адресу електронске поште и лозинку!",
