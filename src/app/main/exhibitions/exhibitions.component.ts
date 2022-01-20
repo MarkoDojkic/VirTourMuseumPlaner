@@ -284,6 +284,7 @@ export class ExhibitionComponent implements OnInit {
     }
 
     var selectedExhibitIds = (JSON.parse(sessionStorage.getItem("newPlanerExhibits")!) as Array<string>);
+    var noDisable = false;
 
     Swal.fire({
       title: "Изаберите датум и време\nновог обиласка",
@@ -307,6 +308,7 @@ export class ExhibitionComponent implements OnInit {
       if (choice.isDismissed) {
         Swal.close();
         this.isTourCreationMode = true;
+        noDisable = true;
         return;
       } else if (choice.isDenied) {
         this.ns.notify("error", "Одустали сте од креирања новог обиласка.");
@@ -324,7 +326,7 @@ export class ExhibitionComponent implements OnInit {
       }
     });
 
-    selectedExhibitIds.forEach(id => {
+    if (!noDisable) selectedExhibitIds.forEach(id => {
       document.querySelector("#addToPlaner_" + id)?.classList.remove("mat-button-disabled");
       document.querySelector("#addToPlaner_" + id)?.setAttribute("disabled", "false");
     });
@@ -363,8 +365,10 @@ export class ExhibitionComponent implements OnInit {
   }
 
   updateTourTime(newTime: string): void {
-    this.newTourDateTime.setHours(parseInt(newTime.split(":")[0]));
-    this.newTourDateTime.setMinutes(parseInt(newTime.split(":")[1]));
+    var temp = new Date(this.newTourDateTime);
+    temp.setHours(parseInt(newTime.split(":")[0]));
+    temp.setMinutes(parseInt(newTime.split(":")[1]));
+    this.newTourDateTime = temp;
   }
 
   showReviews(exhibitId: string) {

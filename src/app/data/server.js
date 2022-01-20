@@ -235,17 +235,16 @@ app.post('/checkIfTourTimeSlotIsAvailable/:id', (request, response) => {
         var visitor = visitorsData.find(visitor => visitor.id === request.params.id);
         
         var targetDateTime = new Date(request.body.dateTime);
-        var closestDateTime;
-
+        var closestDateTime = new Date("01-01-1900");
+        
         visitor.planer.map(plan => plan.date).forEach(date => {
-            if (closestDateTime === undefined || targetDateTime - date > targetDateTime - closestDateTime)
-                closestDateTime = date;
+            if (closestDateTime === undefined || targetDateTime - new Date(date) < targetDateTime - closestDateTime)
+                closestDateTime = new Date(date);
         });
 
-        closestDateTime = new Date(closestDateTime);
-
         if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60 * 24))) > 1) return response.sendStatus(200);
-        else if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60))) >= 1) return response.sendStatus(200);
+        else if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60))) >= 2) return response.sendStatus(200);
+        else if (Math.abs(Math.floor((targetDateTime - closestDateTime) / (1000 * 60 * 60))) <= -2) return response.sendStatus(200);
         else return response.send("WRONG_TIME");
     });
 });

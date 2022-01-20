@@ -34,6 +34,7 @@ export class PlanerComponent implements OnInit {
   @ViewChild('timeTemplate', { static: false })
   timeTemplate!: ElementRef;
   refresh: Subject<any> = new Subject();
+  newTourTime?: Date = undefined;
 
   constructor(private tourService: TourService, breakpointObserver: BreakpointObserver, private ns: NotifierService) {
     this.stepperOrientation = breakpointObserver
@@ -85,6 +86,7 @@ export class PlanerComponent implements OnInit {
           label: '<i class="material-icons">edit</i>',
           a11yLabel: 'Edit',
           onClick: ({ event }: { event: CalendarEvent }): void => {
+            tour.scheduledAt = event.start;
             this.currentViewingTour = tour;
             this.planerStepper.selected!.completed = true;
             this.planerStepper.next();
@@ -134,6 +136,7 @@ export class PlanerComponent implements OnInit {
                     this.ns.notify("success", "Успешно уклоњен обилазак из планера");
                     this.events.splice(this.events.findIndex(e => e.meta.id === tour.id), 1);
                     this.refresh.next();
+                    if (this.currentViewingTour?.id! === tour.id) this.currentViewingTour = undefined;
                   } else {
                     //console.log(response);
                     this.ns.notify("error", "Догодила се грешка. Проверите да ли сте повезани на интернет. Уколико се грешка идаље појављује контактирајте администратора.");
@@ -268,13 +271,14 @@ export class PlanerComponent implements OnInit {
   }
 
   registerNewTime(newTime: string): void {
-    var oldDate = new Date(this.currentViewingTour?.scheduledAt!);
-    oldDate.setHours(parseInt(newTime.split(":")[0]));
-    oldDate.setMinutes(parseInt(newTime.split(":")[1]));
-    this.currentViewingTour!.scheduledAt = oldDate;
+    var temp = new Date(this.newTourTime!);
+    temp.setHours(parseInt(newTime.split(":")[0]));
+    temp.setMinutes(parseInt(newTime.split(":")[1]));
+    this.newTourTime = temp;
   }
 
   updateTourTime(): void {
+    this.newTourTime = this.currentViewingTour?.scheduledAt!;
     Swal.fire({
       title: "Изаберите ново време изабраног обиласка",
       html: this.timeTemplate!.nativeElement,
@@ -298,7 +302,8 @@ export class PlanerComponent implements OnInit {
         this.tourService.updateTourDateTime(this.currentViewingTour?.id!, this.currentViewingTour?.scheduledAt!).then(resolve => {
           //console.log(resolve);
           this.ns.notify("success", "Успешно сте променили време обиласка.");
-
+          this.currentViewingTour!.scheduledAt! = this.newTourTime!;
+          this.newTourTime = undefined;
           var oldEvent = this.events.find(e => e.meta.id === this.currentViewingTour?.id);
           oldEvent!.start = this.currentViewingTour?.scheduledAt!;
           oldEvent!.title = "Почетак у: " + oldEvent!.start.toLocaleTimeString("sr-RS") + " | Број експоната:" + oldEvent!.title.split(" | Број експоната:")[1];
